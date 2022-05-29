@@ -1,0 +1,11 @@
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\bin\Debug\Prueba control de led.exe.config
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\bin\Debug\Prueba control de led.exe
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\bin\Debug\Prueba control de led.pdb
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.csproj.AssemblyReference.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.csproj.SuggestedBindingRedirects.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba_control_de_led.Principal.resources
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba_control_de_led.Properties.Resources.resources
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.csproj.GenerateResource.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.csproj.CoreCompileInputs.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.exe
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\ControlLeds\Prueba control de led\obj\Debug\Prueba control de led.pdb

@@ -1,0 +1,12 @@
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Release\Dewimed_Beta.exe.config
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Release\Dewimed_Beta.exe
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Release\Dewimed_Beta.pdb
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.Form1.resources
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.Form2.resources
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.Properties.Resources.resources
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.exe
+C:\Users\pc\Desktop\Repositorios Dewimed\actualizacion 22 mayo 22\Visual studio proyectos nuevos\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Release\Dewimed_Beta.pdb

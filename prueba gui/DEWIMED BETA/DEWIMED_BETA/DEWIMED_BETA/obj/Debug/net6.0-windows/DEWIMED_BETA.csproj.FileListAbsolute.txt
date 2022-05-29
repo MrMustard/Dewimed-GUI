@@ -1,0 +1,17 @@
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\bin\Debug\net6.0-windows\DEWIMED_BETA.exe
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\bin\Debug\net6.0-windows\DEWIMED_BETA.deps.json
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\bin\Debug\net6.0-windows\DEWIMED_BETA.runtimeconfig.json
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\bin\Debug\net6.0-windows\DEWIMED_BETA.dll
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\bin\Debug\net6.0-windows\DEWIMED_BETA.pdb
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.csproj.AssemblyReference.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.Form1.resources
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.csproj.GenerateResource.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.AssemblyInfoInputs.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.AssemblyInfo.cs
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.csproj.CoreCompileInputs.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.dll
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\refint\DEWIMED_BETA.dll
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.pdb
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\DEWIMED_BETA.genruntimeconfig.cache
+C:\Users\el_gl\Desktop\Visual studio proyectos nuevos\prueba gui\DEWIMED BETA\DEWIMED_BETA\DEWIMED_BETA\obj\Debug\net6.0-windows\ref\DEWIMED_BETA.dll
