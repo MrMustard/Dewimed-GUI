@@ -23,5 +23,10 @@ namespace Dewimed_Beta
             this.Hide();//escondemos el form 1
             f1.ShowDialog();//mostramos form2
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
