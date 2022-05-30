@@ -14,7 +14,7 @@ namespace Dewimed_Beta
     public partial class Form1 : Form
     {
         private string ReceivedData;//received data form serial port
-
+        private int Valor_Barra = 0;
 
 
         public Form1()
@@ -35,7 +35,7 @@ namespace Dewimed_Beta
                // button_field_mas.Enabled = true;//desactivamos el boton de campo mas
                 serialport1.WriteLine("[P]");
                LabelStatus.Text = "[P]";
-                progressBar1.Value = 10;
+                
 
 
             }
@@ -127,7 +127,17 @@ namespace Dewimed_Beta
             {
               serialport1.WriteLine("[-]");
                 LabelStatus.Text = "[-]";
-                progressBar1.Value = 20;
+                
+                if (Valor_Barra <= 10)
+                {
+                    Valor_Barra = 10;
+                }
+                else
+                {
+                    Valor_Barra -= 10;
+                }
+
+                progressBar1.Value = Valor_Barra;
             }
 
             catch (Exception error)
@@ -146,7 +156,17 @@ namespace Dewimed_Beta
             {
                 serialport1.WriteLine("[+]");
                 LabelStatus.Text = "[+]";
-                progressBar1.Value = 30;
+
+                if (Valor_Barra >= 100)
+                {
+                    Valor_Barra = 100;
+                }
+                else
+                {
+                    Valor_Barra += 10;                
+                }
+
+                progressBar1.Value = Valor_Barra;
             }
 
             catch (Exception error)
@@ -165,7 +185,7 @@ namespace Dewimed_Beta
             {
                 serialport1.WriteLine("[A]");
                 LabelStatus.Text = "[A]";
-                progressBar1.Value = 40;
+               
             }
 
             catch (Exception error)
@@ -184,7 +204,7 @@ namespace Dewimed_Beta
             {
                 serialport1.WriteLine("[F]");
                 LabelStatus.Text = "[F]";
-                progressBar1.Value = 50;
+               
             }
 
             catch (Exception error)
@@ -203,7 +223,7 @@ namespace Dewimed_Beta
             {
                 serialport1.WriteLine("[L]");
                 LabelStatus.Text = "[L]";
-                progressBar1.Value = 60;
+               
             }
 
             catch (Exception error)
@@ -222,7 +242,7 @@ namespace Dewimed_Beta
             {
                 serialport1.WriteLine("[H]");
                 LabelStatus.Text = "[H]";
-                progressBar1.Value = 70;
+               
             }
 
             catch (Exception error)
@@ -248,9 +268,24 @@ namespace Dewimed_Beta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();//creamos un nuevo form
-            this.Hide();//escondemos el form 1
-            f2.ShowDialog();//mostramos form2
+
+
+
+
+            try
+            {
+                serialport1.Close();//cerramos el puerto serie
+
+                Form2 f2 = new Form2();//creamos un nuevo form
+                this.Hide();//escondemos el form 1
+                f2.ShowDialog();//mostramos form2
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
 
         }
 
@@ -301,7 +336,10 @@ namespace Dewimed_Beta
                 button_Config_Menu.Enabled = true;
                 TextBox_Serial_Receive.Enabled = true;
                 TextBox_Serial_Send.Enabled = true;
-                progressBar1.Value = 100;
+
+                progressBar1.Value = 10;
+                Valor_Barra = 10;
+                
                 serialport1.DataReceived += serialport1_DataReceived;
 
 
@@ -335,6 +373,9 @@ namespace Dewimed_Beta
                     progressBar1.Value = 0;
                     Combo_Port.Enabled = true;
                     Combo_Baud.Enabled = true;
+
+                    progressBar1.Value = 0;
+                    Valor_Barra = 10;
                 }
 
                 catch (Exception error)
@@ -403,6 +444,23 @@ namespace Dewimed_Beta
         {
            TextBox_Serial_Receive.Text  = string.Empty;//limpiamos el textbox
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //serialport1.
+            //string[] ports = serialport1.GetPortNames();
+          
+            
+
+        }
+
+        private void Combo_Port_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
     }
 
 

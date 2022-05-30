@@ -40,6 +40,7 @@
             this.button_ambi = new System.Windows.Forms.Button();
             this.button_mas = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TextBox_Serial_Receive = new System.Windows.Forms.TextBox();
             this.groupBox_Terminal_Send = new System.Windows.Forms.GroupBox();
             this.TextBox_Serial_Send = new System.Windows.Forms.TextBox();
             this.button_Config_Menu = new System.Windows.Forms.Button();
@@ -55,14 +56,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.serialport1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Group_Terminal = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.TextBox_Serial_Receive = new System.Windows.Forms.TextBox();
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.LabelStatus);
             this.groupBox1.Controls.Add(this.button_field_mas);
             this.groupBox1.Controls.Add(this.label1);
@@ -192,6 +192,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Recibidos";
             // 
+            // TextBox_Serial_Receive
+            // 
+            this.TextBox_Serial_Receive.Location = new System.Drawing.Point(6, 35);
+            this.TextBox_Serial_Receive.Multiline = true;
+            this.TextBox_Serial_Receive.Name = "TextBox_Serial_Receive";
+            this.TextBox_Serial_Receive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_Serial_Receive.Size = new System.Drawing.Size(625, 131);
+            this.TextBox_Serial_Receive.TabIndex = 0;
+            // 
             // groupBox_Terminal_Send
             // 
             this.groupBox_Terminal_Send.Controls.Add(this.TextBox_Serial_Send);
@@ -241,8 +250,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.progressBar1);
             this.groupBox4.Controls.Add(this.Button_Serial_Close);
             this.groupBox4.Controls.Add(this.Button_Serial_Open);
             this.groupBox4.Controls.Add(this.Combo_Baud);
@@ -251,7 +258,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(257, 263);
+            this.groupBox4.Size = new System.Drawing.Size(257, 202);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "UART CONFIG";
@@ -259,14 +266,14 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 231);
+            this.progressBar1.Location = new System.Drawing.Point(185, 129);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(243, 21);
+            this.progressBar1.Size = new System.Drawing.Size(589, 21);
             this.progressBar1.TabIndex = 11;
             // 
             // Button_Serial_Close
             // 
-            this.Button_Serial_Close.Location = new System.Drawing.Point(10, 190);
+            this.Button_Serial_Close.Location = new System.Drawing.Point(6, 156);
             this.Button_Serial_Close.Name = "Button_Serial_Close";
             this.Button_Serial_Close.Size = new System.Drawing.Size(239, 31);
             this.Button_Serial_Close.TabIndex = 10;
@@ -276,7 +283,7 @@
             // 
             // Button_Serial_Open
             // 
-            this.Button_Serial_Open.Location = new System.Drawing.Point(10, 149);
+            this.Button_Serial_Open.Location = new System.Drawing.Point(6, 119);
             this.Button_Serial_Open.Name = "Button_Serial_Open";
             this.Button_Serial_Open.Size = new System.Drawing.Size(239, 31);
             this.Button_Serial_Open.TabIndex = 9;
@@ -299,6 +306,7 @@
             this.Combo_Port.Name = "Combo_Port";
             this.Combo_Port.Size = new System.Drawing.Size(121, 21);
             this.Combo_Port.TabIndex = 2;
+            this.Combo_Port.SelectedIndexChanged += new System.EventHandler(this.Combo_Port_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -332,32 +340,22 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(12, 289);
+            this.groupBox3.Location = new System.Drawing.Point(12, 221);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(257, 159);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info";
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Mextronics";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "DEWILUX ";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(173, 25);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "FIRMWARE: 0.1";
             // 
             // label6
             // 
@@ -369,15 +367,25 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "HARDWARE : 1.0";
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 25);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "FIRMWARE: 0.1";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "DEWILUX ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Imprint MT Shadow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Mextronics";
             // 
             // Group_Terminal
             // 
@@ -401,24 +409,6 @@
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(10, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(239, 31);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // TextBox_Serial_Receive
-            // 
-            this.TextBox_Serial_Receive.Location = new System.Drawing.Point(6, 35);
-            this.TextBox_Serial_Receive.Multiline = true;
-            this.TextBox_Serial_Receive.Name = "TextBox_Serial_Receive";
-            this.TextBox_Serial_Receive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_Serial_Receive.Size = new System.Drawing.Size(625, 131);
-            this.TextBox_Serial_Receive.TabIndex = 0;
             // 
             // Form1
             // 
@@ -485,7 +475,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox Group_Terminal;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox TextBox_Serial_Receive;
         private System.IO.Ports.SerialPort serialPort2;
     }
