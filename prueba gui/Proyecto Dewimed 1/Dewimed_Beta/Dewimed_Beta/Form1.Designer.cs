@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.button_On = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.LabelStatus = new System.Windows.Forms.Label();
             this.button_field_mas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button_Enviar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.Button_Serial_Close = new System.Windows.Forms.Button();
             this.Button_Serial_Open = new System.Windows.Forms.Button();
             this.Combo_Baud = new System.Windows.Forms.ComboBox();
@@ -63,6 +63,8 @@
             this.Group_Terminal = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox_Terminal_Send.SuspendLayout();
@@ -99,6 +101,13 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teclado Virtual";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(185, 129);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(589, 21);
+            this.progressBar1.TabIndex = 11;
             // 
             // LabelStatus
             // 
@@ -194,12 +203,16 @@
             // 
             // TextBox_Serial_Receive
             // 
+            this.TextBox_Serial_Receive.AcceptsReturn = true;
+            this.TextBox_Serial_Receive.AcceptsTab = true;
             this.TextBox_Serial_Receive.Location = new System.Drawing.Point(6, 35);
             this.TextBox_Serial_Receive.Multiline = true;
             this.TextBox_Serial_Receive.Name = "TextBox_Serial_Receive";
+            this.TextBox_Serial_Receive.ReadOnly = true;
             this.TextBox_Serial_Receive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox_Serial_Receive.Size = new System.Drawing.Size(625, 131);
             this.TextBox_Serial_Receive.TabIndex = 0;
+            this.TextBox_Serial_Receive.TextChanged += new System.EventHandler(this.TextBox_Serial_Receive_TextChanged);
             // 
             // groupBox_Terminal_Send
             // 
@@ -237,6 +250,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button_Enviar
             // 
@@ -263,13 +277,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "UART CONFIG";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(185, 129);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(589, 21);
-            this.progressBar1.TabIndex = 11;
             // 
             // Button_Serial_Close
             // 
@@ -410,11 +417,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1167, 68);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 42);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Probar WhatchDog";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1167, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(140, 42);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Reset ";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 471);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Group_Terminal);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -477,6 +506,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox TextBox_Serial_Receive;
         private System.IO.Ports.SerialPort serialPort2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

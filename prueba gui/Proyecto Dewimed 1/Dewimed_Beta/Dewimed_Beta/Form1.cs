@@ -63,14 +63,14 @@ namespace Dewimed_Beta
             button_field_menos.Enabled = false;
             button_field_mas.Enabled=false;
             button_Enviar.Enabled = false;
-            button_Config_Menu.Enabled = false;
+            button_Config_Menu.Enabled = true;
             TextBox_Serial_Receive.Enabled = false;
             TextBox_Serial_Send .Enabled = false;
             Combo_Baud.Enabled = true;
             Combo_Port.Enabled = true;
 
 
-            string[] rates = { "9600", "38400", "57600", "115200"};
+            string[] rates = { "38400", "9600", "57600", "115200"};
             Combo_Baud.DataSource = rates;
             //Combo_Baud.Text = "38400";
             progressBar1.Value= 0;
@@ -118,12 +118,21 @@ namespace Dewimed_Beta
             
             }
 
-           
+
+            System.Windows.Forms.Application.Exit();//INDICAMOS QUE QUEREMOS CERRAR LA APLICACION 
 
 
 
 
-            
+
+
+
+
+
+
+
+
+
         }
 
         private void button_menos_Click(object sender, EventArgs e)
@@ -431,6 +440,7 @@ namespace Dewimed_Beta
         private void serialport1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             ReceivedData = serialport1.ReadLine();//leemos la linea del puerto serial
+            //TextBox_Serial_Receive.ScrollToCaret();//MANTENEMOS LA BARRA DE DESPLAZMAIENTO SIEMORE A ABAJO
 
             this.Invoke(new Action(ProcessingData));
 
@@ -443,6 +453,7 @@ namespace Dewimed_Beta
         private void ProcessingData()
         { 
            TextBox_Serial_Receive.Text += ReceivedData.ToString() + Environment.NewLine;
+           
         
         }
 
@@ -465,8 +476,74 @@ namespace Dewimed_Beta
 
         }
 
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            try
 
-        
+            {
+                serialport1.WriteLine("[W]");
+                LabelStatus.Text = "[W]";
+
+            }
+
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (serialport1.IsOpen)//Si esta abierto el puerto
+            {
+                try
+                {
+                    serialport1.Close();//cerramos el puerto serie
+                }
+
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+
+                }
+
+            }
+
+
+            System.Windows.Forms.Application.Exit();//INDICAMOS QUE QUEREMOS CERRAR LA APLICACION 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+
+            {
+                serialport1.WriteLine("[Y]");
+                LabelStatus.Text = "[Y]";
+                //progressBar1.Value = 10;
+
+            }
+
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+
+            }
+        }
+
+        private void TextBox_Serial_Receive_TextChanged(object sender, EventArgs e)
+        {
+            //TextBox_Serial_Receive.ScrollToCaret();//MANTENEMOS LA BARRA DE DESPLAZMAIENTO SIEMORE A ABAJO
+            //TextBox_Serial_Receive.SelectionStart = TextBox_Serial_Receive.TextLength;
+
+            //TextBox_Serial_Receive.ScrollToCaret();
+
+        }
     }
 
 
