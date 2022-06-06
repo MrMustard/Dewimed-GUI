@@ -46,3 +46,7 @@ C:\Users\pc\Desktop\Dewimed software gui GIT\Dewimed-GUI\prueba gui\Proyecto Dew
 C:\Users\pc\Desktop\Dewimed software gui GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Debug\Dewimed_Beta.exe
 C:\Users\pc\Desktop\Dewimed software gui GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Debug\Dewimed_Beta.pdb
 C:\Users\pc\Desktop\Dewimed software gui GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Debug\Dewimed_Beta.pdb
+C:\Users\el_gl\Desktop\Dewimed Software GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Debug\CircularProgressBar.dll
+C:\Users\el_gl\Desktop\Dewimed Software GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Debug\WinFormAnimation.dll
+C:\Users\el_gl\Desktop\Dewimed Software GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\bin\Debug\CircularProgressBar.xml
+C:\Users\el_gl\Desktop\Dewimed Software GIT\Dewimed-GUI\prueba gui\Proyecto Dewimed 1\Dewimed_Beta\Dewimed_Beta\obj\Debug\Dewimed_Beta.csproj.CopyComplete
