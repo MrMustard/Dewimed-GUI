@@ -7272,7 +7272,7 @@
             // 
             // button_guardar
             // 
-            this.button_guardar.Location = new System.Drawing.Point(6, 164);
+            this.button_guardar.Location = new System.Drawing.Point(6, 115);
             this.button_guardar.Name = "button_guardar";
             this.button_guardar.Size = new System.Drawing.Size(226, 42);
             this.button_guardar.TabIndex = 15;
@@ -7282,7 +7282,7 @@
             // 
             // button_calcular
             // 
-            this.button_calcular.Location = new System.Drawing.Point(6, 116);
+            this.button_calcular.Location = new System.Drawing.Point(6, 67);
             this.button_calcular.Name = "button_calcular";
             this.button_calcular.Size = new System.Drawing.Size(226, 42);
             this.button_calcular.TabIndex = 14;
@@ -7292,7 +7292,7 @@
             // 
             // button_leer
             // 
-            this.button_leer.Location = new System.Drawing.Point(6, 68);
+            this.button_leer.Location = new System.Drawing.Point(6, 19);
             this.button_leer.Name = "button_leer";
             this.button_leer.Size = new System.Drawing.Size(226, 42);
             this.button_leer.TabIndex = 13;
@@ -7302,7 +7302,7 @@
             // 
             // button_teclado
             // 
-            this.button_teclado.Location = new System.Drawing.Point(6, 19);
+            this.button_teclado.Location = new System.Drawing.Point(12, 17);
             this.button_teclado.Name = "button_teclado";
             this.button_teclado.Size = new System.Drawing.Size(226, 42);
             this.button_teclado.TabIndex = 12;
@@ -7317,7 +7317,7 @@
             // 
             // button_limpiar
             // 
-            this.button_limpiar.Location = new System.Drawing.Point(6, 264);
+            this.button_limpiar.Location = new System.Drawing.Point(6, 215);
             this.button_limpiar.Name = "button_limpiar";
             this.button_limpiar.Size = new System.Drawing.Size(226, 42);
             this.button_limpiar.TabIndex = 17;
@@ -7327,7 +7327,7 @@
             // 
             // button_restaurar
             // 
-            this.button_restaurar.Location = new System.Drawing.Point(6, 216);
+            this.button_restaurar.Location = new System.Drawing.Point(6, 166);
             this.button_restaurar.Name = "button_restaurar";
             this.button_restaurar.Size = new System.Drawing.Size(226, 42);
             this.button_restaurar.TabIndex = 18;
@@ -7337,15 +7337,14 @@
             // 
             // groupBox21
             // 
-            this.groupBox21.Controls.Add(this.button_teclado);
             this.groupBox21.Controls.Add(this.button_leer);
             this.groupBox21.Controls.Add(this.button_restaurar);
             this.groupBox21.Controls.Add(this.button_calcular);
             this.groupBox21.Controls.Add(this.button_limpiar);
             this.groupBox21.Controls.Add(this.button_guardar);
-            this.groupBox21.Location = new System.Drawing.Point(12, 544);
+            this.groupBox21.Location = new System.Drawing.Point(12, 250);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(238, 324);
+            this.groupBox21.Size = new System.Drawing.Size(238, 274);
             this.groupBox21.TabIndex = 19;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Opciones";
@@ -7363,7 +7362,7 @@
             this.groupBox7.Controls.Add(this.button_conectar);
             this.groupBox7.Controls.Add(this.combo_baud);
             this.groupBox7.Controls.Add(this.comboBox_port);
-            this.groupBox7.Location = new System.Drawing.Point(12, 17);
+            this.groupBox7.Location = new System.Drawing.Point(12, 65);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(232, 179);
             this.groupBox7.TabIndex = 20;
@@ -7445,6 +7444,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1460, 881);
+            this.Controls.Add(this.button_teclado);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox21);
             this.Controls.Add(this.groupBox1);

@@ -57,10 +57,10 @@
             this.serialport1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Group_Terminal = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Limpiar = new System.Windows.Forms.Button();
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_wdg = new System.Windows.Forms.Button();
+            this.button_reset = new System.Windows.Forms.Button();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -350,7 +350,7 @@
             // 
             // Group_Terminal
             // 
-            this.Group_Terminal.Controls.Add(this.button1);
+            this.Group_Terminal.Controls.Add(this.button_Limpiar);
             this.Group_Terminal.Controls.Add(this.groupBox_Terminal_Send);
             this.Group_Terminal.Controls.Add(this.button_Enviar);
             this.Group_Terminal.Controls.Add(this.groupBox2);
@@ -361,35 +361,35 @@
             this.Group_Terminal.TabStop = false;
             this.Group_Terminal.Text = "Terminal";
             // 
-            // button1
+            // button_Limpiar
             // 
-            this.button1.Location = new System.Drawing.Point(711, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button_Limpiar.Location = new System.Drawing.Point(711, 106);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(91, 31);
+            this.button_Limpiar.TabIndex = 9;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button3
+            // button_wdg
             // 
-            this.button3.Location = new System.Drawing.Point(1167, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 42);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Probar WhatchDog";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button_wdg.Location = new System.Drawing.Point(1167, 68);
+            this.button_wdg.Name = "button_wdg";
+            this.button_wdg.Size = new System.Drawing.Size(140, 42);
+            this.button_wdg.TabIndex = 11;
+            this.button_wdg.Text = "Probar WhatchDog";
+            this.button_wdg.UseVisualStyleBackColor = true;
+            this.button_wdg.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // button4
+            // button_reset
             // 
-            this.button4.Location = new System.Drawing.Point(1167, 120);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 42);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Reset ";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button_reset.Location = new System.Drawing.Point(1167, 120);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(140, 42);
+            this.button_reset.TabIndex = 12;
+            this.button_reset.Text = "Reset ";
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button4_Click);
             // 
             // circularProgressBar1
             // 
@@ -429,8 +429,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 471);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button_reset);
+            this.Controls.Add(this.button_wdg);
             this.Controls.Add(this.Group_Terminal);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
@@ -485,11 +485,11 @@
         private System.IO.Ports.SerialPort serialport1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox Group_Terminal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.TextBox TextBox_Serial_Receive;
         private System.IO.Ports.SerialPort serialPort2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_wdg;
+        private System.Windows.Forms.Button button_reset;
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
     }
 }

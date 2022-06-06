@@ -53,7 +53,7 @@ namespace Dewimed_Beta
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            button_Limpiar.Enabled = false;
             button_On.Enabled = false;
             button_menos.Enabled = false;
             button_mas.Enabled = false;
@@ -68,6 +68,9 @@ namespace Dewimed_Beta
             TextBox_Serial_Send .Enabled = false;
             Combo_Baud.Enabled = true;
             Combo_Port.Enabled = true;
+
+            button_wdg.Enabled = false;
+            button_reset.Enabled = false;
 
 
             string[] rates = { "38400", "9600", "57600", "115200"};
@@ -289,7 +292,14 @@ namespace Dewimed_Beta
 
             try
             {
-                serialport1.Close();//cerramos el puerto serie
+
+                if (serialport1.IsOpen)
+                {
+                    serialport1.Close();//cerramos el puerto serie
+                }
+
+
+                
 
                 Form2 f2 = new Form2();//creamos un nuevo form
                 this.Hide();//escondemos el form 1
@@ -351,6 +361,13 @@ namespace Dewimed_Beta
                 button_Config_Menu.Enabled = true;
                 TextBox_Serial_Receive.Enabled = true;
                 TextBox_Serial_Send.Enabled = true;
+                button_wdg.Enabled = true;
+                button_reset.Enabled = true;
+
+                button_Enviar.Enabled = true;
+                button_Limpiar.Enabled = true;
+                TextBox_Serial_Send.Enabled = true;
+                TextBox_Serial_Receive.Enabled = true;
 
                 progressBar1.Value = 10;
                 Valor_Barra = 10;
@@ -384,7 +401,13 @@ namespace Dewimed_Beta
                     Button_Serial_Close.Enabled = false;
                     button_field_menos.Enabled = false;
                     button_field_mas.Enabled = false;
-                    button_Config_Menu.Enabled = false;
+                    button_Enviar.Enabled=false;
+                    button_Limpiar.Enabled = false;
+                    TextBox_Serial_Send.Enabled=false;
+                    TextBox_Serial_Receive.Enabled=false;
+                    button_Config_Menu.Enabled = true;
+                    button_wdg.Enabled = false;
+                    button_reset.Enabled = false;
                     progressBar1.Value = 0;
                     Combo_Port.Enabled = true;
                     Combo_Baud.Enabled = true;

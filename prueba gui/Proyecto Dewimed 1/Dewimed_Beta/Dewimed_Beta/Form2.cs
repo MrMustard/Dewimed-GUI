@@ -813,6 +813,27 @@ namespace Dewimed_Beta
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+
+                if (serialPort_Form2.IsOpen)
+                {
+                    serialPort_Form2.Close();//cerramos el puerto serie
+                }
+
+
+                
+
+                Form1 f1 = new Form1();//creamos un nuevo form
+                this.Hide();//escondemos el form 1
+                f1.ShowDialog();//mostramos form2
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
 
         }
 
@@ -1050,7 +1071,7 @@ namespace Dewimed_Beta
         {
             button_apagar.Enabled = false;
             button_desconectar2.Enabled = false;
-            button_teclado.Enabled = false;
+            button_teclado.Enabled = true;
             button_leer.Enabled = false;
             button_calcular.Enabled = false;
             button_guardar.Enabled = false;
