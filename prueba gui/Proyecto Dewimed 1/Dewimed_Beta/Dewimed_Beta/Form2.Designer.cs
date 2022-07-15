@@ -44,12 +44,20 @@
             this.TextBox_F2_C4_mA_7 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.TextBox_F2_C4_mA_6 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo4_1 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo4_3 = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo4_4 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C4_mA_5 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo4_2 = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo4_5 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C4_mA_4 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo4_6 = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo4_7 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C4_mA_3 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo4_8 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_Campo4_mA_Min = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C4_mA_2 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_Max = new System.Windows.Forms.TextBox();
@@ -62,18 +70,10 @@
             this.TextBox_DC_F2_Campo4_6 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_Campo4_Min = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_5 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_1 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_4 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_3 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_3 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_4 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_2 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_2 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo4_1 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_5 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_8 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_6 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo2_7 = new System.Windows.Forms.TextBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label117 = new System.Windows.Forms.Label();
             this.TextBox_F1_C0_mA_8 = new System.Windows.Forms.TextBox();
@@ -124,12 +124,20 @@
             this.label190 = new System.Windows.Forms.Label();
             this.label191 = new System.Windows.Forms.Label();
             this.label192 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo3_1 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo3_3 = new System.Windows.Forms.TextBox();
             this.label193 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo3_4 = new System.Windows.Forms.TextBox();
             this.label194 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo3_2 = new System.Windows.Forms.TextBox();
             this.label195 = new System.Windows.Forms.Label();
+            this.TextBox_F2_Campo3_5 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_8 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo3_6 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_7 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo3_7 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_6 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo3_8 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_5 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_4 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_C3_mA_3 = new System.Windows.Forms.TextBox();
@@ -143,14 +151,6 @@
             this.TextBox_DC_F2_Campo3_3 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo3_2 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo3_1 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_8 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_7 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_6 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_5 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_2 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_4 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_3 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo4_1 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
@@ -231,14 +231,6 @@
             this.TextBox_DC_F2_Campo2_3 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo2_2 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo2_1 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_8 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_7 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_6 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_5 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_2 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_4 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_3 = new System.Windows.Forms.TextBox();
-            this.TextBox_F2_Campo3_1 = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
@@ -246,10 +238,18 @@
             this.label65 = new System.Windows.Forms.Label();
             this.TextBox_F2_Campo2_mA_Min = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo2_Max = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_1 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_Campo2_Max = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_3 = new System.Windows.Forms.TextBox();
             this.TextBox_DC_F2_Campo2_Min = new System.Windows.Forms.TextBox();
             this.TextBox_F2_Campo2_mA_Max = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_4 = new System.Windows.Forms.TextBox();
             this.TextBox_F2_Campo2_Min = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_7 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_2 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_6 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_8 = new System.Windows.Forms.TextBox();
+            this.TextBox_F2_Campo2_5 = new System.Windows.Forms.TextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label77 = new System.Windows.Forms.Label();
             this.label133 = new System.Windows.Forms.Label();
@@ -707,6 +707,7 @@
             this.button_conectar = new System.Windows.Forms.Button();
             this.combo_baud = new System.Windows.Forms.ComboBox();
             this.comboBox_port = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox13.SuspendLayout();
@@ -744,7 +745,7 @@
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(256, 16);
+            this.groupBox1.Location = new System.Drawing.Point(256, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1182, 852);
             this.groupBox1.TabIndex = 8;
@@ -766,12 +767,20 @@
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_7);
             this.groupBox15.Controls.Add(this.label52);
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_6);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_1);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_3);
             this.groupBox15.Controls.Add(this.label53);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_4);
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_5);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_2);
             this.groupBox15.Controls.Add(this.label54);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_5);
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_4);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_6);
             this.groupBox15.Controls.Add(this.label55);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_7);
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_3);
+            this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_8);
             this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_mA_Min);
             this.groupBox15.Controls.Add(this.TextBox_F2_C4_mA_2);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_Max);
@@ -784,18 +793,10 @@
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_6);
             this.groupBox15.Controls.Add(this.TextBox_F2_Campo4_Min);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_5);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_1);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_4);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_3);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_3);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_4);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_2);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_2);
             this.groupBox15.Controls.Add(this.TextBox_DC_F2_Campo4_1);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_5);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_8);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_6);
-            this.groupBox15.Controls.Add(this.TextBox_F2_Campo2_7);
             this.groupBox15.Location = new System.Drawing.Point(953, 572);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(219, 273);
@@ -920,6 +921,24 @@
             this.TextBox_F2_C4_mA_6.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C4_mA_6.TabIndex = 63;
             // 
+            // TextBox_F2_Campo4_1
+            // 
+            this.TextBox_F2_Campo4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_1.Location = new System.Drawing.Point(38, 56);
+            this.TextBox_F2_Campo4_1.Name = "TextBox_F2_Campo4_1";
+            this.TextBox_F2_Campo4_1.ReadOnly = true;
+            this.TextBox_F2_Campo4_1.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_1.TabIndex = 42;
+            // 
+            // TextBox_F2_Campo4_3
+            // 
+            this.TextBox_F2_Campo4_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_3.Location = new System.Drawing.Point(38, 102);
+            this.TextBox_F2_Campo4_3.Name = "TextBox_F2_Campo4_3";
+            this.TextBox_F2_Campo4_3.ReadOnly = true;
+            this.TextBox_F2_Campo4_3.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_3.TabIndex = 44;
+            // 
             // label53
             // 
             this.label53.AutoSize = true;
@@ -928,6 +947,15 @@
             this.label53.Size = new System.Drawing.Size(43, 13);
             this.label53.TabIndex = 8;
             this.label53.Text = "VALOR";
+            // 
+            // TextBox_F2_Campo4_4
+            // 
+            this.TextBox_F2_Campo4_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_4.Location = new System.Drawing.Point(38, 125);
+            this.TextBox_F2_Campo4_4.Name = "TextBox_F2_Campo4_4";
+            this.TextBox_F2_Campo4_4.ReadOnly = true;
+            this.TextBox_F2_Campo4_4.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_4.TabIndex = 45;
             // 
             // TextBox_F2_C4_mA_5
             // 
@@ -938,6 +966,16 @@
             this.TextBox_F2_C4_mA_5.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C4_mA_5.TabIndex = 62;
             // 
+            // TextBox_F2_Campo4_2
+            // 
+            this.TextBox_F2_Campo4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_2.Location = new System.Drawing.Point(38, 79);
+            this.TextBox_F2_Campo4_2.Name = "TextBox_F2_Campo4_2";
+            this.TextBox_F2_Campo4_2.ReadOnly = true;
+            this.TextBox_F2_Campo4_2.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_2.TabIndex = 43;
+            this.TextBox_F2_Campo4_2.TextChanged += new System.EventHandler(this.textBox365_TextChanged);
+            // 
             // label54
             // 
             this.label54.AutoSize = true;
@@ -946,6 +984,15 @@
             this.label54.Size = new System.Drawing.Size(27, 13);
             this.label54.TabIndex = 7;
             this.label54.Text = "MIN";
+            // 
+            // TextBox_F2_Campo4_5
+            // 
+            this.TextBox_F2_Campo4_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_5.Location = new System.Drawing.Point(38, 148);
+            this.TextBox_F2_Campo4_5.Name = "TextBox_F2_Campo4_5";
+            this.TextBox_F2_Campo4_5.ReadOnly = true;
+            this.TextBox_F2_Campo4_5.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_5.TabIndex = 46;
             // 
             // TextBox_F2_C4_mA_4
             // 
@@ -956,6 +1003,15 @@
             this.TextBox_F2_C4_mA_4.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C4_mA_4.TabIndex = 61;
             // 
+            // TextBox_F2_Campo4_6
+            // 
+            this.TextBox_F2_Campo4_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_6.Location = new System.Drawing.Point(38, 171);
+            this.TextBox_F2_Campo4_6.Name = "TextBox_F2_Campo4_6";
+            this.TextBox_F2_Campo4_6.ReadOnly = true;
+            this.TextBox_F2_Campo4_6.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_6.TabIndex = 47;
+            // 
             // label55
             // 
             this.label55.AutoSize = true;
@@ -965,6 +1021,15 @@
             this.label55.TabIndex = 6;
             this.label55.Text = "MAX";
             // 
+            // TextBox_F2_Campo4_7
+            // 
+            this.TextBox_F2_Campo4_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_7.Location = new System.Drawing.Point(38, 194);
+            this.TextBox_F2_Campo4_7.Name = "TextBox_F2_Campo4_7";
+            this.TextBox_F2_Campo4_7.ReadOnly = true;
+            this.TextBox_F2_Campo4_7.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_7.TabIndex = 48;
+            // 
             // TextBox_F2_C4_mA_3
             // 
             this.TextBox_F2_C4_mA_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -973,6 +1038,15 @@
             this.TextBox_F2_C4_mA_3.ReadOnly = true;
             this.TextBox_F2_C4_mA_3.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C4_mA_3.TabIndex = 60;
+            // 
+            // TextBox_F2_Campo4_8
+            // 
+            this.TextBox_F2_Campo4_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo4_8.Location = new System.Drawing.Point(38, 217);
+            this.TextBox_F2_Campo4_8.Name = "TextBox_F2_Campo4_8";
+            this.TextBox_F2_Campo4_8.ReadOnly = true;
+            this.TextBox_F2_Campo4_8.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo4_8.TabIndex = 49;
             // 
             // TextBox_F2_Campo4_mA_Min
             // 
@@ -1076,15 +1150,6 @@
             this.TextBox_DC_F2_Campo4_5.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo4_5.TabIndex = 54;
             // 
-            // TextBox_F2_Campo2_1
-            // 
-            this.TextBox_F2_Campo2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_1.Location = new System.Drawing.Point(38, 56);
-            this.TextBox_F2_Campo2_1.Name = "TextBox_F2_Campo2_1";
-            this.TextBox_F2_Campo2_1.ReadOnly = true;
-            this.TextBox_F2_Campo2_1.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_1.TabIndex = 42;
-            // 
             // TextBox_DC_F2_Campo4_4
             // 
             this.TextBox_DC_F2_Campo4_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1093,15 +1158,6 @@
             this.TextBox_DC_F2_Campo4_4.ReadOnly = true;
             this.TextBox_DC_F2_Campo4_4.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo4_4.TabIndex = 53;
-            // 
-            // TextBox_F2_Campo2_3
-            // 
-            this.TextBox_F2_Campo2_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_3.Location = new System.Drawing.Point(38, 102);
-            this.TextBox_F2_Campo2_3.Name = "TextBox_F2_Campo2_3";
-            this.TextBox_F2_Campo2_3.ReadOnly = true;
-            this.TextBox_F2_Campo2_3.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_3.TabIndex = 44;
             // 
             // TextBox_DC_F2_Campo4_3
             // 
@@ -1112,15 +1168,6 @@
             this.TextBox_DC_F2_Campo4_3.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo4_3.TabIndex = 52;
             // 
-            // TextBox_F2_Campo2_4
-            // 
-            this.TextBox_F2_Campo2_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_4.Location = new System.Drawing.Point(38, 125);
-            this.TextBox_F2_Campo2_4.Name = "TextBox_F2_Campo2_4";
-            this.TextBox_F2_Campo2_4.ReadOnly = true;
-            this.TextBox_F2_Campo2_4.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_4.TabIndex = 45;
-            // 
             // TextBox_DC_F2_Campo4_2
             // 
             this.TextBox_DC_F2_Campo4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1130,15 +1177,6 @@
             this.TextBox_DC_F2_Campo4_2.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo4_2.TabIndex = 51;
             // 
-            // TextBox_F2_Campo2_2
-            // 
-            this.TextBox_F2_Campo2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_2.Location = new System.Drawing.Point(38, 79);
-            this.TextBox_F2_Campo2_2.Name = "TextBox_F2_Campo2_2";
-            this.TextBox_F2_Campo2_2.ReadOnly = true;
-            this.TextBox_F2_Campo2_2.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_2.TabIndex = 43;
-            // 
             // TextBox_DC_F2_Campo4_1
             // 
             this.TextBox_DC_F2_Campo4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1147,42 +1185,6 @@
             this.TextBox_DC_F2_Campo4_1.ReadOnly = true;
             this.TextBox_DC_F2_Campo4_1.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo4_1.TabIndex = 50;
-            // 
-            // TextBox_F2_Campo2_5
-            // 
-            this.TextBox_F2_Campo2_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_5.Location = new System.Drawing.Point(38, 148);
-            this.TextBox_F2_Campo2_5.Name = "TextBox_F2_Campo2_5";
-            this.TextBox_F2_Campo2_5.ReadOnly = true;
-            this.TextBox_F2_Campo2_5.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_5.TabIndex = 46;
-            // 
-            // TextBox_F2_Campo2_8
-            // 
-            this.TextBox_F2_Campo2_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_8.Location = new System.Drawing.Point(38, 217);
-            this.TextBox_F2_Campo2_8.Name = "TextBox_F2_Campo2_8";
-            this.TextBox_F2_Campo2_8.ReadOnly = true;
-            this.TextBox_F2_Campo2_8.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_8.TabIndex = 49;
-            // 
-            // TextBox_F2_Campo2_6
-            // 
-            this.TextBox_F2_Campo2_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_6.Location = new System.Drawing.Point(38, 171);
-            this.TextBox_F2_Campo2_6.Name = "TextBox_F2_Campo2_6";
-            this.TextBox_F2_Campo2_6.ReadOnly = true;
-            this.TextBox_F2_Campo2_6.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_6.TabIndex = 47;
-            // 
-            // TextBox_F2_Campo2_7
-            // 
-            this.TextBox_F2_Campo2_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo2_7.Location = new System.Drawing.Point(38, 194);
-            this.TextBox_F2_Campo2_7.Name = "TextBox_F2_Campo2_7";
-            this.TextBox_F2_Campo2_7.ReadOnly = true;
-            this.TextBox_F2_Campo2_7.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo2_7.TabIndex = 48;
             // 
             // groupBox13
             // 
@@ -1624,12 +1626,20 @@
             this.groupBox16.Controls.Add(this.label190);
             this.groupBox16.Controls.Add(this.label191);
             this.groupBox16.Controls.Add(this.label192);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_1);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_3);
             this.groupBox16.Controls.Add(this.label193);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_4);
             this.groupBox16.Controls.Add(this.label194);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_2);
             this.groupBox16.Controls.Add(this.label195);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_5);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_8);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_6);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_7);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_7);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_6);
+            this.groupBox16.Controls.Add(this.TextBox_F2_Campo3_8);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_5);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_4);
             this.groupBox16.Controls.Add(this.TextBox_F2_C3_mA_3);
@@ -1643,14 +1653,6 @@
             this.groupBox16.Controls.Add(this.TextBox_DC_F2_Campo3_3);
             this.groupBox16.Controls.Add(this.TextBox_DC_F2_Campo3_2);
             this.groupBox16.Controls.Add(this.TextBox_DC_F2_Campo3_1);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_8);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_7);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_6);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_5);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_2);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_4);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_3);
-            this.groupBox16.Controls.Add(this.TextBox_F2_Campo4_1);
             this.groupBox16.Controls.Add(this.label56);
             this.groupBox16.Controls.Add(this.label57);
             this.groupBox16.Controls.Add(this.label58);
@@ -1714,6 +1716,24 @@
             this.label192.TabIndex = 69;
             this.label192.Text = "5";
             // 
+            // TextBox_F2_Campo3_1
+            // 
+            this.TextBox_F2_Campo3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_1.Location = new System.Drawing.Point(38, 56);
+            this.TextBox_F2_Campo3_1.Name = "TextBox_F2_Campo3_1";
+            this.TextBox_F2_Campo3_1.ReadOnly = true;
+            this.TextBox_F2_Campo3_1.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_1.TabIndex = 42;
+            // 
+            // TextBox_F2_Campo3_3
+            // 
+            this.TextBox_F2_Campo3_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_3.Location = new System.Drawing.Point(38, 102);
+            this.TextBox_F2_Campo3_3.Name = "TextBox_F2_Campo3_3";
+            this.TextBox_F2_Campo3_3.ReadOnly = true;
+            this.TextBox_F2_Campo3_3.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_3.TabIndex = 44;
+            // 
             // label193
             // 
             this.label193.AutoSize = true;
@@ -1722,6 +1742,15 @@
             this.label193.Size = new System.Drawing.Size(13, 13);
             this.label193.TabIndex = 68;
             this.label193.Text = "4";
+            // 
+            // TextBox_F2_Campo3_4
+            // 
+            this.TextBox_F2_Campo3_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_4.Location = new System.Drawing.Point(38, 125);
+            this.TextBox_F2_Campo3_4.Name = "TextBox_F2_Campo3_4";
+            this.TextBox_F2_Campo3_4.ReadOnly = true;
+            this.TextBox_F2_Campo3_4.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_4.TabIndex = 45;
             // 
             // label194
             // 
@@ -1732,6 +1761,15 @@
             this.label194.TabIndex = 67;
             this.label194.Text = "3";
             // 
+            // TextBox_F2_Campo3_2
+            // 
+            this.TextBox_F2_Campo3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_2.Location = new System.Drawing.Point(38, 79);
+            this.TextBox_F2_Campo3_2.Name = "TextBox_F2_Campo3_2";
+            this.TextBox_F2_Campo3_2.ReadOnly = true;
+            this.TextBox_F2_Campo3_2.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_2.TabIndex = 43;
+            // 
             // label195
             // 
             this.label195.AutoSize = true;
@@ -1740,6 +1778,15 @@
             this.label195.Size = new System.Drawing.Size(13, 13);
             this.label195.TabIndex = 66;
             this.label195.Text = "2";
+            // 
+            // TextBox_F2_Campo3_5
+            // 
+            this.TextBox_F2_Campo3_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_5.Location = new System.Drawing.Point(38, 148);
+            this.TextBox_F2_Campo3_5.Name = "TextBox_F2_Campo3_5";
+            this.TextBox_F2_Campo3_5.ReadOnly = true;
+            this.TextBox_F2_Campo3_5.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_5.TabIndex = 46;
             // 
             // TextBox_F2_C3_mA_8
             // 
@@ -1750,6 +1797,15 @@
             this.TextBox_F2_C3_mA_8.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C3_mA_8.TabIndex = 65;
             // 
+            // TextBox_F2_Campo3_6
+            // 
+            this.TextBox_F2_Campo3_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_6.Location = new System.Drawing.Point(38, 171);
+            this.TextBox_F2_Campo3_6.Name = "TextBox_F2_Campo3_6";
+            this.TextBox_F2_Campo3_6.ReadOnly = true;
+            this.TextBox_F2_Campo3_6.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_6.TabIndex = 47;
+            // 
             // TextBox_F2_C3_mA_7
             // 
             this.TextBox_F2_C3_mA_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1759,6 +1815,15 @@
             this.TextBox_F2_C3_mA_7.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C3_mA_7.TabIndex = 64;
             // 
+            // TextBox_F2_Campo3_7
+            // 
+            this.TextBox_F2_Campo3_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_7.Location = new System.Drawing.Point(38, 194);
+            this.TextBox_F2_Campo3_7.Name = "TextBox_F2_Campo3_7";
+            this.TextBox_F2_Campo3_7.ReadOnly = true;
+            this.TextBox_F2_Campo3_7.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_7.TabIndex = 48;
+            // 
             // TextBox_F2_C3_mA_6
             // 
             this.TextBox_F2_C3_mA_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1767,6 +1832,15 @@
             this.TextBox_F2_C3_mA_6.ReadOnly = true;
             this.TextBox_F2_C3_mA_6.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_C3_mA_6.TabIndex = 63;
+            // 
+            // TextBox_F2_Campo3_8
+            // 
+            this.TextBox_F2_Campo3_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo3_8.Location = new System.Drawing.Point(38, 217);
+            this.TextBox_F2_Campo3_8.Name = "TextBox_F2_Campo3_8";
+            this.TextBox_F2_Campo3_8.ReadOnly = true;
+            this.TextBox_F2_Campo3_8.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo3_8.TabIndex = 49;
             // 
             // TextBox_F2_C3_mA_5
             // 
@@ -1884,79 +1958,6 @@
             this.TextBox_DC_F2_Campo3_1.ReadOnly = true;
             this.TextBox_DC_F2_Campo3_1.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo3_1.TabIndex = 50;
-            // 
-            // TextBox_F2_Campo4_8
-            // 
-            this.TextBox_F2_Campo4_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_8.Location = new System.Drawing.Point(37, 217);
-            this.TextBox_F2_Campo4_8.Name = "TextBox_F2_Campo4_8";
-            this.TextBox_F2_Campo4_8.ReadOnly = true;
-            this.TextBox_F2_Campo4_8.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_8.TabIndex = 49;
-            // 
-            // TextBox_F2_Campo4_7
-            // 
-            this.TextBox_F2_Campo4_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_7.Location = new System.Drawing.Point(37, 194);
-            this.TextBox_F2_Campo4_7.Name = "TextBox_F2_Campo4_7";
-            this.TextBox_F2_Campo4_7.ReadOnly = true;
-            this.TextBox_F2_Campo4_7.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_7.TabIndex = 48;
-            // 
-            // TextBox_F2_Campo4_6
-            // 
-            this.TextBox_F2_Campo4_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_6.Location = new System.Drawing.Point(37, 171);
-            this.TextBox_F2_Campo4_6.Name = "TextBox_F2_Campo4_6";
-            this.TextBox_F2_Campo4_6.ReadOnly = true;
-            this.TextBox_F2_Campo4_6.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_6.TabIndex = 47;
-            // 
-            // TextBox_F2_Campo4_5
-            // 
-            this.TextBox_F2_Campo4_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_5.Location = new System.Drawing.Point(37, 148);
-            this.TextBox_F2_Campo4_5.Name = "TextBox_F2_Campo4_5";
-            this.TextBox_F2_Campo4_5.ReadOnly = true;
-            this.TextBox_F2_Campo4_5.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_5.TabIndex = 46;
-            // 
-            // TextBox_F2_Campo4_2
-            // 
-            this.TextBox_F2_Campo4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_2.Location = new System.Drawing.Point(37, 79);
-            this.TextBox_F2_Campo4_2.Name = "TextBox_F2_Campo4_2";
-            this.TextBox_F2_Campo4_2.ReadOnly = true;
-            this.TextBox_F2_Campo4_2.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_2.TabIndex = 43;
-            this.TextBox_F2_Campo4_2.TextChanged += new System.EventHandler(this.textBox365_TextChanged);
-            // 
-            // TextBox_F2_Campo4_4
-            // 
-            this.TextBox_F2_Campo4_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_4.Location = new System.Drawing.Point(37, 125);
-            this.TextBox_F2_Campo4_4.Name = "TextBox_F2_Campo4_4";
-            this.TextBox_F2_Campo4_4.ReadOnly = true;
-            this.TextBox_F2_Campo4_4.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_4.TabIndex = 45;
-            // 
-            // TextBox_F2_Campo4_3
-            // 
-            this.TextBox_F2_Campo4_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_3.Location = new System.Drawing.Point(37, 102);
-            this.TextBox_F2_Campo4_3.Name = "TextBox_F2_Campo4_3";
-            this.TextBox_F2_Campo4_3.ReadOnly = true;
-            this.TextBox_F2_Campo4_3.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_3.TabIndex = 44;
-            // 
-            // TextBox_F2_Campo4_1
-            // 
-            this.TextBox_F2_Campo4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo4_1.Location = new System.Drawing.Point(37, 56);
-            this.TextBox_F2_Campo4_1.Name = "TextBox_F2_Campo4_1";
-            this.TextBox_F2_Campo4_1.ReadOnly = true;
-            this.TextBox_F2_Campo4_1.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo4_1.TabIndex = 42;
             // 
             // label56
             // 
@@ -2511,14 +2512,6 @@
             this.groupBox17.Controls.Add(this.TextBox_DC_F2_Campo2_3);
             this.groupBox17.Controls.Add(this.TextBox_DC_F2_Campo2_2);
             this.groupBox17.Controls.Add(this.TextBox_DC_F2_Campo2_1);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_8);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_7);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_6);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_5);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_2);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_4);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_3);
-            this.groupBox17.Controls.Add(this.TextBox_F2_Campo3_1);
             this.groupBox17.Controls.Add(this.label61);
             this.groupBox17.Controls.Add(this.label62);
             this.groupBox17.Controls.Add(this.label63);
@@ -2526,10 +2519,18 @@
             this.groupBox17.Controls.Add(this.label65);
             this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_mA_Min);
             this.groupBox17.Controls.Add(this.TextBox_DC_F2_Campo2_Max);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_1);
             this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_Max);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_3);
             this.groupBox17.Controls.Add(this.TextBox_DC_F2_Campo2_Min);
             this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_mA_Max);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_4);
             this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_Min);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_7);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_2);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_6);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_8);
+            this.groupBox17.Controls.Add(this.TextBox_F2_Campo2_5);
             this.groupBox17.Location = new System.Drawing.Point(503, 573);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(219, 273);
@@ -2753,78 +2754,6 @@
             this.TextBox_DC_F2_Campo2_1.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo2_1.TabIndex = 50;
             // 
-            // TextBox_F2_Campo3_8
-            // 
-            this.TextBox_F2_Campo3_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_8.Location = new System.Drawing.Point(37, 209);
-            this.TextBox_F2_Campo3_8.Name = "TextBox_F2_Campo3_8";
-            this.TextBox_F2_Campo3_8.ReadOnly = true;
-            this.TextBox_F2_Campo3_8.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_8.TabIndex = 49;
-            // 
-            // TextBox_F2_Campo3_7
-            // 
-            this.TextBox_F2_Campo3_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_7.Location = new System.Drawing.Point(37, 187);
-            this.TextBox_F2_Campo3_7.Name = "TextBox_F2_Campo3_7";
-            this.TextBox_F2_Campo3_7.ReadOnly = true;
-            this.TextBox_F2_Campo3_7.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_7.TabIndex = 48;
-            // 
-            // TextBox_F2_Campo3_6
-            // 
-            this.TextBox_F2_Campo3_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_6.Location = new System.Drawing.Point(37, 165);
-            this.TextBox_F2_Campo3_6.Name = "TextBox_F2_Campo3_6";
-            this.TextBox_F2_Campo3_6.ReadOnly = true;
-            this.TextBox_F2_Campo3_6.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_6.TabIndex = 47;
-            // 
-            // TextBox_F2_Campo3_5
-            // 
-            this.TextBox_F2_Campo3_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_5.Location = new System.Drawing.Point(37, 143);
-            this.TextBox_F2_Campo3_5.Name = "TextBox_F2_Campo3_5";
-            this.TextBox_F2_Campo3_5.ReadOnly = true;
-            this.TextBox_F2_Campo3_5.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_5.TabIndex = 46;
-            // 
-            // TextBox_F2_Campo3_2
-            // 
-            this.TextBox_F2_Campo3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_2.Location = new System.Drawing.Point(37, 77);
-            this.TextBox_F2_Campo3_2.Name = "TextBox_F2_Campo3_2";
-            this.TextBox_F2_Campo3_2.ReadOnly = true;
-            this.TextBox_F2_Campo3_2.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_2.TabIndex = 43;
-            // 
-            // TextBox_F2_Campo3_4
-            // 
-            this.TextBox_F2_Campo3_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_4.Location = new System.Drawing.Point(37, 121);
-            this.TextBox_F2_Campo3_4.Name = "TextBox_F2_Campo3_4";
-            this.TextBox_F2_Campo3_4.ReadOnly = true;
-            this.TextBox_F2_Campo3_4.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_4.TabIndex = 45;
-            // 
-            // TextBox_F2_Campo3_3
-            // 
-            this.TextBox_F2_Campo3_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_3.Location = new System.Drawing.Point(37, 99);
-            this.TextBox_F2_Campo3_3.Name = "TextBox_F2_Campo3_3";
-            this.TextBox_F2_Campo3_3.ReadOnly = true;
-            this.TextBox_F2_Campo3_3.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_3.TabIndex = 44;
-            // 
-            // TextBox_F2_Campo3_1
-            // 
-            this.TextBox_F2_Campo3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_F2_Campo3_1.Location = new System.Drawing.Point(37, 55);
-            this.TextBox_F2_Campo3_1.Name = "TextBox_F2_Campo3_1";
-            this.TextBox_F2_Campo3_1.ReadOnly = true;
-            this.TextBox_F2_Campo3_1.Size = new System.Drawing.Size(53, 20);
-            this.TextBox_F2_Campo3_1.TabIndex = 42;
-            // 
             // label61
             // 
             this.label61.AutoSize = true;
@@ -2886,6 +2815,15 @@
             this.TextBox_DC_F2_Campo2_Max.Size = new System.Drawing.Size(53, 20);
             this.TextBox_DC_F2_Campo2_Max.TabIndex = 1;
             // 
+            // TextBox_F2_Campo2_1
+            // 
+            this.TextBox_F2_Campo2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_1.Location = new System.Drawing.Point(37, 55);
+            this.TextBox_F2_Campo2_1.Name = "TextBox_F2_Campo2_1";
+            this.TextBox_F2_Campo2_1.ReadOnly = true;
+            this.TextBox_F2_Campo2_1.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_1.TabIndex = 42;
+            // 
             // TextBox_F2_Campo2_Max
             // 
             this.TextBox_F2_Campo2_Max.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -2893,6 +2831,15 @@
             this.TextBox_F2_Campo2_Max.Name = "TextBox_F2_Campo2_Max";
             this.TextBox_F2_Campo2_Max.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_Campo2_Max.TabIndex = 0;
+            // 
+            // TextBox_F2_Campo2_3
+            // 
+            this.TextBox_F2_Campo2_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_3.Location = new System.Drawing.Point(37, 99);
+            this.TextBox_F2_Campo2_3.Name = "TextBox_F2_Campo2_3";
+            this.TextBox_F2_Campo2_3.ReadOnly = true;
+            this.TextBox_F2_Campo2_3.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_3.TabIndex = 44;
             // 
             // TextBox_DC_F2_Campo2_Min
             // 
@@ -2910,6 +2857,15 @@
             this.TextBox_F2_Campo2_mA_Max.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_Campo2_mA_Max.TabIndex = 2;
             // 
+            // TextBox_F2_Campo2_4
+            // 
+            this.TextBox_F2_Campo2_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_4.Location = new System.Drawing.Point(37, 121);
+            this.TextBox_F2_Campo2_4.Name = "TextBox_F2_Campo2_4";
+            this.TextBox_F2_Campo2_4.ReadOnly = true;
+            this.TextBox_F2_Campo2_4.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_4.TabIndex = 45;
+            // 
             // TextBox_F2_Campo2_Min
             // 
             this.TextBox_F2_Campo2_Min.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -2917,6 +2873,51 @@
             this.TextBox_F2_Campo2_Min.Name = "TextBox_F2_Campo2_Min";
             this.TextBox_F2_Campo2_Min.Size = new System.Drawing.Size(53, 20);
             this.TextBox_F2_Campo2_Min.TabIndex = 3;
+            // 
+            // TextBox_F2_Campo2_7
+            // 
+            this.TextBox_F2_Campo2_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_7.Location = new System.Drawing.Point(37, 187);
+            this.TextBox_F2_Campo2_7.Name = "TextBox_F2_Campo2_7";
+            this.TextBox_F2_Campo2_7.ReadOnly = true;
+            this.TextBox_F2_Campo2_7.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_7.TabIndex = 48;
+            // 
+            // TextBox_F2_Campo2_2
+            // 
+            this.TextBox_F2_Campo2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_2.Location = new System.Drawing.Point(37, 77);
+            this.TextBox_F2_Campo2_2.Name = "TextBox_F2_Campo2_2";
+            this.TextBox_F2_Campo2_2.ReadOnly = true;
+            this.TextBox_F2_Campo2_2.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_2.TabIndex = 43;
+            // 
+            // TextBox_F2_Campo2_6
+            // 
+            this.TextBox_F2_Campo2_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_6.Location = new System.Drawing.Point(37, 165);
+            this.TextBox_F2_Campo2_6.Name = "TextBox_F2_Campo2_6";
+            this.TextBox_F2_Campo2_6.ReadOnly = true;
+            this.TextBox_F2_Campo2_6.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_6.TabIndex = 47;
+            // 
+            // TextBox_F2_Campo2_8
+            // 
+            this.TextBox_F2_Campo2_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_8.Location = new System.Drawing.Point(37, 209);
+            this.TextBox_F2_Campo2_8.Name = "TextBox_F2_Campo2_8";
+            this.TextBox_F2_Campo2_8.ReadOnly = true;
+            this.TextBox_F2_Campo2_8.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_8.TabIndex = 49;
+            // 
+            // TextBox_F2_Campo2_5
+            // 
+            this.TextBox_F2_Campo2_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_F2_Campo2_5.Location = new System.Drawing.Point(37, 143);
+            this.TextBox_F2_Campo2_5.Name = "TextBox_F2_Campo2_5";
+            this.TextBox_F2_Campo2_5.ReadOnly = true;
+            this.TextBox_F2_Campo2_5.Size = new System.Drawing.Size(53, 20);
+            this.TextBox_F2_Campo2_5.TabIndex = 46;
             // 
             // groupBox11
             // 
@@ -6877,7 +6878,7 @@
             this.groupBox2.Controls.Add(this.TextBox_DC_F0_Campo0_Min);
             this.groupBox2.Controls.Add(this.TextBox_F0_Campo0_mA_Max);
             this.groupBox2.Controls.Add(this.TextBox_F0_Campo0_Min);
-            this.groupBox2.Location = new System.Drawing.Point(55, 12);
+            this.groupBox2.Location = new System.Drawing.Point(55, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(219, 269);
             this.groupBox2.TabIndex = 6;
@@ -7337,14 +7338,15 @@
             // 
             // groupBox21
             // 
+            this.groupBox21.Controls.Add(this.button_apagar);
             this.groupBox21.Controls.Add(this.button_leer);
             this.groupBox21.Controls.Add(this.button_restaurar);
             this.groupBox21.Controls.Add(this.button_calcular);
             this.groupBox21.Controls.Add(this.button_limpiar);
             this.groupBox21.Controls.Add(this.button_guardar);
-            this.groupBox21.Location = new System.Drawing.Point(12, 250);
+            this.groupBox21.Location = new System.Drawing.Point(12, 219);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(238, 274);
+            this.groupBox21.Size = new System.Drawing.Size(238, 320);
             this.groupBox21.TabIndex = 19;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Opciones";
@@ -7355,7 +7357,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button_apagar);
             this.groupBox7.Controls.Add(this.label197);
             this.groupBox7.Controls.Add(this.label196);
             this.groupBox7.Controls.Add(this.button_desconectar2);
@@ -7364,18 +7365,18 @@
             this.groupBox7.Controls.Add(this.comboBox_port);
             this.groupBox7.Location = new System.Drawing.Point(12, 65);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(232, 179);
+            this.groupBox7.Size = new System.Drawing.Size(232, 145);
             this.groupBox7.TabIndex = 20;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Serial";
             // 
             // button_apagar
             // 
-            this.button_apagar.Location = new System.Drawing.Point(0, 139);
+            this.button_apagar.Location = new System.Drawing.Point(6, 261);
             this.button_apagar.Name = "button_apagar";
-            this.button_apagar.Size = new System.Drawing.Size(226, 23);
+            this.button_apagar.Size = new System.Drawing.Size(226, 47);
             this.button_apagar.TabIndex = 6;
-            this.button_apagar.Text = "Apagar";
+            this.button_apagar.Text = "Apagar/Encender Luminaria";
             this.button_apagar.UseVisualStyleBackColor = true;
             this.button_apagar.Click += new System.EventHandler(this.button_apagar_Click);
             // 
@@ -7439,11 +7440,24 @@
             this.comboBox_port.Size = new System.Drawing.Size(131, 21);
             this.comboBox_port.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(12, 545);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 49);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Info";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1460, 881);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_teclado);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox21);
@@ -7488,6 +7502,7 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -8170,5 +8185,6 @@
         private System.Windows.Forms.ComboBox combo_baud;
         private System.Windows.Forms.ComboBox comboBox_port;
         private System.Windows.Forms.Button button_apagar;
+        private System.Windows.Forms.Button button1;
     }
 }

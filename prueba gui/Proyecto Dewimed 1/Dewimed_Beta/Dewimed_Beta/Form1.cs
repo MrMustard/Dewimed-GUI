@@ -15,6 +15,7 @@ namespace Dewimed_Beta
     {
         private string ReceivedData;//received data form serial port
         private int Valor_Barra = 0;
+        int ContadorManuel = 0;
 
 
         public Form1()
@@ -72,7 +73,7 @@ namespace Dewimed_Beta
             button_wdg.Enabled = false;
             button_reset.Enabled = false;
 
-
+             
             string[] rates = { "38400", "9600", "57600", "115200"};
             Combo_Baud.DataSource = rates;
             //Combo_Baud.Text = "38400";
@@ -463,7 +464,7 @@ namespace Dewimed_Beta
         private void serialport1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             ReceivedData = serialport1.ReadLine();//leemos la linea del puerto serial
-            //TextBox_Serial_Receive.ScrollToCaret();//MANTENEMOS LA BARRA DE DESPLAZMAIENTO SIEMORE A ABAJO
+            
 
             this.Invoke(new Action(ProcessingData));
 
@@ -474,8 +475,8 @@ namespace Dewimed_Beta
 
 
         private void ProcessingData()
-        { 
-           TextBox_Serial_Receive.Text += ReceivedData.ToString() + Environment.NewLine;
+        {
+            TextBox_Serial_Receive.Text += ReceivedData.ToString()+ Environment.NewLine;
            
         
         }
@@ -566,6 +567,32 @@ namespace Dewimed_Beta
 
             //TextBox_Serial_Receive.ScrollToCaret();
 
+            //TextBox_Serial_Receive.ScrollToCaret();//MANTENEMOS LA BARRA DE DESPLAZMAIENTO SIEMORE A ABAJO
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Info_Click(object sender, EventArgs e)
+        {
+            
+
+            if (ContadorManuel >= 3)
+            {
+                MessageBox.Show("Firmware y GUI desarrollado por:\nJosé Manuel Ramírez Vega\n");
+                ContadorManuel = 0;
+
+            }
+
+            else 
+            {
+                MessageBox.Show("Conectarse al puerto serie donde esta conectada la luminaria,\nUsar la terminal o botones para accionarla.\nPresiona el boton Configuracion para entrar al menu de calibracion\n");
+                ContadorManuel++;
+            }
+            
         }
     }
 

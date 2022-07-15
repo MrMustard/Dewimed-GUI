@@ -55,19 +55,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.serialport1 = new System.IO.Ports.SerialPort(this.components);
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Group_Terminal = new System.Windows.Forms.GroupBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.button_wdg = new System.Windows.Forms.Button();
             this.button_reset = new System.Windows.Forms.Button();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_Info = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox_Terminal_Send.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.Group_Terminal.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_On
@@ -92,7 +92,7 @@
             this.groupBox1.Controls.Add(this.button_menos);
             this.groupBox1.Controls.Add(this.button_ambi);
             this.groupBox1.Controls.Add(this.button_mas);
-            this.groupBox1.Location = new System.Drawing.Point(275, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(817, 165);
             this.groupBox1.TabIndex = 2;
@@ -231,9 +231,9 @@
             // 
             // button_Config_Menu
             // 
-            this.button_Config_Menu.Location = new System.Drawing.Point(1167, 12);
+            this.button_Config_Menu.Location = new System.Drawing.Point(6, 19);
             this.button_Config_Menu.Name = "button_Config_Menu";
-            this.button_Config_Menu.Size = new System.Drawing.Size(140, 42);
+            this.button_Config_Menu.Size = new System.Drawing.Size(251, 30);
             this.button_Config_Menu.TabIndex = 6;
             this.button_Config_Menu.Text = "Config";
             this.button_Config_Menu.UseVisualStyleBackColor = true;
@@ -241,9 +241,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1167, 418);
+            this.button2.Location = new System.Drawing.Point(850, 412);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 42);
+            this.button2.Size = new System.Drawing.Size(263, 42);
             this.button2.TabIndex = 7;
             this.button2.Text = "Salir";
             this.button2.UseVisualStyleBackColor = true;
@@ -267,9 +267,9 @@
             this.groupBox4.Controls.Add(this.Combo_Port);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Location = new System.Drawing.Point(12, 12);
+            this.groupBox4.Location = new System.Drawing.Point(844, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(257, 202);
+            this.groupBox4.Size = new System.Drawing.Size(270, 202);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "UART CONFIG";
@@ -277,7 +277,7 @@
             // 
             // Button_Serial_Close
             // 
-            this.Button_Serial_Close.Location = new System.Drawing.Point(6, 156);
+            this.Button_Serial_Close.Location = new System.Drawing.Point(18, 156);
             this.Button_Serial_Close.Name = "Button_Serial_Close";
             this.Button_Serial_Close.Size = new System.Drawing.Size(239, 31);
             this.Button_Serial_Close.TabIndex = 10;
@@ -287,7 +287,7 @@
             // 
             // Button_Serial_Open
             // 
-            this.Button_Serial_Open.Location = new System.Drawing.Point(6, 119);
+            this.Button_Serial_Open.Location = new System.Drawing.Point(18, 119);
             this.Button_Serial_Open.Name = "Button_Serial_Open";
             this.Button_Serial_Open.Size = new System.Drawing.Size(239, 31);
             this.Button_Serial_Open.TabIndex = 9;
@@ -338,23 +338,13 @@
             this.serialport1.BaudRate = 38400;
             this.serialport1.PortName = "COM8";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.circularProgressBar1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 221);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(257, 202);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Info";
-            // 
             // Group_Terminal
             // 
             this.Group_Terminal.Controls.Add(this.button_Limpiar);
             this.Group_Terminal.Controls.Add(this.groupBox_Terminal_Send);
             this.Group_Terminal.Controls.Add(this.button_Enviar);
             this.Group_Terminal.Controls.Add(this.groupBox2);
-            this.Group_Terminal.Location = new System.Drawing.Point(277, 183);
+            this.Group_Terminal.Location = new System.Drawing.Point(12, 173);
             this.Group_Terminal.Name = "Group_Terminal";
             this.Group_Terminal.Size = new System.Drawing.Size(815, 265);
             this.Group_Terminal.TabIndex = 4;
@@ -373,9 +363,9 @@
             // 
             // button_wdg
             // 
-            this.button_wdg.Location = new System.Drawing.Point(1167, 68);
+            this.button_wdg.Location = new System.Drawing.Point(6, 55);
             this.button_wdg.Name = "button_wdg";
-            this.button_wdg.Size = new System.Drawing.Size(140, 42);
+            this.button_wdg.Size = new System.Drawing.Size(251, 30);
             this.button_wdg.TabIndex = 11;
             this.button_wdg.Text = "Probar WhatchDog";
             this.button_wdg.UseVisualStyleBackColor = true;
@@ -383,59 +373,51 @@
             // 
             // button_reset
             // 
-            this.button_reset.Location = new System.Drawing.Point(1167, 120);
+            this.button_reset.Location = new System.Drawing.Point(6, 91);
             this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(140, 42);
+            this.button_reset.Size = new System.Drawing.Size(251, 30);
             this.button_reset.TabIndex = 12;
             this.button_reset.Text = "Reset ";
             this.button_reset.UseVisualStyleBackColor = true;
             this.button_reset.Click += new System.EventHandler(this.button4_Click);
             // 
-            // circularProgressBar1
+            // groupBox3
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(10, 19);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Maximum = 200;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.Gray;
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.circularProgressBar1.ProgressWidth = 25;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(138, 134);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = "";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "";
-            this.circularProgressBar1.TabIndex = 13;
-            this.circularProgressBar1.Text = "1";
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar1.Value = 100;
+            this.groupBox3.Controls.Add(this.button_Info);
+            this.groupBox3.Controls.Add(this.button_Config_Menu);
+            this.groupBox3.Controls.Add(this.button_reset);
+            this.groupBox3.Controls.Add(this.button_wdg);
+            this.groupBox3.Location = new System.Drawing.Point(844, 216);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(270, 165);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Opciones";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // button_Info
+            // 
+            this.button_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Info.AutoSize = true;
+            this.button_Info.Location = new System.Drawing.Point(6, 127);
+            this.button_Info.Name = "button_Info";
+            this.button_Info.Size = new System.Drawing.Size(251, 30);
+            this.button_Info.TabIndex = 13;
+            this.button_Info.Text = "Info";
+            this.button_Info.UseVisualStyleBackColor = true;
+            this.button_Info.Click += new System.EventHandler(this.button_Info_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 471);
-            this.Controls.Add(this.button_reset);
-            this.Controls.Add(this.button_wdg);
-            this.Controls.Add(this.Group_Terminal);
+            this.ClientSize = new System.Drawing.Size(1119, 466);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.Group_Terminal);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button_Config_Menu);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -451,8 +433,9 @@
             this.groupBox_Terminal_Send.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.Group_Terminal.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -483,14 +466,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.IO.Ports.SerialPort serialport1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox Group_Terminal;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.TextBox TextBox_Serial_Receive;
         private System.IO.Ports.SerialPort serialPort2;
         private System.Windows.Forms.Button button_wdg;
         private System.Windows.Forms.Button button_reset;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button_Info;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Threading;
 
 namespace Dewimed_Beta
 {
@@ -16,89 +17,135 @@ namespace Dewimed_Beta
     public partial class Form2 : Form
     {
 
-        float[] Registro_F0_C0 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F0_C0 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F0_C0 = new float[10];//Vector que indica valores de mA
-        float[] DC_F0_C0 = new float[10];//Vector que indica el %DC
+        double[] Registro_F0_C0 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F0_C0 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F0_C0 = new double[10];//Vector que indica valores de mA
+        double[] DC_F0_C0 = new double[10];//Vector que indica el %DC
 
-        float[] Registro_F0_C1 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F0_C1 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F0_C1 = new float[10];//Vector que indica valores de mA
-        float[] DC_F0_C1 = new float[10];//Vector que indica el %DC
-
-
-        float[] Registro_F0_C2 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F0_C2 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F0_C2 = new float[10];//Vector que indica valores de mA
-        float[] DC_F0_C2 = new float[10];//Vector que indica el %DC
-
-        float[] Registro_F0_C3 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F0_C3 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F0_C3 = new float[10];//Vector que indica valores de mA
-        float[] DC_F0_C3 = new float[10];//Vector que indica el %DC
-
-        float[] Registro_F0_C4 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F0_C4 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F0_C4 = new float[10];//Vector que indica valores de mA
-        float[] DC_F0_C4 = new float[10];//Vector que indica el %DC
+        double[] Registro_F0_C1 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F0_C1 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F0_C1 = new double[10];//Vector que indica valores de mA
+        double[] DC_F0_C1 = new double[10];//Vector que indica el %DC
 
 
+        double[] Registro_F0_C2 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F0_C2 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F0_C2 = new double[10];//Vector que indica valores de mA
+        double[] DC_F0_C2 = new double[10];//Vector que indica el %DC
 
+        double[] Registro_F0_C3 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F0_C3 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F0_C3 = new double[10];//Vector que indica valores de mA
+        double[] DC_F0_C3 = new double[10];//Vector que indica el %DC
 
-        float[] Registro_F1_C0 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F1_C0 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F1_C0 = new float[10];//Vector que indica valores de mA
-        float[] DC_F1_C0 = new float[10];//Vector que indica el %DC
-
-        float[] Registro_F1_C1 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F1_C1 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F1_C1 = new float[10];//Vector que indica valores de mA
-        float[] DC_F1_C1 = new float[10];//Vector que indica el %DC
-
-
-        float[] Registro_F1_C2 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F1_C2 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F1_C2 = new float[10];//Vector que indica valores de mA
-        float[] DC_F1_C2 = new float[10];//Vector que indica el %DC
-
-        float[] Registro_F1_C3 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F1_C3 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F1_C3 = new float[10];//Vector que indica valores de mA
-        float[] DC_F1_C3 = new float[10];//Vector que indica el %DC
-
-        float[] Registro_F1_C4 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F1_C4 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F1_C4 = new float[10];//Vector que indica valores de mA
-        float[] DC_F1_C4 = new float[10];//Vector que indica el %DC
+        double[] Registro_F0_C4 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F0_C4 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F0_C4 = new double[10];//Vector que indica valores de mA
+        double[] DC_F0_C4 = new double[10];//Vector que indica el %DC
 
 
 
 
-        float[] Registro_F2_C0 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F2_C0 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F2_C0 = new float[10];//Vector que indica valores de mA
-        float[] DC_F2_C0 = new float[10];//Vector que indica el %DC
+        double[] Registro_F1_C0 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F1_C0 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F1_C0 = new double[10];//Vector que indica valores de mA
+        double[] DC_F1_C0 = new double[10];//Vector que indica el %DC
 
-        float[] Registro_F2_C1 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F2_C1 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F2_C1 = new float[10];//Vector que indica valores de mA
-        float[] DC_F2_C1 = new float[10];//Vector que indica el %DC
+        double[] Registro_F1_C1 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F1_C1 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F1_C1 = new double[10];//Vector que indica valores de mA
+        double[] DC_F1_C1 = new double[10];//Vector que indica el %DC
 
 
-        float[] Registro_F2_C2 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F2_C2 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F2_C2 = new float[10];//Vector que indica valores de mA
-        float[] DC_F2_C2 = new float[10];//Vector que indica el %DC
+        double[] Registro_F1_C2 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F1_C2 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F1_C2 = new double[10];//Vector que indica valores de mA
+        double[] DC_F1_C2 = new double[10];//Vector que indica el %DC
 
-        float[] Registro_F2_C3 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F2_C3 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F2_C3 = new float[10];//Vector que indica valores de mA
-        float[] DC_F2_C3 = new float[10];//Vector que indica el %DC
+        double[] Registro_F1_C3 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F1_C3 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F1_C3 = new double[10];//Vector que indica valores de mA
+        double[] DC_F1_C3 = new double[10];//Vector que indica el %DC
 
-        float[] Registro_F2_C4 = new float[10]; // vector donde guardaraemos los valores de registros.
-        float[] Incremento_F2_C4 = new float[10]; // vector donde guardaraemos los valores de incremento
-        float[] mA_F2_C4 = new float[10];//Vector que indica valores de mA
-        float[] DC_F2_C4 = new float[10];//Vector que indica el %DC
+        double[] Registro_F1_C4 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F1_C4 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F1_C4 = new double[10];//Vector que indica valores de mA
+        double[] DC_F1_C4 = new double[10];//Vector que indica el %DC
+
+
+
+
+        double[] Registro_F2_C0 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F2_C0 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F2_C0 = new double[10];//Vector que indica valores de mA
+        double[] DC_F2_C0 = new double[10];//Vector que indica el %DC
+
+        double[] Registro_F2_C1 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F2_C1 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F2_C1 = new double[10];//Vector que indica valores de mA
+        double[] DC_F2_C1 = new double[10];//Vector que indica el %DC
+
+
+        double[] Registro_F2_C2 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F2_C2 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F2_C2 = new double[10];//Vector que indica valores de mA
+        double[] DC_F2_C2 = new double[10];//Vector que indica el %DC
+
+        double[] Registro_F2_C3 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F2_C3 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F2_C3 = new double[10];//Vector que indica valores de mA
+        double[] DC_F2_C3 = new double[10];//Vector que indica el %DC
+
+        double[] Registro_F2_C4 = new double[10]; // vector donde guardaraemos los valores de registros.
+        double[] Incremento_F2_C4 = new double[10]; // vector donde guardaraemos los valores de incremento
+        double[] mA_F2_C4 = new double[10];//Vector que indica valores de mA
+        double[] DC_F2_C4 = new double[10];//Vector que indica el %DC
+
+
+
+        /*String para dar ormato y enviar*/
+        /*-------------F0---------------------*/
+        string [] Val_F0_C0 = new string[10];
+        string[] Val_F0_C1 = new string[10];
+        string[] Val_F0_C2 = new string[10];
+        string[] Val_F0_C3 = new string[10];
+        string[] Val_F0_C4 = new string[10];
+        /*-------------F1---------------------*/
+        string[] Val_F1_C0 = new string[10];
+        string[] Val_F1_C1 = new string[10];
+        string[] Val_F1_C2 = new string[10];
+        string[] Val_F1_C3 = new string[10];
+        string[] Val_F1_C4 = new string[10];
+        /*-------------F1---------------------*/
+
+        string[] Val_F2_C0 = new string[10];
+        string[] Val_F2_C1 = new string[10];
+        string[] Val_F2_C2 = new string[10];
+        string[] Val_F2_C3 = new string[10];
+        string[] Val_F2_C4 = new string[10];
+
+
+        /*para convertir a int*/
+        /* F0 */
+
+        int[] Num_F0_C0 = new int[10];
+        int[] Num_F0_C1 = new int[10];
+        int[] Num_F0_C2 = new int[10];
+        int[] Num_F0_C3 = new int[10];
+        int[] Num_F0_C4 = new int[10];
+        /* F1 */
+        int[] Num_F1_C0 = new int[10];
+        int[] Num_F1_C1 = new int[10];
+        int[] Num_F1_C2 = new int[10];
+        int[] Num_F1_C3 = new int[10];
+        int[] Num_F1_C4 = new int[10];
+        /* F2 */
+        int[] Num_F2_C0 = new int[10];
+        int[] Num_F2_C1 = new int[10];
+        int[] Num_F2_C2 = new int[10];
+        int[] Num_F2_C3 = new int[10];
+        int[] Num_F2_C4 = new int[10];
+
 
 
         string SerialDataIn;// string que recibe los datos enviados por el microcontrolador 
@@ -146,6 +193,11 @@ namespace Dewimed_Beta
             f1.ShowDialog();//mostramos form2
         }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MessageBox.Show("Valor minimo que puede introducir:1300.\nValor maximo que se puede introducir:9999\nValor 1300 equivale a 13% DC\nValor 9999 equivale a 99% DC");
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -166,6 +218,8 @@ namespace Dewimed_Beta
 
             //TextBox_Resultados.Text = string.Empty;//limpiamos el textbox
 
+
+            button_guardar.Enabled = false;
             /*------------------------------------------------------------------------------------------*/
 
             TextBox_F0_Campo0_mA_Max.Text = String.Empty;
@@ -841,26 +895,44 @@ namespace Dewimed_Beta
         {
             //TextBox_F0_Campo0_Max.Text
 
-            try
-
+            if (serialPort_Form2.IsOpen)
             {
-                serialPort_Form2.WriteLine("[R]");
+                try
 
+                {
+                    serialPort_Form2.DiscardInBuffer();//descartamos el buffer de entrada si es que esta llegnado algo
+                    serialPort_Form2.WriteLine("[R]");
+
+                    SerialDataIn = serialPort_Form2.ReadLine();
+                    //SerialDataIn = serialPort_Form2.ReadExisting();
+
+                    //********************************************************************************************
+
+
+                    Serial_Index();//realizamos la index
+
+
+
+
+                }
+
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+
+                }
 
             }
 
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
 
-            }
+           
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-
+            
 
             try {
 
@@ -908,7 +980,7 @@ namespace Dewimed_Beta
 
                
                 Imprimir_Reistro_Tablas();// imprimimos los valores de tablase de registro
-
+                button_guardar.Enabled = true;//Habilitamos el boton
 
 
 
@@ -931,6 +1003,54 @@ namespace Dewimed_Beta
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
+
+
+            button_leer.Enabled = false;
+            button_calcular.Enabled = false;
+            button_guardar.Enabled = false;
+            button_restaurar.Enabled = false;
+            button_limpiar.Enabled = false;
+
+
+
+            try
+            {
+                // esto lo debemos que quitar a la hora de enviar al microcontrolador.
+                //serialPort_Form2.WriteLine("Debemos enviar las siguentes cadenas: \n");
+            
+                
+
+                //serialPort_Form2.WriteLine("F0 C0 \n");
+
+
+                Convertir_Entero();// convertimos a enteros
+                Covnertir_a_String();//convertirmos enteros a string
+                Imprimir_Valores_Registros();// ahora imprimirmos los valores
+                Thread.Sleep(100);//delay
+                serialPort_Form2.WriteLine("$Z$");
+
+            }
+
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+
+
+            }
+            button_leer.Enabled = true;
+            button_calcular.Enabled = true;
+            
+            button_restaurar.Enabled = true;
+            button_limpiar.Enabled = true;
+
+
+            //label_Listo.Visible = false;
+
+
+
 
         }
 
@@ -941,6 +1061,8 @@ namespace Dewimed_Beta
 
         private void button6_Click(object sender, EventArgs e)
         {
+
+           
             //Guardando el valor minimo
             Registro_F0_C0[0] = 1590;// valor minimo
             Registro_F0_C0[9] = 4230;// valor maximo
@@ -1932,6 +2054,8 @@ namespace Dewimed_Beta
         {
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F0 C0--------------------------------------------------------*/
+            
+
             Incremento_F0_C0[0] = 0;
             Incremento_F0_C0[1] = ((mA_F0_C0[9] - mA_F0_C0[0]) / 9) - 1;
             Incremento_F0_C0[2] = ((mA_F0_C0[9] - mA_F0_C0[0]) / 9);
@@ -1948,15 +2072,15 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F0 C1--------------------------------------------------------*/
             Incremento_F0_C1[0] = 0;
-            Incremento_F0_C1[1] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9) - 1;
-            Incremento_F0_C1[2] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[3] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[4] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[5] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[5] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9) - 1;
-            Incremento_F0_C1[6] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[7] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
-            Incremento_F0_C1[8] = ((mA_F0_C1[9] - mA_F0_C1[0]) / 9);
+            Incremento_F0_C1[1] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9) - 1);
+            Incremento_F0_C1[2] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[3] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[4] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[5] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[5] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9) - 1);
+            Incremento_F0_C1[6] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[7] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
+            Incremento_F0_C1[8] = (((mA_F0_C1[9] - mA_F0_C1[0]) / 9));
             Incremento_F0_C1[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -1964,14 +2088,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F0 C2--------------------------------------------------------*/
             Incremento_F0_C2[0] = 0;
-            Incremento_F0_C2[1] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9) - 1;
-            Incremento_F0_C2[2] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
-            Incremento_F0_C2[3] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
-            Incremento_F0_C2[4] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
-            Incremento_F0_C2[5] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9) - 1;
-            Incremento_F0_C2[6] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
-            Incremento_F0_C2[7] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
-            Incremento_F0_C2[8] = ((mA_F0_C2[9] - mA_F0_C2[0]) / 9);
+            Incremento_F0_C2[1] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9) - 1);
+            Incremento_F0_C2[2] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
+            Incremento_F0_C2[3] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
+            Incremento_F0_C2[4] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
+            Incremento_F0_C2[5] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9) - 1);
+            Incremento_F0_C2[6] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
+            Incremento_F0_C2[7] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
+            Incremento_F0_C2[8] = (((mA_F0_C2[9] - mA_F0_C2[0]) / 9));
             Incremento_F0_C0[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -1980,28 +2104,28 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F0 C3--------------------------------------------------------*/
             Incremento_F0_C3[0] = 0;
-            Incremento_F0_C3[1] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9) - 1;
-            Incremento_F0_C3[2] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
-            Incremento_F0_C3[3] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
-            Incremento_F0_C3[4] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
-            Incremento_F0_C3[5] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9) - 1;
-            Incremento_F0_C3[6] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
-            Incremento_F0_C3[7] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
-            Incremento_F0_C3[8] = ((mA_F0_C3[9] - mA_F0_C3[0]) / 9);
+            Incremento_F0_C3[1] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9) - 1);
+            Incremento_F0_C3[2] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
+            Incremento_F0_C3[3] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
+            Incremento_F0_C3[4] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
+            Incremento_F0_C3[5] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9) - 1);
+            Incremento_F0_C3[6] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
+            Incremento_F0_C3[7] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
+            Incremento_F0_C3[8] = (((mA_F0_C3[9] - mA_F0_C3[0]) / 9));
             Incremento_F0_C3[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F0 C4--------------------------------------------------------*/
             Incremento_F0_C4[0] = 0;
-            Incremento_F0_C4[1] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9) - 1;
-            Incremento_F0_C4[2] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
-            Incremento_F0_C4[3] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
-            Incremento_F0_C4[4] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
-            Incremento_F0_C4[5] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9) - 1;
-            Incremento_F0_C4[6] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
-            Incremento_F0_C4[7] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
-            Incremento_F0_C4[8] = ((mA_F0_C4[9] - mA_F0_C4[0]) / 9);
+            Incremento_F0_C4[1] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9) - 1);
+            Incremento_F0_C4[2] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
+            Incremento_F0_C4[3] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
+            Incremento_F0_C4[4] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
+            Incremento_F0_C4[5] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9) - 1);
+            Incremento_F0_C4[6] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
+            Incremento_F0_C4[7] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
+            Incremento_F0_C4[8] = (((mA_F0_C4[9] - mA_F0_C4[0]) / 9));
             Incremento_F0_C4[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2010,14 +2134,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F1 C0--------------------------------------------------------*/
             Incremento_F1_C0[0] = 0;
-            Incremento_F1_C0[1] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9) - 1;
-            Incremento_F1_C0[2] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
-            Incremento_F1_C0[3] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
-            Incremento_F1_C0[4] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
-            Incremento_F1_C0[5] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9) - 1;
-            Incremento_F1_C0[6] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
-            Incremento_F1_C0[7] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
-            Incremento_F1_C0[8] = ((mA_F1_C0[9] - mA_F1_C0[0]) / 9);
+            Incremento_F1_C0[1] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9) - 1);
+            Incremento_F1_C0[2] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
+            Incremento_F1_C0[3] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
+            Incremento_F1_C0[4] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
+            Incremento_F1_C0[5] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9) - 1);
+            Incremento_F1_C0[6] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
+            Incremento_F1_C0[7] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
+            Incremento_F1_C0[8] = (((mA_F1_C0[9] - mA_F1_C0[0]) / 9));
             Incremento_F1_C0[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2025,14 +2149,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F1 C1--------------------------------------------------------*/
             Incremento_F1_C1[0] = 0;
-            Incremento_F1_C1[1] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9) - 1;
-            Incremento_F1_C1[2] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
-            Incremento_F1_C1[3] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
-            Incremento_F1_C1[4] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
-            Incremento_F1_C1[5] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9) - 1;
-            Incremento_F1_C1[6] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
-            Incremento_F1_C1[7] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
-            Incremento_F1_C1[8] = ((mA_F1_C1[9] - mA_F1_C1[0]) / 9);
+            Incremento_F1_C1[1] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9) - 1);
+            Incremento_F1_C1[2] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
+            Incremento_F1_C1[3] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
+            Incremento_F1_C1[4] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
+            Incremento_F1_C1[5] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9) - 1);
+            Incremento_F1_C1[6] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
+            Incremento_F1_C1[7] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
+            Incremento_F1_C1[8] = (((mA_F1_C1[9] - mA_F1_C1[0]) / 9));
             Incremento_F1_C1[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2040,14 +2164,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F1 C2--------------------------------------------------------*/
             Incremento_F1_C2[0] = 0;
-            Incremento_F1_C2[1] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9) - 1;
-            Incremento_F1_C2[2] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
-            Incremento_F1_C2[3] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
-            Incremento_F1_C2[4] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
-            Incremento_F1_C2[5] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9) - 1;
-            Incremento_F1_C2[6] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
-            Incremento_F1_C2[7] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
-            Incremento_F1_C2[8] = ((mA_F1_C2[9] - mA_F1_C2[0]) / 9);
+            Incremento_F1_C2[1] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9) - 1);
+            Incremento_F1_C2[2] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
+            Incremento_F1_C2[3] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
+            Incremento_F1_C2[4] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
+            Incremento_F1_C2[5] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9) - 1);
+            Incremento_F1_C2[6] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
+            Incremento_F1_C2[7] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
+            Incremento_F1_C2[8] = (((mA_F1_C2[9] - mA_F1_C2[0]) / 9));
             Incremento_F1_C0[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2056,28 +2180,28 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F1 C3--------------------------------------------------------*/
             Incremento_F1_C3[0] = 0;
-            Incremento_F1_C3[1] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9) - 1;
-            Incremento_F1_C3[2] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
-            Incremento_F1_C3[3] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
-            Incremento_F1_C3[4] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
-            Incremento_F1_C3[5] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9) - 1;
-            Incremento_F1_C3[6] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
-            Incremento_F1_C3[7] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
-            Incremento_F1_C3[8] = ((mA_F1_C3[9] - mA_F1_C3[0]) / 9);
+            Incremento_F1_C3[1] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9) - 1);
+            Incremento_F1_C3[2] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
+            Incremento_F1_C3[3] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
+            Incremento_F1_C3[4] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
+            Incremento_F1_C3[5] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9) - 1);
+            Incremento_F1_C3[6] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
+            Incremento_F1_C3[7] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
+            Incremento_F1_C3[8] = (((mA_F1_C3[9] - mA_F1_C3[0]) / 9));
             Incremento_F1_C3[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F1 C4--------------------------------------------------------*/
             Incremento_F1_C4[0] = 0;
-            Incremento_F1_C4[1] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9) - 1;
-            Incremento_F1_C4[2] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
-            Incremento_F1_C4[3] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
-            Incremento_F1_C4[4] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
-            Incremento_F1_C4[5] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9) - 1;
-            Incremento_F1_C4[6] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
-            Incremento_F1_C4[7] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
-            Incremento_F1_C4[8] = ((mA_F1_C4[9] - mA_F1_C4[0]) / 9);
+            Incremento_F1_C4[1] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9) - 1);
+            Incremento_F1_C4[2] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
+            Incremento_F1_C4[3] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
+            Incremento_F1_C4[4] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
+            Incremento_F1_C4[5] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9) - 1);
+            Incremento_F1_C4[6] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
+            Incremento_F1_C4[7] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
+            Incremento_F1_C4[8] = (((mA_F1_C4[9] - mA_F1_C4[0]) / 9));
             Incremento_F1_C4[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2086,14 +2210,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F2 C0--------------------------------------------------------*/
             Incremento_F2_C0[0] = 0;
-            Incremento_F2_C0[1] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9) - 1;
-            Incremento_F2_C0[2] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
-            Incremento_F2_C0[3] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
-            Incremento_F2_C0[4] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
-            Incremento_F2_C0[5] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9) - 1;
-            Incremento_F2_C0[6] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
-            Incremento_F2_C0[7] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
-            Incremento_F2_C0[8] = ((mA_F2_C0[9] - mA_F2_C0[0]) / 9);
+            Incremento_F2_C0[1] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9) - 1);
+            Incremento_F2_C0[2] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
+            Incremento_F2_C0[3] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
+            Incremento_F2_C0[4] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
+            Incremento_F2_C0[5] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9) - 1);
+            Incremento_F2_C0[6] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
+            Incremento_F2_C0[7] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
+            Incremento_F2_C0[8] = (((mA_F2_C0[9] - mA_F2_C0[0]) / 9));
             Incremento_F2_C0[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2101,14 +2225,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F2 C1--------------------------------------------------------*/
             Incremento_F2_C1[0] = 0;
-            Incremento_F2_C1[1] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9) - 1;
-            Incremento_F2_C1[2] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
-            Incremento_F2_C1[3] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
-            Incremento_F2_C1[4] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
-            Incremento_F2_C1[5] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9) - 1;
-            Incremento_F2_C1[6] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
-            Incremento_F2_C1[7] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
-            Incremento_F2_C1[8] = ((mA_F2_C1[9] - mA_F2_C1[0]) / 9);
+            Incremento_F2_C1[1] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9) - 1);
+            Incremento_F2_C1[2] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
+            Incremento_F2_C1[3] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
+            Incremento_F2_C1[4] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
+            Incremento_F2_C1[5] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9) - 1);
+            Incremento_F2_C1[6] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
+            Incremento_F2_C1[7] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
+            Incremento_F2_C1[8] = (((mA_F2_C1[9] - mA_F2_C1[0]) / 9));
             Incremento_F2_C1[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2116,14 +2240,14 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F2 C2--------------------------------------------------------*/
             Incremento_F2_C2[0] = 0;
-            Incremento_F2_C2[1] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9) - 1;
-            Incremento_F2_C2[2] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
-            Incremento_F2_C2[3] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
-            Incremento_F2_C2[4] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
-            Incremento_F2_C2[5] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9) - 1;
-            Incremento_F2_C2[6] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
-            Incremento_F2_C2[7] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
-            Incremento_F2_C2[8] = ((mA_F2_C2[9] - mA_F2_C2[0]) / 9);
+            Incremento_F2_C2[1] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9) - 1);
+            Incremento_F2_C2[2] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
+            Incremento_F2_C2[3] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
+            Incremento_F2_C2[4] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
+            Incremento_F2_C2[5] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9) - 1);
+            Incremento_F2_C2[6] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
+            Incremento_F2_C2[7] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
+            Incremento_F2_C2[8] = (((mA_F2_C2[9] - mA_F2_C2[0]) / 9));
             Incremento_F2_C0[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2132,28 +2256,28 @@ namespace Dewimed_Beta
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F2 C3--------------------------------------------------------*/
             Incremento_F2_C3[0] = 0;
-            Incremento_F2_C3[1] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9) - 1;
-            Incremento_F2_C3[2] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
-            Incremento_F2_C3[3] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
-            Incremento_F2_C3[4] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
-            Incremento_F2_C3[5] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9) - 1;
-            Incremento_F2_C3[6] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
-            Incremento_F2_C3[7] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
-            Incremento_F2_C3[8] = ((mA_F2_C3[9] - mA_F2_C3[0]) / 9);
+            Incremento_F2_C3[1] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9) - 1);
+            Incremento_F2_C3[2] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
+            Incremento_F2_C3[3] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
+            Incremento_F2_C3[4] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
+            Incremento_F2_C3[5] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9) - 1);
+            Incremento_F2_C3[6] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
+            Incremento_F2_C3[7] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
+            Incremento_F2_C3[8] = (((mA_F2_C3[9] - mA_F2_C3[0]) / 9));
             Incremento_F2_C3[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------------------*/
             /*------------------------------------F2 C4--------------------------------------------------------*/
             Incremento_F2_C4[0] = 0;
-            Incremento_F2_C4[1] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9) - 1;
-            Incremento_F2_C4[2] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
-            Incremento_F2_C4[3] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
-            Incremento_F2_C4[4] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
-            Incremento_F2_C4[5] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9) - 1;
-            Incremento_F2_C4[6] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
-            Incremento_F2_C4[7] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
-            Incremento_F2_C4[8] = ((mA_F2_C4[9] - mA_F2_C4[0]) / 9);
+            Incremento_F2_C4[1] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9) - 1);
+            Incremento_F2_C4[2] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
+            Incremento_F2_C4[3] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
+            Incremento_F2_C4[4] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
+            Incremento_F2_C4[5] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9) - 1);
+            Incremento_F2_C4[6] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
+            Incremento_F2_C4[7] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
+            Incremento_F2_C4[8] = (((mA_F2_C4[9] - mA_F2_C4[0]) / 9));
             Incremento_F2_C4[9] = 0;
             /*--------------------------------------------------------------------------------------------*/
 
@@ -2411,7 +2535,7 @@ namespace Dewimed_Beta
 
 
             /*-----------------------------------------------------------------------------*/
-            /*--------------------------------F0 C2 mA-------------------------------------*/
+            /*--------------------------------F2 C2 mA-------------------------------------*/
 
             //mA_F0_C0[0]= mA_F0_C0[0] + Incremento_F0_C0[0];// minimo
 
@@ -2431,7 +2555,7 @@ namespace Dewimed_Beta
 
 
             /*-----------------------------------------------------------------------------*/
-            /*--------------------------------F0 C3 mA-------------------------------------*/
+            /*--------------------------------F2 C3 mA-------------------------------------*/
 
             //mA_F0_C0[0]= mA_F0_C0[0] + Incremento_F0_C0[0];// minimo
 
@@ -2451,7 +2575,7 @@ namespace Dewimed_Beta
 
 
             /*-----------------------------------------------------------------------------*/
-            /*--------------------------------F0 C4 mA-------------------------------------*/
+            /*--------------------------------F2 C4 mA-------------------------------------*/
 
             //mA_F0_C0[0]= mA_F0_C0[0] + Incremento_F0_C0[0];// minimo
 
@@ -3223,7 +3347,7 @@ namespace Dewimed_Beta
             Registro_F0_C4[4] = Convert.ToInt16((DC_F0_C4[4] * 9999f) / 100f);
             Registro_F0_C4[5] = Convert.ToInt16((DC_F0_C4[5] * 9999f) / 100f);
             Registro_F0_C4[6] = Convert.ToInt16((DC_F0_C4[6] * 9999f) / 100f);
-            Registro_F0_C4[6] = Convert.ToInt16((DC_F0_C4[7] * 9999f) / 100f);
+            Registro_F0_C4[7] = Convert.ToInt16((DC_F0_C4[7] * 9999f) / 100f);
             Registro_F0_C4[8] = Convert.ToInt16((DC_F0_C4[8] * 9999f) / 100f);
 
 
@@ -3336,14 +3460,14 @@ namespace Dewimed_Beta
 
             /*-----------------------------------------------------------------------------*/
             /*------------------------------------F2 C2 ---------------------------------------*/
-            Registro_F2_C2[1] = Convert.ToInt16((DC_F0_C2[1] * 9999f) / 100f);
-            Registro_F2_C2[2] = Convert.ToInt16((DC_F0_C2[2] * 9999f) / 100f);
-            Registro_F2_C2[3] = Convert.ToInt16((DC_F0_C2[3] * 9999f) / 100f);
-            Registro_F2_C2[4] = Convert.ToInt16((DC_F0_C2[4] * 9999f) / 100f);
-            Registro_F2_C2[5] = Convert.ToInt16((DC_F0_C2[5] * 9999f) / 100f);
-            Registro_F2_C2[6] = Convert.ToInt16((DC_F0_C2[6] * 9999f) / 100f);
-            Registro_F2_C2[7] = Convert.ToInt16((DC_F0_C2[7] * 9999f) / 100f);
-            Registro_F2_C2[8] = Convert.ToInt16((DC_F0_C2[8] * 9999f) / 100f);
+            Registro_F2_C2[1] = Convert.ToInt16((DC_F2_C2[1] * 9999f) / 100f);
+            Registro_F2_C2[2] = Convert.ToInt16((DC_F2_C2[2] * 9999f) / 100f);
+            Registro_F2_C2[3] = Convert.ToInt16((DC_F2_C2[3] * 9999f) / 100f);
+            Registro_F2_C2[4] = Convert.ToInt16((DC_F2_C2[4] * 9999f) / 100f);
+            Registro_F2_C2[5] = Convert.ToInt16((DC_F2_C2[5] * 9999f) / 100f);
+            Registro_F2_C2[6] = Convert.ToInt16((DC_F2_C2[6] * 9999f) / 100f);
+            Registro_F2_C2[7] = Convert.ToInt16((DC_F2_C2[7] * 9999f) / 100f);
+            Registro_F2_C2[8] = Convert.ToInt16((DC_F2_C2[8] * 9999f) / 100f);
 
 
             /*-----------------------------------------------------------------------------*/
@@ -3351,14 +3475,14 @@ namespace Dewimed_Beta
 
             /*-----------------------------------------------------------------------------*/
             /*------------------------------------F2 C3 ---------------------------------------*/
-            Registro_F2_C3[1] = Convert.ToInt16((DC_F0_C3[1] * 9999f) / 100f);
-            Registro_F2_C3[2] = Convert.ToInt16((DC_F0_C3[2] * 9999f) / 100f);
-            Registro_F2_C3[3] = Convert.ToInt16((DC_F0_C3[3] * 9999f) / 100f);
-            Registro_F2_C3[4] = Convert.ToInt16((DC_F0_C3[4] * 9999f) / 100f);
-            Registro_F2_C3[5] = Convert.ToInt16((DC_F0_C3[5] * 9999f) / 100f);
-            Registro_F2_C3[6] = Convert.ToInt16((DC_F0_C3[6] * 9999f) / 100f);
-            Registro_F2_C3[7] = Convert.ToInt16((DC_F0_C3[7] * 9999f) / 100f);
-            Registro_F2_C3[8] = Convert.ToInt16((DC_F0_C3[8] * 9999f) / 100f);
+            Registro_F2_C3[1] = Convert.ToInt16((DC_F2_C3[1] * 9999f) / 100f);
+            Registro_F2_C3[2] = Convert.ToInt16((DC_F2_C3[2] * 9999f) / 100f);
+            Registro_F2_C3[3] = Convert.ToInt16((DC_F2_C3[3] * 9999f) / 100f);
+            Registro_F2_C3[4] = Convert.ToInt16((DC_F2_C3[4] * 9999f) / 100f);
+            Registro_F2_C3[5] = Convert.ToInt16((DC_F2_C3[5] * 9999f) / 100f);
+            Registro_F2_C3[6] = Convert.ToInt16((DC_F2_C3[6] * 9999f) / 100f);
+            Registro_F2_C3[7] = Convert.ToInt16((DC_F2_C3[7] * 9999f) / 100f);
+            Registro_F2_C3[8] = Convert.ToInt16((DC_F2_C3[8] * 9999f) / 100f);
 
 
             /*-----------------------------------------------------------------------------*/
@@ -3366,14 +3490,14 @@ namespace Dewimed_Beta
 
             /*-----------------------------------------------------------------------------*/
             /*------------------------------------F2 C4 ---------------------------------------*/
-            Registro_F2_C4[1] = Convert.ToInt16((DC_F0_C4[1] * 9999f) / 100f);
-            Registro_F2_C4[2] = Convert.ToInt16((DC_F0_C4[2] * 9999f) / 100f);
-            Registro_F2_C4[3] = Convert.ToInt16((DC_F0_C4[3] * 9999f) / 100f);
-            Registro_F2_C4[4] = Convert.ToInt16((DC_F0_C4[4] * 9999f) / 100f);
-            Registro_F2_C4[5] = Convert.ToInt16((DC_F0_C4[5] * 9999f) / 100f);
-            Registro_F2_C4[6] = Convert.ToInt16((DC_F0_C4[6] * 9999f) / 100f);
-            Registro_F2_C4[7] = Convert.ToInt16((DC_F0_C4[7] * 9999f) / 100f);
-            Registro_F2_C4[8] = Convert.ToInt16((DC_F0_C4[8] * 9999f) / 100f);
+            Registro_F2_C4[1] = Convert.ToInt16((DC_F2_C4[1] * 9999f) / 100f);
+            Registro_F2_C4[2] = Convert.ToInt16((DC_F2_C4[2] * 9999f) / 100f);
+            Registro_F2_C4[3] = Convert.ToInt16((DC_F2_C4[3] * 9999f) / 100f);
+            Registro_F2_C4[4] = Convert.ToInt16((DC_F2_C4[4] * 9999f) / 100f);
+            Registro_F2_C4[5] = Convert.ToInt16((DC_F2_C4[5] * 9999f) / 100f);
+            Registro_F2_C4[6] = Convert.ToInt16((DC_F2_C4[6] * 9999f) / 100f);
+            Registro_F2_C4[7] = Convert.ToInt16((DC_F2_C4[7] * 9999f) / 100f);
+            Registro_F2_C4[8] = Convert.ToInt16((DC_F2_C4[8] * 9999f) / 100f);
 
 
             /*-----------------------------------------------------------------------------*/
@@ -3651,7 +3775,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador =0; contador <= 9; contador++)
                 {
-                    Registro_F0_C0[contador] = 0;
+                    Registro_F0_C0[contador] = 0000;
 
                 }
 
@@ -3661,7 +3785,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
                    
-                    Incremento_F0_C0[contador] = 0;
+                    Incremento_F0_C0[contador] = 0000;
 
                 }
 
@@ -3670,7 +3794,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
                     
-                    DC_F0_C0[contador] = 0;
+                    DC_F0_C0[contador] = 0000;
 
 
                 }
@@ -3680,7 +3804,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
                     
-                    mA_F0_C0[contador] = 0;
+                    mA_F0_C0[contador] = 0000;
 
                 }
 
@@ -3699,7 +3823,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F0_C1[contador] = 0;
+                    Registro_F0_C1[contador] = 0000;
 
                 }
 
@@ -3709,7 +3833,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F0_C1[contador] = 0;
+                    Incremento_F0_C1[contador] = 0000;
 
                 }
 
@@ -3718,7 +3842,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F0_C1[contador] = 0;
+                    DC_F0_C1[contador] = 0000;
 
 
                 }
@@ -3728,7 +3852,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F0_C1[contador] = 0;
+                    mA_F0_C1[contador] = 0000;
 
                 }
 
@@ -3747,7 +3871,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F0_C2[contador] = 0;
+                    Registro_F0_C2[contador] = 0000;
 
                 }
 
@@ -3757,7 +3881,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F0_C2[contador] = 0;
+                    Incremento_F0_C2[contador] = 0000;
 
                 }
 
@@ -3766,7 +3890,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F0_C2[contador] = 0;
+                    DC_F0_C2[contador] = 0000;
 
 
                 }
@@ -3776,7 +3900,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F0_C2[contador] = 0;
+                    mA_F0_C2[contador] = 0000;
 
                 }
 
@@ -3795,7 +3919,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F0_C3[contador] = 0;
+                    Registro_F0_C3[contador] = 0000;
 
                 }
 
@@ -3805,7 +3929,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F0_C3[contador] = 0;
+                    Incremento_F0_C3[contador] = 0000;
 
                 }
 
@@ -3814,7 +3938,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F0_C3[contador] = 0;
+                    DC_F0_C3[contador] = 0000;
 
 
                 }
@@ -3824,7 +3948,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F0_C3[contador] = 0;
+                    mA_F0_C3[contador] = 0000;
 
                 }
 
@@ -3844,7 +3968,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F0_C4[contador] = 0;
+                    Registro_F0_C4[contador] = 0000;
 
                 }
 
@@ -3854,7 +3978,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F0_C4[contador] = 0;
+                    Incremento_F0_C4[contador] = 0000;
 
                 }
 
@@ -3863,7 +3987,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F0_C4[contador] = 0;
+                    DC_F0_C4[contador] = 0000;
 
 
                 }
@@ -3873,7 +3997,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F0_C4[contador] = 0;
+                    mA_F0_C4[contador] = 0000;
 
                 }
 
@@ -3893,7 +4017,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F1_C0[contador] = 0;
+                    Registro_F1_C0[contador] = 0000;
 
                 }
 
@@ -3903,7 +4027,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F1_C0[contador] = 0;
+                    Incremento_F1_C0[contador] = 0000;
 
                 }
 
@@ -3912,7 +4036,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F1_C0[contador] = 0;
+                    DC_F1_C0[contador] = 0000;
 
 
                 }
@@ -3922,7 +4046,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F1_C0[contador] = 0;
+                    mA_F1_C0[contador] = 0000;
 
                 }
 
@@ -3941,7 +4065,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F1_C1[contador] = 0;
+                    Registro_F1_C1[contador] = 0000;
 
                 }
 
@@ -3951,7 +4075,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F1_C1[contador] = 0;
+                    Incremento_F1_C1[contador] = 0000;
 
                 }
 
@@ -3960,7 +4084,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F1_C1[contador] = 0;
+                    DC_F1_C1[contador] = 0000;
 
 
                 }
@@ -3970,7 +4094,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F1_C1[contador] = 0;
+                    mA_F1_C1[contador] = 0000;
 
                 }
 
@@ -3989,7 +4113,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F1_C2[contador] = 0;
+                    Registro_F1_C2[contador] = 0000;
 
                 }
 
@@ -3999,7 +4123,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F1_C2[contador] = 0;
+                    Incremento_F1_C2[contador] = 0000;
 
                 }
 
@@ -4008,7 +4132,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F1_C2[contador] = 0;
+                    DC_F1_C2[contador] = 0000;
 
 
                 }
@@ -4018,7 +4142,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F1_C2[contador] = 0;
+                    mA_F1_C2[contador] = 0000;
 
                 }
 
@@ -4037,7 +4161,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F1_C3[contador] = 0;
+                    Registro_F1_C3[contador] = 0000;
 
                 }
 
@@ -4047,7 +4171,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F1_C3[contador] = 0;
+                    Incremento_F1_C3[contador] = 0000;
 
                 }
 
@@ -4056,7 +4180,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F1_C3[contador] = 0;
+                    DC_F1_C3[contador] = 0000;
 
 
                 }
@@ -4066,7 +4190,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F1_C3[contador] = 0;
+                    mA_F1_C3[contador] = 0000;
 
                 }
 
@@ -4086,7 +4210,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F1_C4[contador] = 0;
+                    Registro_F1_C4[contador] = 0000;
 
                 }
 
@@ -4096,7 +4220,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F1_C4[contador] = 0;
+                    Incremento_F1_C4[contador] = 0000;
 
                 }
 
@@ -4105,7 +4229,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F1_C4[contador] = 0;
+                    DC_F1_C4[contador] = 0000;
 
 
                 }
@@ -4115,7 +4239,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F1_C4[contador] = 0;
+                    mA_F1_C4[contador] = 0000;
 
                 }
 
@@ -4135,7 +4259,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F2_C0[contador] = 0;
+                    Registro_F2_C0[contador] = 0000;
 
                 }
 
@@ -4145,7 +4269,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F2_C0[contador] = 0;
+                    Incremento_F2_C0[contador] = 0000;
 
                 }
 
@@ -4154,7 +4278,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F2_C0[contador] = 0;
+                    DC_F2_C0[contador] = 0000;
 
 
                 }
@@ -4164,7 +4288,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F2_C0[contador] = 0;
+                    mA_F2_C0[contador] = 0000;
 
                 }
 
@@ -4183,7 +4307,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F2_C1[contador] = 0;
+                    Registro_F2_C1[contador] = 0000;
 
                 }
 
@@ -4193,7 +4317,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F2_C1[contador] = 0;
+                    Incremento_F2_C1[contador] = 0000;
 
                 }
 
@@ -4202,7 +4326,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F2_C1[contador] = 0;
+                    DC_F2_C1[contador] = 0000;
 
 
                 }
@@ -4212,7 +4336,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F2_C1[contador] = 0;
+                    mA_F2_C1[contador] = 0000;
 
                 }
 
@@ -4231,7 +4355,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F2_C2[contador] = 0;
+                    Registro_F2_C2[contador] = 0000;
 
                 }
 
@@ -4241,7 +4365,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F2_C2[contador] = 0;
+                    Incremento_F2_C2[contador] = 0000;
 
                 }
 
@@ -4250,7 +4374,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F2_C2[contador] = 0;
+                    DC_F2_C2[contador] = 0000;
 
 
                 }
@@ -4260,7 +4384,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F2_C2[contador] = 0;
+                    mA_F2_C2[contador] = 0000;
 
                 }
 
@@ -4279,7 +4403,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F2_C3[contador] = 0;
+                    Registro_F2_C3[contador] = 0000;
 
                 }
 
@@ -4289,7 +4413,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F2_C3[contador] = 0;
+                    Incremento_F2_C3[contador] = 0000;
 
                 }
 
@@ -4298,7 +4422,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F2_C3[contador] = 0;
+                    DC_F2_C3[contador] = 0000;
 
 
                 }
@@ -4308,7 +4432,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F2_C3[contador] = 0;
+                    mA_F2_C3[contador] = 0000;
 
                 }
 
@@ -4328,7 +4452,7 @@ namespace Dewimed_Beta
                 /********************REGISTRO **************************/
                 for (byte contador = 0; contador <= 9; contador++)
                 {
-                    Registro_F2_C4[contador] = 0;
+                    Registro_F2_C4[contador] = 0000;
 
                 }
 
@@ -4338,7 +4462,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    Incremento_F2_C4[contador] = 0;
+                    Incremento_F2_C4[contador] = 0000;
 
                 }
 
@@ -4347,7 +4471,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    DC_F2_C4[contador] = 0;
+                    DC_F2_C4[contador] = 0000;
 
 
                 }
@@ -4357,7 +4481,7 @@ namespace Dewimed_Beta
                 for (byte contador = 0; contador <= 9; contador++)
                 {
 
-                    mA_F2_C4[contador] = 0;
+                    mA_F2_C4[contador] = 0000;
 
                 }
 
@@ -4382,6 +4506,10 @@ namespace Dewimed_Beta
 
 
         }
+
+
+
+        
 
 
 
@@ -4599,6 +4727,597 @@ namespace Dewimed_Beta
         }
 
 
+        public void Convertir_Entero() // convertirmos los valores flotantes a enteros 
+        {
+
+            /*Primero convertirmos todo en int*/
+            /*------------------F0----------------------------------------*/
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F0_C0[contador] = Convert.ToInt32(Registro_F0_C0[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F0_C1[contador] = Convert.ToInt32(Registro_F0_C1[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F0_C2[contador] = Convert.ToInt32(Registro_F0_C2[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F0_C3[contador] = Convert.ToInt32(Registro_F0_C3[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F0_C4[contador] = Convert.ToInt32(Registro_F0_C4[contador]);
+            }
+            /*----------------------------------------------------------------------------*/
+
+
+            /*Primero convertirmos todo en int*/
+            /*------------------F1----------------------------------------*/
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F1_C0[contador] = Convert.ToInt32(Registro_F1_C0[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F1_C1[contador] = Convert.ToInt32(Registro_F1_C1[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F1_C2[contador] = Convert.ToInt32(Registro_F1_C2[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F1_C3[contador] = Convert.ToInt32(Registro_F1_C3[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F1_C4[contador] = Convert.ToInt32(Registro_F1_C4[contador]);
+            }
+            /*----------------------------------------------------------------------------*/
+
+
+
+
+            /*Primero convertirmos todo en int*/
+            /*------------------F2----------------------------------------*/
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F2_C0[contador] = Convert.ToInt32(Registro_F2_C0[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F2_C1[contador] = Convert.ToInt32(Registro_F2_C1[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F2_C2[contador] = Convert.ToInt32(Registro_F2_C2[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F2_C3[contador] = Convert.ToInt32(Registro_F2_C3[contador]);
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Num_F2_C4[contador] = Convert.ToInt32(Registro_F2_C4[contador]);
+            }
+            /*----------------------------------------------------------------------------*/
+
+        }
+
+        public void Covnertir_a_String() // convertirmos a strings
+        {
+
+
+
+            //Ahora debemos de pasar los enteros a string 
+
+            /*----------------------F0---------------------------------------*/
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F0_C0[contador] = Num_F0_C0[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F0_C1[contador] = Num_F0_C1[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F0_C2[contador] = Num_F0_C2[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F0_C3[contador] = Num_F0_C3[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F0_C4[contador] = Num_F0_C4[contador].ToString("D4");
+
+            }
+
+
+
+            /*----------------------------------------------------------------------------*/
+
+
+
+            /*----------------------F1---------------------------------------*/
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F1_C0[contador] = Num_F1_C0[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F1_C1[contador] = Num_F1_C1[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F1_C2[contador] = Num_F1_C2[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F1_C3[contador] = Num_F1_C3[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F1_C4[contador] = Num_F1_C4[contador].ToString("D4");
+
+            }
+
+
+
+            /*----------------------------------------------------------------------------*/
+
+
+
+
+
+
+            /*----------------------F2---------------------------------------*/
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F2_C0[contador] = Num_F2_C0[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F2_C1[contador] = Num_F2_C1[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F2_C2[contador] = Num_F2_C2[contador].ToString("D4");
+
+            }
+
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F2_C3[contador] = Num_F2_C3[contador].ToString("D4");
+
+            }
+
+            for (byte contador = 0; contador <= 9; contador++)
+            {
+                Val_F2_C4[contador] = Num_F2_C4[contador].ToString("D4");
+
+            }
+
+
+
+            /*----------------------------------------------------------------------------*/
+
+        }
+
+
+        public void Serial_Index()// esta funcion se ejecuta despues de que se envia el comando de lectura [R] y realiza la index de la trama serial
+        {
+
+            try
+            {
+                indexOfA = Convert.ToInt32(SerialDataIn.IndexOf("A"));
+                indexOfB = Convert.ToInt32(SerialDataIn.IndexOf("B"));
+                indexOfC = Convert.ToInt32(SerialDataIn.IndexOf("C"));
+                indexOfD = Convert.ToInt32(SerialDataIn.IndexOf("D"));
+                indexOfE = Convert.ToInt32(SerialDataIn.IndexOf("E"));
+                indexOfF = Convert.ToInt32(SerialDataIn.IndexOf("F"));
+                indexOfG = Convert.ToInt32(SerialDataIn.IndexOf("G"));
+                indexOfH = Convert.ToInt32(SerialDataIn.IndexOf("H"));
+                indexOfI = Convert.ToInt32(SerialDataIn.IndexOf("I"));
+                indexOfJ = Convert.ToInt32(SerialDataIn.IndexOf("J"));
+
+                indexOfK = Convert.ToInt32(SerialDataIn.IndexOf("K"));
+                indexOfL = Convert.ToInt32(SerialDataIn.IndexOf("L"));
+                indexOfM = Convert.ToInt32(SerialDataIn.IndexOf("M"));
+                indexOfN = Convert.ToInt32(SerialDataIn.IndexOf("N"));
+                indexOfO = Convert.ToInt32(SerialDataIn.IndexOf("O"));
+                indexOfP = Convert.ToInt32(SerialDataIn.IndexOf("P"));
+                indexOfQ = Convert.ToInt32(SerialDataIn.IndexOf("Q"));
+                indexOfR = Convert.ToInt32(SerialDataIn.IndexOf("R"));
+                indexOfS = Convert.ToInt32(SerialDataIn.IndexOf("S"));
+                indexOfT = Convert.ToInt32(SerialDataIn.IndexOf("T"));
+
+
+
+                indexOfU = Convert.ToInt32(SerialDataIn.IndexOf("U"));
+                indexOfV = Convert.ToInt32(SerialDataIn.IndexOf("V"));
+                indexOfW = Convert.ToInt32(SerialDataIn.IndexOf("W"));
+                indexOfX = Convert.ToInt32(SerialDataIn.IndexOf("X"));
+                indexOfY = Convert.ToInt32(SerialDataIn.IndexOf("Y"));
+                indexOfZ = Convert.ToInt32(SerialDataIn.IndexOf("Z"));
+                indexOfa = Convert.ToInt32(SerialDataIn.IndexOf("a"));
+                indexOfb = Convert.ToInt32(SerialDataIn.IndexOf("b"));
+                indexOfc = Convert.ToInt32(SerialDataIn.IndexOf("c"));
+                indexOfd = Convert.ToInt32(SerialDataIn.IndexOf("d"));
+
+
+                String_F0_C0_MIN = SerialDataIn.Substring(0, indexOfA);
+                TextBox_F0_Campo0_Min.Text = String_F0_C0_MIN;//IMPRIMIRMOS EL VALOR 
+
+
+
+                String_F0_C0_MAX = SerialDataIn.Substring(indexOfA + 1, (indexOfB - indexOfA) - 1);
+                TextBox_F0_Campo0_Max.Text = String_F0_C0_MAX;
+
+
+
+                String_F0_C1_MIN = SerialDataIn.Substring(indexOfB + 1, (indexOfC - indexOfB) - 1);
+                TextBox_F0_Campo1_Min.Text = String_F0_C1_MIN;
+
+
+                String_F0_C1_MAX = SerialDataIn.Substring(indexOfC + 1, (indexOfD - indexOfC) - 1);
+                TextBox_F0_Campo1_Max.Text = String_F0_C1_MAX;
+
+
+                String_F0_C2_MIN = SerialDataIn.Substring(indexOfD + 1, (indexOfE - indexOfD) - 1);
+                TextBox_F0_Campo2_Min.Text = String_F0_C2_MIN;
+
+
+                String_F0_C2_MAX = SerialDataIn.Substring(indexOfE + 1, (indexOfF - indexOfE) - 1);
+                TextBox_F0_Campo2_Max.Text = String_F0_C2_MAX;
+
+
+                String_F0_C3_MIN = SerialDataIn.Substring(indexOfF + 1, (indexOfG - indexOfF) - 1);
+                TextBox_F0_Campo3_Min.Text = String_F0_C3_MIN;
+
+
+                String_F0_C3_MAX = SerialDataIn.Substring(indexOfG + 1, (indexOfH - indexOfG) - 1);
+                TextBox_F0_Campo3_Max.Text = String_F0_C3_MAX;
+
+
+
+                String_F0_C4_MIN = SerialDataIn.Substring(indexOfH + 1, (indexOfI - indexOfH) - 1);
+                TextBox_F0_Campo4_Min.Text = String_F0_C4_MIN;
+
+
+                String_F0_C4_MAX = SerialDataIn.Substring(indexOfI + 1, (indexOfJ - indexOfI) - 1);
+                TextBox_F0_Campo4_Max.Text = String_F0_C4_MAX;
+
+
+                //---------------------------------------------------------------------------------------------
+
+
+
+                String_F1_C0_MIN = SerialDataIn.Substring(indexOfJ + 1, (indexOfK - indexOfJ) - 1);
+                TextBox_F1_Campo0_Min.Text = String_F1_C0_MIN;
+
+
+
+
+                String_F1_C0_MAX = SerialDataIn.Substring(indexOfK + 1, (indexOfL - indexOfK) - 1);
+                TextBox_F1_Campo0_Max.Text = String_F1_C0_MAX;
+
+
+
+                String_F1_C1_MIN = SerialDataIn.Substring(indexOfL + 1, (indexOfM - indexOfL) - 1);
+                TextBox_F1_Campo1_Min.Text = String_F1_C1_MIN;
+
+
+                String_F1_C1_MAX = SerialDataIn.Substring(indexOfM + 1, (indexOfN - indexOfM) - 1);
+                TextBox_F1_Campo1_Max.Text = String_F1_C1_MAX;
+
+
+
+                String_F1_C2_MIN = SerialDataIn.Substring(indexOfN + 1, (indexOfO - indexOfN) - 1);
+                TextBox_F1_Campo2_Min.Text = String_F1_C2_MIN;
+
+
+
+                String_F1_C2_MAX = SerialDataIn.Substring(indexOfO + 1, (indexOfP - indexOfO) - 1);
+                TextBox_F1_Campo2_Max.Text = String_F1_C2_MAX;
+
+
+
+                String_F1_C3_MIN = SerialDataIn.Substring(indexOfP + 1, (indexOfQ - indexOfP) - 1);
+                TextBox_F1_Campo3_Min.Text = String_F1_C3_MIN;
+
+
+                String_F1_C3_MAX = SerialDataIn.Substring(indexOfQ + 1, (indexOfR - indexOfQ) - 1);
+                TextBox_F1_Campo3_Max.Text = String_F1_C3_MAX;
+
+
+                String_F1_C4_MIN = SerialDataIn.Substring(indexOfR + 1, (indexOfS - indexOfR) - 1);
+                TextBox_F1_Campo4_Min.Text = String_F1_C4_MIN;
+
+
+
+                String_F1_C4_MAX = SerialDataIn.Substring(indexOfS + 1, (indexOfT - indexOfS) - 1);
+                TextBox_F1_Campo4_Max.Text = String_F1_C4_MAX;
+
+
+
+                //-------------------------------------------------------------------------------------------
+
+                String_F2_C0_MIN = SerialDataIn.Substring(indexOfT + 1, (indexOfU - indexOfT) - 1);
+                TextBox_F2_Campo0_Min.Text = String_F2_C0_MIN;
+
+
+
+
+
+                String_F2_C0_MAX = SerialDataIn.Substring(indexOfU + 1, (indexOfV - indexOfU) - 1);
+                TextBox_F2_Campo0_Max.Text = String_F2_C0_MAX;
+
+
+
+
+                String_F2_C1_MIN = SerialDataIn.Substring(indexOfV + 1, (indexOfW - indexOfV) - 1);
+                TextBox_F2_Campo1_Min.Text = String_F2_C1_MIN;
+
+
+
+                String_F2_C1_MAX = SerialDataIn.Substring(indexOfW + 1, (indexOfX - indexOfW) - 1);
+                TextBox_F2_Campo1_Max.Text = String_F2_C1_MAX;
+
+
+
+                String_F2_C2_MIN = SerialDataIn.Substring(indexOfX + 1, (indexOfY - indexOfX) - 1);
+                TextBox_F2_Campo2_Min.Text = String_F2_C2_MIN;
+
+
+
+                String_F2_C2_MAX = SerialDataIn.Substring(indexOfY + 1, (indexOfZ - indexOfY) - 1);
+                TextBox_F2_Campo2_Max.Text = String_F2_C2_MAX;
+
+
+                String_F2_C3_MIN = SerialDataIn.Substring(indexOfZ + 1, (indexOfa - indexOfZ) - 1);
+                TextBox_F2_Campo3_Min.Text = String_F2_C3_MIN;
+
+
+                String_F2_C3_MAX = SerialDataIn.Substring(indexOfa + 1, (indexOfb - indexOfa) - 1);
+                TextBox_F2_Campo3_Max.Text = String_F2_C3_MAX;
+
+
+
+                String_F2_C4_MIN = SerialDataIn.Substring(indexOfb + 1, (indexOfc - indexOfb) - 1);
+                TextBox_F2_Campo4_Min.Text = String_F2_C4_MIN;
+
+
+                String_F2_C4_MAX = SerialDataIn.Substring(indexOfc + 1, (indexOfd - indexOfc) - 1);
+                TextBox_F2_Campo4_Max.Text = String_F2_C4_MAX;
+
+                /*ahora debemos de resetear los valores.*/
+                SerialDataIn = null;
+
+
+
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
+
+
+        }
+
+        public void Imprimir_Valores_Registros()
+        {
+
+
+            /*--------------------------F0--------------------------------------------------*/
+            /*Ahora debemos de imprimir las cadenas*/
+            serialPort_Form2.WriteLine("$A$");// mandamos el comando para lectura de F0C0
+            Thread.Sleep(100);//delay de 100 ms
+            /*Ahora enviamos F0C0*/
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F0_C0[0], Val_F0_C0[1], Val_F0_C0[2], Val_F0_C0[3], Val_F0_C0[4], Val_F0_C0[5], Val_F0_C0[6], Val_F0_C0[7], Val_F0_C0[8], Val_F0_C0[9]));
+            Thread.Sleep(100);
+            
+            
+            serialPort_Form2.WriteLine("$B$");// mandamos el comando para lectura de F0C1
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F0C1
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F0_C1[0], Val_F0_C1[1], Val_F0_C1[2], Val_F0_C1[3], Val_F0_C1[4], Val_F0_C1[5], Val_F0_C1[6], Val_F0_C1[7], Val_F0_C1[8], Val_F0_C1[9]));
+            Thread.Sleep(100);
+
+
+
+   
+
+            
+            serialPort_Form2.WriteLine("$C$");// mandamos el comando para lectura de F0C1
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F0C1
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F0_C2[0], Val_F0_C2[1], Val_F0_C2[2], Val_F0_C2[3], Val_F0_C2[4], Val_F0_C2[5], Val_F0_C2[6], Val_F0_C2[7], Val_F0_C2[8], Val_F0_C2[9]));
+            Thread.Sleep(100);
+            
+
+
+
+
+
+
+            serialPort_Form2.WriteLine("$D$");// mandamos el comando para lectura de F0C3
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F0C3
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F0_C3[0], Val_F0_C3[1], Val_F0_C3[2], Val_F0_C3[3], Val_F0_C3[4], Val_F0_C3[5], Val_F0_C3[6], Val_F0_C3[7], Val_F0_C3[8], Val_F0_C3[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+            
+
+           serialPort_Form2.WriteLine("$E$");// mandamos el comando para lectura de F0C4
+           Thread.Sleep(100);//delay de 100 ms
+           //Ahora enviamos F0C4
+           serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+               Val_F0_C4[0], Val_F0_C4[1], Val_F0_C4[2], Val_F0_C4[3], Val_F0_C4[4], Val_F0_C4[5], Val_F0_C4[6], Val_F0_C4[7], Val_F0_C4[8], Val_F0_C4[9]));
+           Thread.Sleep(100);//delay de 100 ms
+
+          
+
+            /*--------------------------F1--------------------------------------------------*/
+            /*Ahora debemos de imprimir las cadenas*/
+
+            
+            
+            serialPort_Form2.WriteLine("$F$");// mandamos el comando para lectura de F1C0
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F1C0
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F1_C0[0], Val_F1_C0[1], Val_F1_C0[2], Val_F1_C0[3], Val_F1_C0[4], Val_F1_C0[5], Val_F1_C0[6], Val_F1_C0[7], Val_F1_C0[8], Val_F1_C0[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+
+            serialPort_Form2.WriteLine("$G$");// mandamos el comando para lectura de F1C1
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F1C1
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F1_C1[0], Val_F1_C1[1], Val_F1_C1[2], Val_F1_C1[3], Val_F1_C1[4], Val_F1_C1[5], Val_F1_C1[6], Val_F1_C1[7], Val_F1_C1[8], Val_F1_C1[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+            
+            serialPort_Form2.WriteLine("$H$");// mandamos el comando para lectura de F1C2
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F1C2
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F1_C2[0], Val_F1_C2[1], Val_F1_C2[2], Val_F1_C2[3], Val_F1_C2[4], Val_F1_C2[5], Val_F1_C2[6], Val_F1_C2[7], Val_F1_C2[8], Val_F1_C2[9]));
+            Thread.Sleep(100);//delay de 100 ms
+            
+
+            serialPort_Form2.WriteLine("$I$");// mandamos el comando para lectura de F1C3
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F1C3
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F1_C3[0], Val_F1_C3[1], Val_F1_C3[2], Val_F1_C3[3], Val_F1_C3[4], Val_F1_C3[5], Val_F1_C3[6], Val_F1_C3[7], Val_F1_C3[8], Val_F1_C3[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+
+            serialPort_Form2.WriteLine("$J$");// mandamos el comando para lectura de F1C4
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F1C4
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F1_C4[0], Val_F1_C4[1], Val_F1_C4[2], Val_F1_C4[3], Val_F1_C4[4], Val_F1_C4[5], Val_F1_C4[6], Val_F1_C4[7], Val_F1_C4[8], Val_F1_C4[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+            
+
+
+
+            /*--------------------------F2--------------------------------------------------*/
+            /*Ahora debemos de imprimir las cadenas*/
+
+            
+            
+            serialPort_Form2.WriteLine("$K$");// mandamos el comando para lectura de F2C0
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F2C0
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F2_C0[0], Val_F2_C0[1], Val_F2_C0[2], Val_F2_C0[3], Val_F2_C0[4], Val_F2_C0[5], Val_F2_C0[6], Val_F2_C0[7], Val_F2_C0[8], Val_F2_C0[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+
+            serialPort_Form2.WriteLine("$L$");// mandamos el comando para lectura de F2C1
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F2C1
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F2_C1[0], Val_F2_C1[1], Val_F2_C1[2], Val_F2_C1[3], Val_F2_C1[4], Val_F2_C1[5], Val_F2_C1[6], Val_F2_C1[7], Val_F2_C1[8], Val_F2_C1[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+            
+
+            serialPort_Form2.WriteLine("$M$");// mandamos el comando para lectura de F2C2
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F2C2
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F2_C2[0], Val_F2_C2[1], Val_F2_C2[2], Val_F2_C2[3], Val_F2_C2[4], Val_F2_C2[5], Val_F2_C2[6], Val_F2_C2[7], Val_F2_C2[8], Val_F2_C2[9]));
+            Thread.Sleep(100);//delay de 100 ms
+            
+
+            serialPort_Form2.WriteLine("$N$");// mandamos el comando para lectura de F2C3
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F2C3
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F2_C3[0], Val_F2_C3[1], Val_F2_C3[2], Val_F2_C3[3], Val_F2_C3[4], Val_F2_C3[5], Val_F2_C3[6], Val_F2_C3[7], Val_F2_C3[8], Val_F2_C3[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+
+            serialPort_Form2.WriteLine("$O$");// mandamos el comando para lectura de F2C4
+            Thread.Sleep(100);//delay de 100 ms
+            //Ahora enviamos F2C4
+            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+                Val_F2_C4[0], Val_F2_C4[1], Val_F2_C4[2], Val_F2_C4[3], Val_F2_C4[4], Val_F2_C4[5], Val_F2_C4[6], Val_F2_C4[7], Val_F2_C4[8], Val_F2_C4[9]));
+            Thread.Sleep(100);//delay de 100 ms
+
+            
+
+
+
+
+
+        }
+
+
 
         private void label78_Click(object sender, EventArgs e)
         {
@@ -4706,7 +5425,7 @@ namespace Dewimed_Beta
                 button_teclado.Enabled = true;
                 button_leer.Enabled = true;
                 button_calcular.Enabled = true;
-                button_guardar.Enabled = true;
+                button_guardar.Enabled = false;
                 button_restaurar.Enabled = true;
                 button_limpiar.Enabled = true;
                 button_conectar.Enabled = false;
@@ -4738,7 +5457,6 @@ namespace Dewimed_Beta
 
                 button_apagar.Enabled = false;
                 button_desconectar2.Enabled = false;
-                button_teclado.Enabled = false;
                 button_leer.Enabled = false;
                 button_calcular.Enabled = false;
                 button_guardar.Enabled = false;
@@ -4786,215 +5504,237 @@ namespace Dewimed_Beta
 
         }
 
+        
         private void serialPort_Form2_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            SerialDataIn = serialPort_Form2.ReadLine();
-            this.BeginInvoke(new EventHandler(ProcessData));
+           // SerialDataIn = serialPort_Form2.ReadLine();
+
+            // primero preguntamos si lo que llego contiene un @ si contiene el @ debemos de ignorar
+            
+            
+               // this.BeginInvoke(new EventHandler(ProcessData));
+
+            
+            
         }
+
+        /*
 
         private void ProcessData(object sender, EventArgs e)
         {
 
-            try
-            {
-                indexOfA = Convert.ToInt32( SerialDataIn.IndexOf("A"));
-                indexOfB = Convert.ToInt32(SerialDataIn.IndexOf("B"));
-                indexOfC = Convert.ToInt32(SerialDataIn.IndexOf("C"));
-                indexOfD = Convert.ToInt32(SerialDataIn.IndexOf("D"));
-                indexOfE = Convert.ToInt32(SerialDataIn.IndexOf("E"));
-                indexOfF = Convert.ToInt32(SerialDataIn.IndexOf("F"));
-                indexOfG = Convert.ToInt32(SerialDataIn.IndexOf("G"));
-                indexOfH = Convert.ToInt32(SerialDataIn.IndexOf("H"));
-                indexOfI = Convert.ToInt32(SerialDataIn.IndexOf("I"));
-                indexOfJ = Convert.ToInt32(SerialDataIn.IndexOf("J"));
 
-                indexOfK = Convert.ToInt32(SerialDataIn.IndexOf("K"));
-                indexOfL = Convert.ToInt32(SerialDataIn.IndexOf("L"));
-                indexOfM = Convert.ToInt32(SerialDataIn.IndexOf("M"));
-                indexOfN = Convert.ToInt32(SerialDataIn.IndexOf("N"));
-                indexOfO = Convert.ToInt32(SerialDataIn.IndexOf("O"));
-                indexOfP = Convert.ToInt32(SerialDataIn.IndexOf("P"));
-                indexOfQ = Convert.ToInt32(SerialDataIn.IndexOf("Q"));
-                indexOfR = Convert.ToInt32(SerialDataIn.IndexOf("R"));
-                indexOfS = Convert.ToInt32(SerialDataIn.IndexOf("S"));
-                indexOfT = Convert.ToInt32(SerialDataIn.IndexOf("T"));
+           
 
+                try
+                {
+                    indexOfA = Convert.ToInt32(SerialDataIn.IndexOf("A"));
+                    indexOfB = Convert.ToInt32(SerialDataIn.IndexOf("B"));
+                    indexOfC = Convert.ToInt32(SerialDataIn.IndexOf("C"));
+                    indexOfD = Convert.ToInt32(SerialDataIn.IndexOf("D"));
+                    indexOfE = Convert.ToInt32(SerialDataIn.IndexOf("E"));
+                    indexOfF = Convert.ToInt32(SerialDataIn.IndexOf("F"));
+                    indexOfG = Convert.ToInt32(SerialDataIn.IndexOf("G"));
+                    indexOfH = Convert.ToInt32(SerialDataIn.IndexOf("H"));
+                    indexOfI = Convert.ToInt32(SerialDataIn.IndexOf("I"));
+                    indexOfJ = Convert.ToInt32(SerialDataIn.IndexOf("J"));
 
+                    indexOfK = Convert.ToInt32(SerialDataIn.IndexOf("K"));
+                    indexOfL = Convert.ToInt32(SerialDataIn.IndexOf("L"));
+                    indexOfM = Convert.ToInt32(SerialDataIn.IndexOf("M"));
+                    indexOfN = Convert.ToInt32(SerialDataIn.IndexOf("N"));
+                    indexOfO = Convert.ToInt32(SerialDataIn.IndexOf("O"));
+                    indexOfP = Convert.ToInt32(SerialDataIn.IndexOf("P"));
+                    indexOfQ = Convert.ToInt32(SerialDataIn.IndexOf("Q"));
+                    indexOfR = Convert.ToInt32(SerialDataIn.IndexOf("R"));
+                    indexOfS = Convert.ToInt32(SerialDataIn.IndexOf("S"));
+                    indexOfT = Convert.ToInt32(SerialDataIn.IndexOf("T"));
 
-                indexOfU = Convert.ToInt32(SerialDataIn.IndexOf("U"));
-                indexOfV = Convert.ToInt32(SerialDataIn.IndexOf("V"));
-                indexOfW = Convert.ToInt32(SerialDataIn.IndexOf("W"));
-                indexOfX = Convert.ToInt32(SerialDataIn.IndexOf("X"));
-                indexOfY = Convert.ToInt32(SerialDataIn.IndexOf("Y"));
-                indexOfZ = Convert.ToInt32(SerialDataIn.IndexOf("Z"));
-                indexOfa = Convert.ToInt32(SerialDataIn.IndexOf("a"));
-                indexOfb = Convert.ToInt32(SerialDataIn.IndexOf("b"));
-                indexOfc = Convert.ToInt32(SerialDataIn.IndexOf("c"));
-                indexOfd = Convert.ToInt32(SerialDataIn.IndexOf("d"));
-                
-                
-                String_F0_C0_MIN = SerialDataIn.Substring(0, indexOfA);
-                TextBox_F0_Campo0_Min.Text = String_F0_C0_MIN;//IMPRIMIRMOS EL VALOR 
 
-                
 
-                String_F0_C0_MAX = SerialDataIn.Substring(indexOfA  +   1, (indexOfB    -   indexOfA)   -1 );
-                TextBox_F0_Campo0_Max.Text = String_F0_C0_MAX;
-                
+                    indexOfU = Convert.ToInt32(SerialDataIn.IndexOf("U"));
+                    indexOfV = Convert.ToInt32(SerialDataIn.IndexOf("V"));
+                    indexOfW = Convert.ToInt32(SerialDataIn.IndexOf("W"));
+                    indexOfX = Convert.ToInt32(SerialDataIn.IndexOf("X"));
+                    indexOfY = Convert.ToInt32(SerialDataIn.IndexOf("Y"));
+                    indexOfZ = Convert.ToInt32(SerialDataIn.IndexOf("Z"));
+                    indexOfa = Convert.ToInt32(SerialDataIn.IndexOf("a"));
+                    indexOfb = Convert.ToInt32(SerialDataIn.IndexOf("b"));
+                    indexOfc = Convert.ToInt32(SerialDataIn.IndexOf("c"));
+                    indexOfd = Convert.ToInt32(SerialDataIn.IndexOf("d"));
 
-                
-                String_F0_C1_MIN = SerialDataIn.Substring(indexOfB  +   1, (indexOfC    -   indexOfB)   - 1);
-                TextBox_F0_Campo1_Min.Text = String_F0_C1_MIN;
 
-                
-                String_F0_C1_MAX = SerialDataIn.Substring(indexOfC + 1, (indexOfD - indexOfC) - 1);
-                TextBox_F0_Campo1_Max.Text = String_F0_C1_MAX;
+                    String_F0_C0_MIN = SerialDataIn.Substring(0, indexOfA);
+                    TextBox_F0_Campo0_Min.Text = String_F0_C0_MIN;//IMPRIMIRMOS EL VALOR 
 
-                
-                String_F0_C2_MIN = SerialDataIn.Substring(indexOfD + 1, (indexOfE - indexOfD) - 1);
-                TextBox_F0_Campo2_Min.Text = String_F0_C2_MIN;
 
-                
-                String_F0_C2_MAX = SerialDataIn.Substring(indexOfE + 1, (indexOfF - indexOfE) - 1);
-                TextBox_F0_Campo2_Max.Text = String_F0_C2_MAX;
 
+                    String_F0_C0_MAX = SerialDataIn.Substring(indexOfA + 1, (indexOfB - indexOfA) - 1);
+                    TextBox_F0_Campo0_Max.Text = String_F0_C0_MAX;
 
-                String_F0_C3_MIN = SerialDataIn.Substring(indexOfF + 1, (indexOfG - indexOfF) - 1);
-                TextBox_F0_Campo3_Min.Text = String_F0_C3_MIN;
 
 
-                String_F0_C3_MAX = SerialDataIn.Substring(indexOfG + 1, (indexOfH - indexOfG) - 1);
-                TextBox_F0_Campo3_Max.Text = String_F0_C3_MAX;
+                    String_F0_C1_MIN = SerialDataIn.Substring(indexOfB + 1, (indexOfC - indexOfB) - 1);
+                    TextBox_F0_Campo1_Min.Text = String_F0_C1_MIN;
 
 
+                    String_F0_C1_MAX = SerialDataIn.Substring(indexOfC + 1, (indexOfD - indexOfC) - 1);
+                    TextBox_F0_Campo1_Max.Text = String_F0_C1_MAX;
 
-                String_F0_C4_MIN = SerialDataIn.Substring(indexOfH + 1, (indexOfI - indexOfH) - 1);
-                TextBox_F0_Campo4_Min.Text = String_F0_C4_MIN;
 
+                    String_F0_C2_MIN = SerialDataIn.Substring(indexOfD + 1, (indexOfE - indexOfD) - 1);
+                    TextBox_F0_Campo2_Min.Text = String_F0_C2_MIN;
 
-                String_F0_C4_MAX = SerialDataIn.Substring(indexOfI + 1, (indexOfJ - indexOfI) - 1);
-                TextBox_F0_Campo4_Max.Text = String_F0_C4_MAX;
 
-                
-                //---------------------------------------------------------------------------------------------
+                    String_F0_C2_MAX = SerialDataIn.Substring(indexOfE + 1, (indexOfF - indexOfE) - 1);
+                    TextBox_F0_Campo2_Max.Text = String_F0_C2_MAX;
 
-                
 
-                String_F1_C0_MIN = SerialDataIn.Substring(indexOfJ + 1, (indexOfK - indexOfJ) - 1);
-                TextBox_F1_Campo0_Min.Text = String_F1_C0_MIN;
+                    String_F0_C3_MIN = SerialDataIn.Substring(indexOfF + 1, (indexOfG - indexOfF) - 1);
+                    TextBox_F0_Campo3_Min.Text = String_F0_C3_MIN;
 
 
+                    String_F0_C3_MAX = SerialDataIn.Substring(indexOfG + 1, (indexOfH - indexOfG) - 1);
+                    TextBox_F0_Campo3_Max.Text = String_F0_C3_MAX;
 
 
-                String_F1_C0_MAX = SerialDataIn.Substring(indexOfK + 1, (indexOfL - indexOfK) - 1);
-                TextBox_F1_Campo0_Max.Text = String_F1_C0_MAX;
 
+                    String_F0_C4_MIN = SerialDataIn.Substring(indexOfH + 1, (indexOfI - indexOfH) - 1);
+                    TextBox_F0_Campo4_Min.Text = String_F0_C4_MIN;
 
 
-                String_F1_C1_MIN = SerialDataIn.Substring(indexOfL + 1, (indexOfM - indexOfL) - 1);
-                TextBox_F1_Campo1_Min.Text = String_F1_C1_MIN;
+                    String_F0_C4_MAX = SerialDataIn.Substring(indexOfI + 1, (indexOfJ - indexOfI) - 1);
+                    TextBox_F0_Campo4_Max.Text = String_F0_C4_MAX;
 
 
-                String_F1_C1_MAX = SerialDataIn.Substring(indexOfM + 1, (indexOfN - indexOfM) - 1);
-                TextBox_F1_Campo1_Max.Text = String_F1_C1_MAX;
+                    //---------------------------------------------------------------------------------------------
 
 
 
-                String_F1_C2_MIN = SerialDataIn.Substring(indexOfN + 1, (indexOfO - indexOfN) - 1);
-                TextBox_F1_Campo2_Min.Text = String_F1_C2_MIN;
+                    String_F1_C0_MIN = SerialDataIn.Substring(indexOfJ + 1, (indexOfK - indexOfJ) - 1);
+                    TextBox_F1_Campo0_Min.Text = String_F1_C0_MIN;
 
 
 
-                String_F1_C2_MAX = SerialDataIn.Substring(indexOfO + 1, (indexOfP - indexOfO) - 1);
-                TextBox_F1_Campo2_Max.Text = String_F1_C2_MAX;
 
+                    String_F1_C0_MAX = SerialDataIn.Substring(indexOfK + 1, (indexOfL - indexOfK) - 1);
+                    TextBox_F1_Campo0_Max.Text = String_F1_C0_MAX;
 
 
-                String_F1_C3_MIN = SerialDataIn.Substring(indexOfP + 1, (indexOfQ - indexOfP) - 1);
-                TextBox_F1_Campo3_Min.Text = String_F1_C3_MIN;
 
+                    String_F1_C1_MIN = SerialDataIn.Substring(indexOfL + 1, (indexOfM - indexOfL) - 1);
+                    TextBox_F1_Campo1_Min.Text = String_F1_C1_MIN;
 
-                String_F1_C3_MAX = SerialDataIn.Substring(indexOfQ + 1, (indexOfR - indexOfQ) - 1);
-                TextBox_F1_Campo3_Max.Text = String_F1_C3_MAX;
 
+                    String_F1_C1_MAX = SerialDataIn.Substring(indexOfM + 1, (indexOfN - indexOfM) - 1);
+                    TextBox_F1_Campo1_Max.Text = String_F1_C1_MAX;
 
-                String_F1_C4_MIN = SerialDataIn.Substring(indexOfR + 1, (indexOfS - indexOfR) - 1);
-                TextBox_F1_Campo4_Min.Text = String_F1_C4_MIN;
 
 
+                    String_F1_C2_MIN = SerialDataIn.Substring(indexOfN + 1, (indexOfO - indexOfN) - 1);
+                    TextBox_F1_Campo2_Min.Text = String_F1_C2_MIN;
 
-                String_F1_C4_MAX = SerialDataIn.Substring(indexOfS + 1, (indexOfT - indexOfS) - 1);
-                TextBox_F1_Campo4_Max.Text = String_F1_C4_MAX;
 
-                
-                
-                //-------------------------------------------------------------------------------------------
 
-                String_F2_C0_MIN = SerialDataIn.Substring(indexOfT + 1, (indexOfU - indexOfT) - 1);
-                TextBox_F2_Campo0_Min.Text = String_F2_C0_MIN;
+                    String_F1_C2_MAX = SerialDataIn.Substring(indexOfO + 1, (indexOfP - indexOfO) - 1);
+                    TextBox_F1_Campo2_Max.Text = String_F1_C2_MAX;
 
-                
 
 
-                
-                String_F2_C0_MAX = SerialDataIn.Substring(indexOfU + 1, (indexOfV - indexOfU) - 1);
-                TextBox_F2_Campo0_Max.Text = String_F2_C0_MAX;
+                    String_F1_C3_MIN = SerialDataIn.Substring(indexOfP + 1, (indexOfQ - indexOfP) - 1);
+                    TextBox_F1_Campo3_Min.Text = String_F1_C3_MIN;
 
 
-                
+                    String_F1_C3_MAX = SerialDataIn.Substring(indexOfQ + 1, (indexOfR - indexOfQ) - 1);
+                    TextBox_F1_Campo3_Max.Text = String_F1_C3_MAX;
 
-                String_F2_C1_MIN = SerialDataIn.Substring(indexOfV + 1, (indexOfW - indexOfV) - 1);
-                TextBox_F2_Campo1_Min.Text = String_F2_C1_MIN;
 
+                    String_F1_C4_MIN = SerialDataIn.Substring(indexOfR + 1, (indexOfS - indexOfR) - 1);
+                    TextBox_F1_Campo4_Min.Text = String_F1_C4_MIN;
 
-                
-                String_F2_C1_MAX = SerialDataIn.Substring(indexOfW + 1, (indexOfX - indexOfW) - 1);
-                TextBox_F2_Campo1_Max.Text = String_F2_C1_MAX;
 
-                
 
-                String_F2_C2_MIN = SerialDataIn.Substring(indexOfX + 1, (indexOfY - indexOfX) - 1);
-                TextBox_F2_Campo2_Min.Text = String_F2_C2_MIN;
+                    String_F1_C4_MAX = SerialDataIn.Substring(indexOfS + 1, (indexOfT - indexOfS) - 1);
+                    TextBox_F1_Campo4_Max.Text = String_F1_C4_MAX;
 
 
 
-                String_F2_C2_MAX = SerialDataIn.Substring(indexOfY + 1, (indexOfZ - indexOfY) - 1);
-                TextBox_F2_Campo2_Max.Text = String_F2_C2_MAX;
+                    //-------------------------------------------------------------------------------------------
 
+                    String_F2_C0_MIN = SerialDataIn.Substring(indexOfT + 1, (indexOfU - indexOfT) - 1);
+                    TextBox_F2_Campo0_Min.Text = String_F2_C0_MIN;
 
-                String_F2_C3_MIN = SerialDataIn.Substring(indexOfZ + 1, (indexOfa - indexOfZ) - 1);
-                TextBox_F2_Campo3_Min.Text = String_F2_C3_MIN;
 
 
-                String_F2_C3_MAX = SerialDataIn.Substring(indexOfa + 1, (indexOfb - indexOfa) - 1);
-                TextBox_F2_Campo3_Max.Text = String_F2_C3_MAX;
 
 
+                    String_F2_C0_MAX = SerialDataIn.Substring(indexOfU + 1, (indexOfV - indexOfU) - 1);
+                    TextBox_F2_Campo0_Max.Text = String_F2_C0_MAX;
 
-                String_F2_C4_MIN = SerialDataIn.Substring(indexOfb + 1, (indexOfc - indexOfb) - 1);
-                TextBox_F2_Campo4_Min.Text = String_F2_C4_MIN;
-                
-                
-                String_F2_C4_MAX = SerialDataIn.Substring(indexOfc + 1, (indexOfd - indexOfc) - 1);
-                TextBox_F2_Campo4_Max.Text = String_F2_C4_MAX;
 
-                /*ahora debemos de resetear los valores.*/
-                SerialDataIn = null;
 
 
+                    String_F2_C1_MIN = SerialDataIn.Substring(indexOfV + 1, (indexOfW - indexOfV) - 1);
+                    TextBox_F2_Campo1_Min.Text = String_F2_C1_MIN;
 
 
 
+                    String_F2_C1_MAX = SerialDataIn.Substring(indexOfW + 1, (indexOfX - indexOfW) - 1);
+                    TextBox_F2_Campo1_Max.Text = String_F2_C1_MAX;
 
-            }
 
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
+
+                    String_F2_C2_MIN = SerialDataIn.Substring(indexOfX + 1, (indexOfY - indexOfX) - 1);
+                    TextBox_F2_Campo2_Min.Text = String_F2_C2_MIN;
+
+
+
+                    String_F2_C2_MAX = SerialDataIn.Substring(indexOfY + 1, (indexOfZ - indexOfY) - 1);
+                    TextBox_F2_Campo2_Max.Text = String_F2_C2_MAX;
+
+
+                    String_F2_C3_MIN = SerialDataIn.Substring(indexOfZ + 1, (indexOfa - indexOfZ) - 1);
+                    TextBox_F2_Campo3_Min.Text = String_F2_C3_MIN;
+
+
+                    String_F2_C3_MAX = SerialDataIn.Substring(indexOfa + 1, (indexOfb - indexOfa) - 1);
+                    TextBox_F2_Campo3_Max.Text = String_F2_C3_MAX;
+
+
+
+                    String_F2_C4_MIN = SerialDataIn.Substring(indexOfb + 1, (indexOfc - indexOfb) - 1);
+                    TextBox_F2_Campo4_Min.Text = String_F2_C4_MIN;
+
+
+                    String_F2_C4_MAX = SerialDataIn.Substring(indexOfc + 1, (indexOfd - indexOfc) - 1);
+                    TextBox_F2_Campo4_Max.Text = String_F2_C4_MAX;
+
+        */
+
+                    /*ahora debemos de resetear los valores.*/
+
+        /*
+                    SerialDataIn = null;
+
+
+
+
+
+
+                }
+
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+
+                }
+
+
             
-            }
         
         }
+
+        */
     }
 
 
