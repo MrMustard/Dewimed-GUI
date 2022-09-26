@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Threading;
 
 namespace Dewimed_Beta
 {
@@ -34,8 +35,8 @@ namespace Dewimed_Beta
                 //button_color.Enabled = true;//desactivamos el boton de color
                 //button_field_menos.Enabled = true; //desactivamos el boton de campo menos
                // button_field_mas.Enabled = true;//desactivamos el boton de campo mas
-                serialport1.WriteLine("[P]");
-               LabelStatus.Text = "[P]";
+                serialport1.WriteLine("p");
+               LabelStatus.Text = "P";
                 
 
 
@@ -144,8 +145,8 @@ namespace Dewimed_Beta
             try
 
             {
-              serialport1.WriteLine("[-]");
-                LabelStatus.Text = "[-]";
+              serialport1.WriteLine("-");
+                LabelStatus.Text = "-";
                 
                 if (Valor_Barra <= 10)
                 {
@@ -173,8 +174,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialport1.WriteLine("[+]");
-                LabelStatus.Text = "[+]";
+                serialport1.WriteLine("+");
+                LabelStatus.Text = "+";
 
                 if (Valor_Barra >= 100)
                 {
@@ -202,8 +203,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialport1.WriteLine("[A]");
-                LabelStatus.Text = "[A]";
+                serialport1.WriteLine("a");
+                LabelStatus.Text = "a";
                
             }
 
@@ -221,8 +222,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialport1.WriteLine("[F]");
-                LabelStatus.Text = "[F]";
+                serialport1.WriteLine("c");
+                LabelStatus.Text = "cf";
                
             }
 
@@ -240,8 +241,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialport1.WriteLine("[L]");
-                LabelStatus.Text = "[L]";
+                serialport1.WriteLine("l");
+                LabelStatus.Text = "l";
                
             }
 
@@ -259,8 +260,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialport1.WriteLine("[H]");
-                LabelStatus.Text = "[H]";
+                serialport1.WriteLine("h");
+                LabelStatus.Text = "h";
                
             }
 
@@ -505,8 +506,13 @@ namespace Dewimed_Beta
             try
 
             {
+                serialport1.WriteLine("X");// comando apra que pueda recibir 3 caracteres
+                Thread.Sleep(100);//delay
+
                 serialport1.WriteLine("[W]");
-                LabelStatus.Text = "[W]";
+                //LabelStatus.Text = "[W]";
+
+                // no enviaremos [N] porque aqui ya se reseteo el micro
 
             }
 
@@ -545,9 +551,11 @@ namespace Dewimed_Beta
             try
 
             {
+                serialport1.WriteLine("X");
+                Thread.Sleep(100);//delay
                 serialport1.WriteLine("[Y]");
-                LabelStatus.Text = "[Y]";
-                //progressBar1.Value = 10;
+                //LabelStatus.Text = "[Y]";
+                
 
             }
 
@@ -582,7 +590,8 @@ namespace Dewimed_Beta
 
             if (ContadorManuel >= 3)
             {
-                MessageBox.Show("Firmware y GUI desarrollado por:\nJosé Manuel Ramírez Vega\n");
+                 MessageBox.Show("Firmware y GUI desarrollado por:\nJosé Manuel Ramírez Vega\n");
+                
                 ContadorManuel = 0;
 
             }

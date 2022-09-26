@@ -101,10 +101,12 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Enabled = false;
             this.progressBar1.Location = new System.Drawing.Point(185, 129);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(589, 21);
             this.progressBar1.TabIndex = 11;
+            this.progressBar1.Visible = false;
             // 
             // LabelStatus
             // 
@@ -191,9 +193,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.TextBox_Serial_Receive);
-            this.groupBox2.Location = new System.Drawing.Point(6, 87);
+            this.groupBox2.Location = new System.Drawing.Point(6, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(678, 172);
+            this.groupBox2.Size = new System.Drawing.Size(678, 240);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Recibidos";
@@ -214,20 +216,24 @@
             // groupBox_Terminal_Send
             // 
             this.groupBox_Terminal_Send.Controls.Add(this.TextBox_Serial_Send);
+            this.groupBox_Terminal_Send.Enabled = false;
             this.groupBox_Terminal_Send.Location = new System.Drawing.Point(6, 19);
             this.groupBox_Terminal_Send.Name = "groupBox_Terminal_Send";
             this.groupBox_Terminal_Send.Size = new System.Drawing.Size(678, 62);
             this.groupBox_Terminal_Send.TabIndex = 5;
             this.groupBox_Terminal_Send.TabStop = false;
             this.groupBox_Terminal_Send.Text = "Enviar Datos";
+            this.groupBox_Terminal_Send.Visible = false;
             // 
             // TextBox_Serial_Send
             // 
+            this.TextBox_Serial_Send.Enabled = false;
             this.TextBox_Serial_Send.Location = new System.Drawing.Point(6, 19);
             this.TextBox_Serial_Send.Multiline = true;
             this.TextBox_Serial_Send.Name = "TextBox_Serial_Send";
             this.TextBox_Serial_Send.Size = new System.Drawing.Size(666, 33);
             this.TextBox_Serial_Send.TabIndex = 3;
+            this.TextBox_Serial_Send.Visible = false;
             // 
             // button_Config_Menu
             // 
@@ -235,7 +241,7 @@
             this.button_Config_Menu.Name = "button_Config_Menu";
             this.button_Config_Menu.Size = new System.Drawing.Size(251, 30);
             this.button_Config_Menu.TabIndex = 6;
-            this.button_Config_Menu.Text = "Config";
+            this.button_Config_Menu.Text = "Calibración";
             this.button_Config_Menu.UseVisualStyleBackColor = true;
             this.button_Config_Menu.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -251,12 +257,14 @@
             // 
             // button_Enviar
             // 
+            this.button_Enviar.Enabled = false;
             this.button_Enviar.Location = new System.Drawing.Point(711, 32);
             this.button_Enviar.Name = "button_Enviar";
             this.button_Enviar.Size = new System.Drawing.Size(91, 31);
             this.button_Enviar.TabIndex = 8;
             this.button_Enviar.Text = "Enviar";
             this.button_Enviar.UseVisualStyleBackColor = true;
+            this.button_Enviar.Visible = false;
             this.button_Enviar.Click += new System.EventHandler(this.button_Enviar_Click);
             // 
             // groupBox4

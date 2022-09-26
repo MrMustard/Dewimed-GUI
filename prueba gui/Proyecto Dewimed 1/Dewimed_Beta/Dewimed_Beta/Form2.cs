@@ -16,7 +16,7 @@ namespace Dewimed_Beta
 
     public partial class Form2 : Form
     {
-
+        int Tiempo = 150;
         double[] Registro_F0_C0 = new double[10]; // vector donde guardaraemos los valores de registros.
         double[] Incremento_F0_C0 = new double[10]; // vector donde guardaraemos los valores de incremento
         double[] mA_F0_C0 = new double[10];//Vector que indica valores de mA
@@ -148,13 +148,22 @@ namespace Dewimed_Beta
 
 
 
+        string factorv, factorc;
+
+
+
+
+
         string SerialDataIn;// string que recibe los datos enviados por el microcontrolador 
+
+        string SerialDataIn2;// string que recibe los datos enviados por el microcontrolador 
 
         //variable para identificar los index
         int   indexOfA, indexOfB, indexOfC, indexOfD, indexOfE, indexOfF, indexOfG, indexOfH, indexOfI, indexOfJ, indexOfK, indexOfL, indexOfM, indexOfN, indexOfO, indexOfP, 
                 indexOfQ,indexOfR, indexOfS, indexOfT, indexOfU, indexOfV, indexOfW, indexOfX, indexOfY, indexOfZ, indexOfa, indexOfb, indexOfc, indexOfd ;
-        
-        
+
+        int indexOff, indexOfg, indexOfh, indexOfi, indexOfj, indexOfk, indexOfl;// indices para leer voltajes 
+
         // STRING DONDE GUARDAREMOS LOS VALORES MAXIMOS Y MINIMOS
         string  String_F0_C0_MAX, String_F0_C0_MIN,
                 String_F0_C1_MAX, String_F0_C1_MIN,
@@ -178,6 +187,118 @@ namespace Dewimed_Beta
 
 
 
+        string StringTemp, StringVolt, StringI, StringF0, StringF1, StringF2;
+
+        private void TextBox_F2_Campo3_mA_Max_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox_DC_F0_Campo0_Min_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            button_leer.Enabled = false;
+            button_calcular.Enabled = false;
+            button_guardar.Enabled = false;
+            button_restaurar.Enabled = false;
+            button_limpiar.Enabled = false;
+            button_desconectar2.Enabled = false;
+            button_teclado.Enabled = false;
+
+            button_apagar.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+
+
+
+
+
+
+            try
+            {
+                // esto lo debemos que quitar a la hora de enviar al microcontrolador.
+                //serialPort_Form2.WriteLine("Debemos enviar las siguentes cadenas: \n");
+
+
+                double voltafac, currafact;
+
+                voltafac = Convert.ToDouble( factorVolt.Value);
+                currafact= Convert.ToDouble(factorCurr.Value);
+                //Siempre vamos a sumar 0.001 a voltafac y currafactpara asegurar que siempre se envien los 3 puntos decimales 
+
+                //**************************************************
+
+
+
+
+
+
+                //Correccion para corrientes
+
+
+                //Siempre vamos a sumar 0.001 a voltafac y currafactpara asegurar que siempre se envien los 3 puntos decimales 
+
+
+                //**************************************************
+
+
+
+
+
+                // factorv = Convert.ToString(factorVolt.Value);// COVNERTIMOS LOS VALORES A STRING
+                //factorc = Convert.ToString(factorCurr.Value);// COVNERTIMOS LOS VALORES A STRING
+
+                //serialPort_Form2.WriteLine("F0 C0 \n");
+
+                serialPort_Form2.WriteLine("X");// COMANDO PARA QUE PUEDA LEER LOS COMANDOS DE 3 CARACTERES
+                Thread.Sleep(100);//delay
+
+
+                serialPort_Form2.WriteLine("[V]");// COMANDO PARA QUE PUEDA LEER LOS COMANDOS DE 3 CARACTERES
+                Thread.Sleep(100);//delay
+
+
+
+               
+                serialPort_Form2.WriteLine(String.Format("{0:F3},{1:F3}", voltafac, currafact));
+                Thread.Sleep(1000);//delay
+               // serialPort_Form2.WriteLine("[N]");// COMANDO PARA QUE PUEDA LEER LOS COMANDOS DE 3 CARACTERES
+                //Thread.Sleep(100);//delay
+            }
+
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+
+
+            }
+
+            Thread.Sleep(2000);//delay
+            button_leer.Enabled = true;
+            button_calcular.Enabled = true;
+            button_guardar.Enabled = true;
+            button_restaurar.Enabled = true;
+            button_limpiar.Enabled = true;
+            button_desconectar2.Enabled = true;
+            button_teclado.Enabled = true;
+            button_apagar.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+
+
+        }
+
+        private void label201_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public Form2()
         {
             InitializeComponent();
@@ -196,6 +317,97 @@ namespace Dewimed_Beta
         private void button1_Click_2(object sender, EventArgs e)
         {
             MessageBox.Show("Valor minimo que puede introducir:1300.\nValor maximo que se puede introducir:9999\nValor 1300 equivale a 13% DC\nValor 9999 equivale a 99% DC");
+        }
+
+        private void label199_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label203_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label204_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (serialPort_Form2.IsOpen)
+
+
+            {
+
+                button_leer.Enabled = false;
+                button_calcular.Enabled = false;
+                button_guardar.Enabled = false;
+                button_restaurar.Enabled = false;
+                button_limpiar.Enabled = false;
+                button_desconectar2.Enabled = false;
+                button_teclado.Enabled = false;
+
+                button_apagar.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+
+
+
+                try
+
+                {
+
+
+
+
+                    serialPort_Form2.WriteLine("X");// COMANDO PARA QUE PUEDA LEER LOS COMANDOS DE 3 CARACTERES
+                    Thread.Sleep(1000);//delay
+
+                    serialPort_Form2.DiscardInBuffer();//descartamos el buffer de entrada si es que esta llegnado algo
+                    serialPort_Form2.WriteLine("[T]");
+
+                    SerialDataIn = serialPort_Form2.ReadLine();
+                    //SerialDataIn = serialPort_Form2.ReadExisting();
+
+                    //********************************************************************************************
+
+                    Thread.Sleep(1000);//delay
+                    Serial_IndexVolt();//realizamos la index
+
+                    Thread.Sleep(300);//delay
+                    serialPort_Form2.WriteLine("[N]");//indicamos que debe de volver a leer comandos de 1 caracter  
+                    Thread.Sleep(500);//delay
+
+
+                }
+
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+
+                }
+
+
+                button_leer.Enabled = true;
+                button_calcular.Enabled = true;
+                button_guardar.Enabled = true;
+                button_restaurar.Enabled = true;
+                button_limpiar.Enabled = true;
+                button_desconectar2.Enabled = true;
+                button_teclado.Enabled = true;
+                button_apagar.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+
+
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -220,6 +432,12 @@ namespace Dewimed_Beta
 
 
             button_guardar.Enabled = false;
+            tempTextBox.Text = String.Empty;
+            voltTextBox.Text = String.Empty;
+            If0TextBox.Text = String.Empty;
+            f0.Text = String.Empty;
+            f1.Text = String.Empty;
+            f2.Text= String.Empty;
             /*------------------------------------------------------------------------------------------*/
 
             TextBox_F0_Campo0_mA_Max.Text = String.Empty;
@@ -900,6 +1118,9 @@ namespace Dewimed_Beta
                 try
 
                 {
+                    serialPort_Form2.WriteLine("X");// COMANDO PARA QUE PUEDA LEER LOS COMANDOS DE 3 CARACTERES
+                    Thread.Sleep(100);//delay
+
                     serialPort_Form2.DiscardInBuffer();//descartamos el buffer de entrada si es que esta llegnado algo
                     serialPort_Form2.WriteLine("[R]");
 
@@ -911,6 +1132,9 @@ namespace Dewimed_Beta
 
                     Serial_Index();//realizamos la index
 
+
+                    serialPort_Form2.WriteLine("[N]");//indicamos que debe de volver a leer comandos de 1 caracter  
+                    Thread.Sleep(100);//delay
 
 
 
@@ -1003,7 +1227,7 @@ namespace Dewimed_Beta
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
 
 
             button_leer.Enabled = false;
@@ -1011,6 +1235,13 @@ namespace Dewimed_Beta
             button_guardar.Enabled = false;
             button_restaurar.Enabled = false;
             button_limpiar.Enabled = false;
+            button_desconectar2.Enabled = false;
+            button_teclado.Enabled = false;
+
+            button_apagar.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+
 
 
 
@@ -1018,17 +1249,23 @@ namespace Dewimed_Beta
             {
                 // esto lo debemos que quitar a la hora de enviar al microcontrolador.
                 //serialPort_Form2.WriteLine("Debemos enviar las siguentes cadenas: \n");
-            
-                
+
+
 
                 //serialPort_Form2.WriteLine("F0 C0 \n");
 
-
+                MessageBox.Show("No desconecte la CPU mientras se guardan los datos.Tiempo de grabado aproximado: 15 Segundos. CLICK en aceptar para coninuar.");
                 Convertir_Entero();// convertimos a enteros
                 Covnertir_a_String();//convertirmos enteros a string
                 Imprimir_Valores_Registros();// ahora imprimirmos los valores
-                Thread.Sleep(100);//delay
+                Thread.Sleep(500);//delay
+                serialPort_Form2.WriteLine("X");// 
+                Thread.Sleep(500);//delay
                 serialPort_Form2.WriteLine("$Z$");
+                Thread.Sleep(2000);//delay.
+                serialPort_Form2.WriteLine("[W]");
+                Thread.Sleep(500);//delay
+                MessageBox.Show("Datos guardados con éxito");
 
             }
 
@@ -1042,9 +1279,14 @@ namespace Dewimed_Beta
             }
             button_leer.Enabled = true;
             button_calcular.Enabled = true;
-            
+            button_guardar.Enabled = true;
             button_restaurar.Enabled = true;
             button_limpiar.Enabled = true;
+            button_desconectar2.Enabled = true;
+            button_teclado.Enabled = true;
+            button_apagar.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
 
 
             //label_Listo.Visible = false;
@@ -1115,58 +1357,58 @@ namespace Dewimed_Beta
 
             // ya que estan cargados los valores, procedemos a cargalos a lso text box
 
-            TextBox_F0_Campo0_Min.Text = Convert.ToString(Registro_F0_C0[0]);// cargamos el valor minimo
-            TextBox_F0_Campo0_Max.Text = Convert.ToString(Registro_F0_C0[9]);//cargamos el valor maximo
+            TextBox_F0_Campo0_Min.Text = Registro_F0_C0[0].ToString();// cargamos el valor minimo
+            TextBox_F0_Campo0_Max.Text = Registro_F0_C0[9].ToString();//cargamos el valor maximo
 
-            TextBox_F0_Campo1_Min.Text = Convert.ToString(Registro_F0_C1[0]);// cargamos el valor minimo
-            TextBox_F0_Campo1_Max.Text = Convert.ToString(Registro_F0_C1[9]);//cargamos el valor maximo
+            TextBox_F0_Campo1_Min.Text = Registro_F0_C1[0].ToString();// cargamos el valor minimo
+            TextBox_F0_Campo1_Max.Text = Registro_F0_C1[9].ToString();//cargamos el valor maximo
 
-            TextBox_F0_Campo2_Min.Text = Convert.ToString(Registro_F0_C2[0]);// cargamos el valor minimo
-            TextBox_F0_Campo2_Max.Text = Convert.ToString(Registro_F0_C2[9]);//cargamos el valor maximo
+            TextBox_F0_Campo2_Min.Text = Registro_F0_C2[0].ToString();// cargamos el valor minimo
+            TextBox_F0_Campo2_Max.Text = Registro_F0_C2[9].ToString();//cargamos el valor maximo
 
-            TextBox_F0_Campo3_Min.Text = Convert.ToString(Registro_F0_C3[0]);// cargamos el valor minimo
-            TextBox_F0_Campo3_Max.Text = Convert.ToString(Registro_F0_C3[9]);//cargamos el valor maximo
+            TextBox_F0_Campo3_Min.Text = Registro_F0_C3[0].ToString();// cargamos el valor minimo
+            TextBox_F0_Campo3_Max.Text = Registro_F0_C3[9].ToString();//cargamos el valor maximo
 
-            TextBox_F0_Campo4_Min.Text = Convert.ToString(Registro_F0_C4[0]);// cargamos el valor minimo
-            TextBox_F0_Campo4_Max.Text = Convert.ToString(Registro_F0_C4[9]);//cargamos el valor maximo
+            TextBox_F0_Campo4_Min.Text = Registro_F0_C4[0].ToString();// cargamos el valor minimo
+            TextBox_F0_Campo4_Max.Text = Registro_F0_C4[9].ToString();//cargamos el valor maximo
             /*----------------------------------------------------------------------------------------------------------*/
 
 
 
-            TextBox_F1_Campo0_Min.Text = Convert.ToString(Registro_F1_C0[0]);// cargamos el valor minimo
-            TextBox_F1_Campo0_Max.Text = Convert.ToString(Registro_F1_C0[9]);//cargamos el valor maximo
+            TextBox_F1_Campo0_Min.Text = Registro_F1_C0[0].ToString();// cargamos el valor minimo
+            TextBox_F1_Campo0_Max.Text = Registro_F1_C0[9].ToString();//cargamos el valor maximo
 
-            TextBox_F1_Campo1_Min.Text = Convert.ToString(Registro_F1_C1[0]);// cargamos el valor minimo
-            TextBox_F1_Campo1_Max.Text = Convert.ToString(Registro_F1_C1[9]);//cargamos el valor maximo
+            TextBox_F1_Campo1_Min.Text = Registro_F1_C1[0].ToString();// cargamos el valor minimo
+            TextBox_F1_Campo1_Max.Text = Registro_F1_C1[9].ToString();//cargamos el valor maximo
 
-            TextBox_F1_Campo2_Min.Text = Convert.ToString(Registro_F1_C2[0]);// cargamos el valor minimo
-            TextBox_F1_Campo2_Max.Text = Convert.ToString(Registro_F1_C2[9]);//cargamos el valor maximo
+            TextBox_F1_Campo2_Min.Text = Registro_F1_C2[0].ToString();// cargamos el valor minimo
+            TextBox_F1_Campo2_Max.Text = Registro_F1_C2[9].ToString();//cargamos el valor maximo
 
-            TextBox_F1_Campo3_Min.Text = Convert.ToString(Registro_F1_C3[0]);// cargamos el valor minimo
-            TextBox_F1_Campo3_Max.Text = Convert.ToString(Registro_F1_C3[9]);//cargamos el valor maximo
+            TextBox_F1_Campo3_Min.Text = Registro_F1_C3[0].ToString();// cargamos el valor minimo
+            TextBox_F1_Campo3_Max.Text = Registro_F1_C3[9].ToString();//cargamos el valor maximo
 
-            TextBox_F1_Campo4_Min.Text = Convert.ToString(Registro_F1_C4[0]);// cargamos el valor minimo
-            TextBox_F1_Campo4_Max.Text = Convert.ToString(Registro_F1_C4[9]);//cargamos el valor maximo
+            TextBox_F1_Campo4_Min.Text = Registro_F1_C4[0].ToString();// cargamos el valor minimo
+            TextBox_F1_Campo4_Max.Text = Registro_F1_C4[9].ToString();//cargamos el valor maximo
             /*----------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-            TextBox_F2_Campo0_Min.Text = Convert.ToString(Registro_F2_C0[0]);// cargamos el valor minimo
-            TextBox_F2_Campo0_Max.Text = Convert.ToString(Registro_F2_C0[9]);//cargamos el valor maximo
+            TextBox_F2_Campo0_Min.Text = Registro_F2_C0[0].ToString();// cargamos el valor minimo
+            TextBox_F2_Campo0_Max.Text = Registro_F2_C0[9].ToString();//cargamos el valor maximo
 
-            TextBox_F2_Campo1_Min.Text = Convert.ToString(Registro_F2_C1[0]);// cargamos el valor minimo
-            TextBox_F2_Campo1_Max.Text = Convert.ToString(Registro_F2_C1[9]);//cargamos el valor maximo
+            TextBox_F2_Campo1_Min.Text = Registro_F2_C1[0].ToString();// cargamos el valor minimo
+            TextBox_F2_Campo1_Max.Text = Registro_F2_C1[9].ToString();//cargamos el valor maximo
 
-            TextBox_F2_Campo2_Min.Text = Convert.ToString(Registro_F2_C2[0]);// cargamos el valor minimo
-            TextBox_F2_Campo2_Max.Text = Convert.ToString(Registro_F2_C2[9]);//cargamos el valor maximo
+            TextBox_F2_Campo2_Min.Text = Registro_F2_C2[0].ToString();// cargamos el valor minimo
+            TextBox_F2_Campo2_Max.Text = Registro_F2_C2[9].ToString();//cargamos el valor maximo
 
-            TextBox_F2_Campo3_Min.Text = Convert.ToString(Registro_F2_C3[0]);// cargamos el valor minimo
-            TextBox_F2_Campo3_Max.Text = Convert.ToString(Registro_F2_C3[9]);//cargamos el valor maximo
+            TextBox_F2_Campo3_Min.Text = Registro_F2_C3[0].ToString();// cargamos el valor minimo
+            TextBox_F2_Campo3_Max.Text = Registro_F2_C3[9].ToString();//cargamos el valor maximo
 
-            TextBox_F2_Campo4_Min.Text = Convert.ToString(Registro_F2_C4[0]);// cargamos el valor minimo
-            TextBox_F2_Campo4_Max.Text = Convert.ToString(Registro_F2_C4[9]);//cargamos el valor maximo
+            TextBox_F2_Campo4_Min.Text = Registro_F2_C4[0].ToString();// cargamos el valor minimo
+            TextBox_F2_Campo4_Max.Text = Registro_F2_C4[9].ToString();//cargamos el valor maximo
             /*----------------------------------------------------------------------------------------------------------*/
 
 
@@ -1349,68 +1591,68 @@ namespace Dewimed_Beta
 
         public void ImprimirDc()
         {
+            //serialPort_Form2.WriteLine(String.Format("{0:F3},{1:F3}", voltafac, currafact));
+            TextBox_DC_F0_Campo0_Min.Text =DC_F0_C0[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F0_Campo0_Max.Text = DC_F0_C0[9].ToString("N2");// imprimirmos el valor maximo 
 
-            TextBox_DC_F0_Campo0_Min.Text = Convert.ToString(DC_F0_C0[0]);// imprimirmos el valor minimo
-            TextBox_DC_F0_Campo0_Max.Text = Convert.ToString(DC_F0_C0[9]);// imprimirmos el valor maximo 
-
-            TextBox_DC_F0_Campo1_Min.Text = Convert.ToString(DC_F0_C1[0]);// imprimirmos el valor minimo
-            TextBox_DC_F0_Campo1_Max.Text = Convert.ToString(DC_F0_C1[9]);// imprimirmos el valor maximo 
-
-
-            TextBox_DC_F0_Campo2_Min.Text = Convert.ToString(DC_F0_C2[0]);// imprimirmos el valor minimo
-            TextBox_DC_F0_Campo2_Max.Text = Convert.ToString(DC_F0_C2[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F0_Campo1_Min.Text = DC_F0_C1[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F0_Campo1_Max.Text = DC_F0_C1[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F0_Campo3_Min.Text = Convert.ToString(DC_F0_C3[0]);// imprimirmos el valor minimo
-            TextBox_DC_F0_Campo3_Max.Text = Convert.ToString(DC_F0_C3[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F0_Campo2_Min.Text = DC_F0_C2[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F0_Campo2_Max.Text = DC_F0_C2[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F0_Campo4_Min.Text = Convert.ToString(DC_F0_C4[0]);// imprimirmos el valor minimo
-            TextBox_DC_F0_Campo4_Max.Text = Convert.ToString(DC_F0_C4[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F0_Campo3_Min.Text = DC_F0_C3[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F0_Campo3_Max.Text = DC_F0_C3[9].ToString("N2");// imprimirmos el valor maximo 
+
+
+            TextBox_DC_F0_Campo4_Min.Text =DC_F0_C4[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F0_Campo4_Max.Text = DC_F0_C4[9].ToString("N2");// imprimirmos el valor maximo 
 
 
             /*ahora para F1*/
 
 
-            TextBox_DC_F1_Campo0_Min.Text = Convert.ToString(DC_F1_C0[0]);// imprimirmos el valor minimo
-            TextBox_DC_F1_Campo0_Max.Text = Convert.ToString(DC_F1_C0[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F1_Campo0_Min.Text = DC_F1_C0[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F1_Campo0_Max.Text = DC_F1_C0[9].ToString("N2");// imprimirmos el valor maximo 
 
-            TextBox_DC_F1_Campo1_Min.Text = Convert.ToString(DC_F1_C1[0]);// imprimirmos el valor minimo
-            TextBox_DC_F1_Campo1_Max.Text = Convert.ToString(DC_F1_C1[9]);// imprimirmos el valor maximo 
-
-
-            TextBox_DC_F1_Campo2_Min.Text = Convert.ToString(DC_F1_C2[0]);// imprimirmos el valor minimo
-            TextBox_DC_F1_Campo2_Max.Text = Convert.ToString(DC_F1_C2[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F1_Campo1_Min.Text = DC_F1_C1[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F1_Campo1_Max.Text = DC_F1_C1[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F1_Campo3_Min.Text = Convert.ToString(DC_F1_C3[0]);// imprimirmos el valor minimo
-            TextBox_DC_F1_Campo3_Max.Text = Convert.ToString(DC_F1_C3[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F1_Campo2_Min.Text = DC_F1_C2[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F1_Campo2_Max.Text = DC_F1_C2[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F1_Campo4_Min.Text = Convert.ToString(DC_F1_C4[0]);// imprimirmos el valor minimo
-            TextBox_DC_F1_Campo4_Max.Text = Convert.ToString(DC_F1_C4[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F1_Campo3_Min.Text = DC_F1_C3[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F1_Campo3_Max.Text =DC_F1_C3[9].ToString("N2");// imprimirmos el valor maximo 
+
+
+            TextBox_DC_F1_Campo4_Min.Text = DC_F1_C4[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F1_Campo4_Max.Text = DC_F1_C4[9].ToString("N2");// imprimirmos el valor maximo 
 
             /*Ahora para campo F2 */
 
 
 
-            TextBox_DC_F2_Campo0_Min.Text = Convert.ToString(DC_F2_C0[0]);// imprimirmos el valor minimo
-            TextBox_DC_F2_Campo0_Max.Text = Convert.ToString(DC_F2_C0[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F2_Campo0_Min.Text = DC_F2_C0[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F2_Campo0_Max.Text =DC_F2_C0[9].ToString("N2");// imprimirmos el valor maximo 
 
-            TextBox_DC_F2_Campo1_Min.Text = Convert.ToString(DC_F2_C1[0]);// imprimirmos el valor minimo
-            TextBox_DC_F2_Campo1_Max.Text = Convert.ToString(DC_F2_C1[9]);// imprimirmos el valor maximo 
-
-
-            TextBox_DC_F2_Campo2_Min.Text = Convert.ToString(DC_F2_C2[0]);// imprimirmos el valor minimo
-            TextBox_DC_F2_Campo2_Max.Text = Convert.ToString(DC_F2_C2[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F2_Campo1_Min.Text = DC_F2_C1[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F2_Campo1_Max.Text = DC_F2_C1[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F2_Campo3_Min.Text = Convert.ToString(DC_F2_C3[0]);// imprimirmos el valor minimo
-            TextBox_DC_F2_Campo3_Max.Text = Convert.ToString(DC_F2_C3[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F2_Campo2_Min.Text = DC_F2_C2[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F2_Campo2_Max.Text =DC_F2_C2[9].ToString("N2");// imprimirmos el valor maximo 
 
 
-            TextBox_DC_F2_Campo4_Min.Text = Convert.ToString(DC_F2_C4[0]);// imprimirmos el valor minimo
-            TextBox_DC_F2_Campo4_Max.Text = Convert.ToString(DC_F2_C4[9]);// imprimirmos el valor maximo 
+            TextBox_DC_F2_Campo3_Min.Text = DC_F2_C3[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F2_Campo3_Max.Text = DC_F2_C3[9].ToString("N2");// imprimirmos el valor maximo 
+
+
+            TextBox_DC_F2_Campo4_Min.Text = DC_F2_C4[0].ToString("N2");// imprimirmos el valor minimo
+            TextBox_DC_F2_Campo4_Max.Text = DC_F2_C4[9].ToString("N2");// imprimirmos el valor maximo 
 
         }
 
@@ -1482,55 +1724,55 @@ namespace Dewimed_Beta
 
         public void Imprimir_mA()
         {
-            TextBox_F0_Campo0_mA_Max.Text = Convert.ToString(mA_F0_C0[0]);// imprimimos valor minimo
-            TextBox_F0_Campo0_mA_Min.Text = Convert.ToString(mA_F0_C0[9]);// imprimimos valor minimo
+            TextBox_F0_Campo0_mA_Max.Text = mA_F0_C0[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F0_Campo0_mA_Min.Text = mA_F0_C0[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F0_Campo1_mA_Max.Text = Convert.ToString(mA_F0_C1[0]);// imprimimos valor minimo
-            TextBox_F0_Campo1_mA_Min.Text = Convert.ToString(mA_F0_C1[9]);// imprimimos valor minimo
+            TextBox_F0_Campo1_mA_Max.Text = mA_F0_C1[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F0_Campo1_mA_Min.Text = mA_F0_C1[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F0_Campo2_mA_Max.Text = Convert.ToString(mA_F0_C2[0]);// imprimimos valor minimo
-            TextBox_F0_Campo2_mA_Min.Text = Convert.ToString(mA_F0_C2[9]);// imprimimos valor minimo
+            TextBox_F0_Campo2_mA_Max.Text = mA_F0_C2[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F0_Campo2_mA_Min.Text = mA_F0_C2[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F0_Campo3_mA_Max.Text = Convert.ToString(mA_F0_C3[0]);// imprimimos valor minimo
-            TextBox_F0_Campo3_mA_Min.Text = Convert.ToString(mA_F0_C3[9]);// imprimimos valor minimo
+            TextBox_F0_Campo3_mA_Max.Text =mA_F0_C3[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F0_Campo3_mA_Min.Text = mA_F0_C3[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F0_Campo4_mA_Max.Text = Convert.ToString(mA_F0_C4[0]);// imprimimos valor minimo
-            TextBox_F0_Campo4_mA_Min.Text = Convert.ToString(mA_F0_C4[9]);// imprimimos valor minimo
-
-            /*------------------------------------------------------------------------------------------------*/
-
-
-            TextBox_F1_Campo0_mA_Max.Text = Convert.ToString(mA_F1_C0[0]);// imprimimos valor minimo
-            TextBox_F1_Campo0_mA_Min.Text = Convert.ToString(mA_F1_C0[9]);// imprimimos valor minimo
-
-            TextBox_F1_Campo1_mA_Max.Text = Convert.ToString(mA_F1_C1[0]);// imprimimos valor minimo
-            TextBox_F1_Campo1_mA_Min.Text = Convert.ToString(mA_F1_C1[9]);// imprimimos valor minimo
-
-            TextBox_F1_Campo2_mA_Max.Text = Convert.ToString(mA_F1_C2[0]);// imprimimos valor minimo
-            TextBox_F1_Campo2_mA_Min.Text = Convert.ToString(mA_F1_C2[9]);// imprimimos valor minimo
-
-            TextBox_F1_Campo3_mA_Max.Text = Convert.ToString(mA_F1_C3[0]);// imprimimos valor minimo
-            TextBox_F1_Campo3_mA_Min.Text = Convert.ToString(mA_F1_C3[9]);// imprimimos valor minimo
-
-            TextBox_F1_Campo4_mA_Max.Text = Convert.ToString(mA_F1_C4[0]);// imprimimos valor minimo
-            TextBox_F1_Campo4_mA_Min.Text = Convert.ToString(mA_F1_C4[9]);// imprimimos valor minimo
+            TextBox_F0_Campo4_mA_Max.Text = mA_F0_C4[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F0_Campo4_mA_Min.Text = mA_F0_C4[9].ToString("N2");// imprimimos valor minimo
 
             /*------------------------------------------------------------------------------------------------*/
 
-            TextBox_F2_Campo0_mA_Max.Text = Convert.ToString(mA_F2_C0[0]);// imprimimos valor minimo
-            TextBox_F2_Campo0_mA_Min.Text = Convert.ToString(mA_F2_C0[9]);// imprimimos valor minimo
 
-            TextBox_F2_Campo1_mA_Max.Text = Convert.ToString(mA_F2_C1[0]);// imprimimos valor minimo
-            TextBox_F2_Campo1_mA_Min.Text = Convert.ToString(mA_F2_C1[9]);// imprimimos valor minimo
+            TextBox_F1_Campo0_mA_Max.Text = mA_F1_C0[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F1_Campo0_mA_Min.Text = mA_F1_C0[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F2_Campo2_mA_Max.Text = Convert.ToString(mA_F2_C2[0]);// imprimimos valor minimo
-            TextBox_F2_Campo2_mA_Min.Text = Convert.ToString(mA_F2_C2[9]);// imprimimos valor minimo
+            TextBox_F1_Campo1_mA_Max.Text = mA_F1_C1[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F1_Campo1_mA_Min.Text = mA_F1_C1[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F2_Campo3_mA_Max.Text = Convert.ToString(mA_F2_C3[0]);// imprimimos valor minimo
-            TextBox_F2_Campo3_mA_Min.Text = Convert.ToString(mA_F2_C3[9]);// imprimimos valor minimo
+            TextBox_F1_Campo2_mA_Max.Text = mA_F1_C2[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F1_Campo2_mA_Min.Text = mA_F1_C2[9].ToString("N2");// imprimimos valor minimo
 
-            TextBox_F2_Campo4_mA_Max.Text = Convert.ToString(mA_F2_C4[0]);// imprimimos valor minimo
-            TextBox_F2_Campo4_mA_Min.Text = Convert.ToString(mA_F2_C4[9]);// imprimimos valor minimo
+            TextBox_F1_Campo3_mA_Max.Text = mA_F1_C3[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F1_Campo3_mA_Min.Text = mA_F1_C3[9].ToString("N2");// imprimimos valor minimo
+
+            TextBox_F1_Campo4_mA_Max.Text = mA_F1_C4[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F1_Campo4_mA_Min.Text = mA_F1_C4[9].ToString("N2");// imprimimos valor minimo
+
+            /*------------------------------------------------------------------------------------------------*/
+
+            TextBox_F2_Campo0_mA_Max.Text = mA_F2_C0[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F2_Campo0_mA_Min.Text = mA_F2_C0[9].ToString("N2");// imprimimos valor minimo
+
+            TextBox_F2_Campo1_mA_Max.Text = mA_F2_C1[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F2_Campo1_mA_Min.Text = mA_F2_C1[9].ToString("N2");// imprimimos valor minimo
+
+            TextBox_F2_Campo2_mA_Max.Text = mA_F2_C2[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F2_Campo2_mA_Min.Text = mA_F2_C2[9].ToString("N2");// imprimimos valor minimo
+
+            TextBox_F2_Campo3_mA_Max.Text = mA_F2_C3[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F2_Campo3_mA_Min.Text = mA_F2_C3[9].ToString("N2");// imprimimos valor minimo
+
+            TextBox_F2_Campo4_mA_Max.Text = mA_F2_C4[0].ToString("N2");// imprimimos valor minimo
+            TextBox_F2_Campo4_mA_Min.Text = mA_F2_C4[9].ToString("N2");// imprimimos valor minimo
 
             /*------------------------------------------------------------------------------------------------*/
 
@@ -2615,194 +2857,194 @@ namespace Dewimed_Beta
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F0  C0-------------------------------------------*/
-            TextBox_F0_C0_mA_1.Text = Convert.ToString(mA_F0_C0[1]);
-            TextBox_F0_C0_mA_2.Text = Convert.ToString(mA_F0_C0[2]);
-            TextBox_F0_C0_mA_3.Text = Convert.ToString(mA_F0_C0[3]);
-            TextBox_F0_C0_mA_4.Text = Convert.ToString(mA_F0_C0[4]);
-            TextBox_F0_C0_mA_5.Text = Convert.ToString(mA_F0_C0[5]);
-            TextBox_F0_C0_mA_6.Text = Convert.ToString(mA_F0_C0[6]);
-            TextBox_F0_C0_mA_7.Text = Convert.ToString(mA_F0_C0[7]);
-            TextBox_F0_C0_mA_8.Text = Convert.ToString(mA_F0_C0[8]);
+            TextBox_F0_C0_mA_1.Text = mA_F0_C0[1].ToString("N2");
+            TextBox_F0_C0_mA_2.Text = mA_F0_C0[2].ToString("N2");
+            TextBox_F0_C0_mA_3.Text = mA_F0_C0[3].ToString("N2");
+            TextBox_F0_C0_mA_4.Text = mA_F0_C0[4].ToString("N2");
+            TextBox_F0_C0_mA_5.Text = mA_F0_C0[5].ToString("N2");
+            TextBox_F0_C0_mA_6.Text = mA_F0_C0[6].ToString("N2");
+            TextBox_F0_C0_mA_7.Text = mA_F0_C0[7].ToString("N2");
+            TextBox_F0_C0_mA_8.Text = mA_F0_C0[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F0  C1-------------------------------------------*/
-            TextBox_F0_C1_mA_1.Text = Convert.ToString(mA_F0_C1[1]);
-            TextBox_F0_C1_mA_2.Text = Convert.ToString(mA_F0_C1[2]);
-            TextBox_F0_C1_mA_3.Text = Convert.ToString(mA_F0_C1[3]);
-            TextBox_F0_C1_mA_4.Text = Convert.ToString(mA_F0_C1[4]);
-            TextBox_F0_C1_mA_5.Text = Convert.ToString(mA_F0_C1[5]);
-            TextBox_F0_C1_mA_6.Text = Convert.ToString(mA_F0_C1[6]);
-            TextBox_F0_C1_mA_7.Text = Convert.ToString(mA_F0_C1[7]);
-            TextBox_F0_C1_mA_8.Text = Convert.ToString(mA_F0_C1[8]);
+            TextBox_F0_C1_mA_1.Text = mA_F0_C1[1].ToString("N2");
+            TextBox_F0_C1_mA_2.Text = mA_F0_C1[2].ToString("N2");
+            TextBox_F0_C1_mA_3.Text = mA_F0_C1[3].ToString("N2");
+            TextBox_F0_C1_mA_4.Text = mA_F0_C1[4].ToString("N2");
+            TextBox_F0_C1_mA_5.Text = mA_F0_C1[5].ToString("N2");
+            TextBox_F0_C1_mA_6.Text = mA_F0_C1[6].ToString("N2");
+            TextBox_F0_C1_mA_7.Text = mA_F0_C1[7].ToString("N2");
+            TextBox_F0_C1_mA_8.Text = mA_F0_C1[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F0  C2-------------------------------------------*/
-            TextBox_F0_C2_mA_1.Text = Convert.ToString(mA_F0_C2[1]);
-            TextBox_F0_C2_mA_2.Text = Convert.ToString(mA_F0_C2[2]);
-            TextBox_F0_C2_mA_3.Text = Convert.ToString(mA_F0_C2[3]);
-            TextBox_F0_C2_mA_4.Text = Convert.ToString(mA_F0_C2[4]);
-            TextBox_F0_C2_mA_5.Text = Convert.ToString(mA_F0_C2[5]);
-            TextBox_F0_C2_mA_6.Text = Convert.ToString(mA_F0_C2[6]);
-            TextBox_F0_C2_mA_7.Text = Convert.ToString(mA_F0_C2[7]);
-            TextBox_F0_C2_mA_8.Text = Convert.ToString(mA_F0_C2[8]);
+            TextBox_F0_C2_mA_1.Text = mA_F0_C2[1].ToString("N2");
+            TextBox_F0_C2_mA_2.Text = mA_F0_C2[2].ToString("N2");
+            TextBox_F0_C2_mA_3.Text = mA_F0_C2[3].ToString("N2");
+            TextBox_F0_C2_mA_4.Text = mA_F0_C2[4].ToString("N2");
+            TextBox_F0_C2_mA_5.Text = mA_F0_C2[5].ToString("N2");
+            TextBox_F0_C2_mA_6.Text = mA_F0_C2[6].ToString("N2");
+            TextBox_F0_C2_mA_7.Text = mA_F0_C2[7].ToString("N2");
+            TextBox_F0_C2_mA_8.Text = mA_F0_C2[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F0  C3-------------------------------------------*/
-            TextBox_F0_C3_mA_1.Text = Convert.ToString(mA_F0_C3[1]);
-            TextBox_F0_C3_mA_2.Text = Convert.ToString(mA_F0_C3[2]);
-            TextBox_F0_C3_mA_3.Text = Convert.ToString(mA_F0_C3[3]);
-            TextBox_F0_C3_mA_4.Text = Convert.ToString(mA_F0_C3[4]);
-            TextBox_F0_C3_mA_5.Text = Convert.ToString(mA_F0_C3[5]);
-            TextBox_F0_C3_mA_6.Text = Convert.ToString(mA_F0_C3[6]);
-            TextBox_F0_C3_mA_7.Text = Convert.ToString(mA_F0_C3[7]);
-            TextBox_F0_C3_mA_8.Text = Convert.ToString(mA_F0_C3[8]);
+            TextBox_F0_C3_mA_1.Text = mA_F0_C3[1].ToString("N2");
+            TextBox_F0_C3_mA_2.Text = mA_F0_C3[2].ToString("N2");
+            TextBox_F0_C3_mA_3.Text = mA_F0_C3[3].ToString("N2");
+            TextBox_F0_C3_mA_4.Text = mA_F0_C3[4].ToString("N2");
+            TextBox_F0_C3_mA_5.Text = mA_F0_C3[5].ToString("N2");
+            TextBox_F0_C3_mA_6.Text = mA_F0_C3[6].ToString("N2");
+            TextBox_F0_C3_mA_7.Text = mA_F0_C3[7].ToString("N2");
+            TextBox_F0_C3_mA_8.Text = mA_F0_C3[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F0  C4-------------------------------------------*/
-            TextBox_F0_C4_mA_1.Text = Convert.ToString(mA_F0_C4[1]);
-            TextBox_F0_C4_mA_2.Text = Convert.ToString(mA_F0_C4[2]);
-            TextBox_F0_C4_mA_3.Text = Convert.ToString(mA_F0_C4[3]);
-            TextBox_F0_C4_mA_4.Text = Convert.ToString(mA_F0_C4[4]);
-            TextBox_F0_C4_mA_5.Text = Convert.ToString(mA_F0_C4[5]);
-            TextBox_F0_C4_mA_6.Text = Convert.ToString(mA_F0_C4[6]);
-            TextBox_F0_C4_mA_7.Text = Convert.ToString(mA_F0_C4[7]);
-            TextBox_F0_C4_mA_8.Text = Convert.ToString(mA_F0_C4[8]);
+            TextBox_F0_C4_mA_1.Text = mA_F0_C4[1].ToString("N2");
+            TextBox_F0_C4_mA_2.Text = mA_F0_C4[2].ToString("N2");
+            TextBox_F0_C4_mA_3.Text = mA_F0_C4[3].ToString("N2");
+            TextBox_F0_C4_mA_4.Text = mA_F0_C4[4].ToString("N2");
+            TextBox_F0_C4_mA_5.Text = mA_F0_C4[5].ToString("N2");
+            TextBox_F0_C4_mA_6.Text = mA_F0_C4[6].ToString("N2");
+            TextBox_F0_C4_mA_7.Text = mA_F0_C4[7].ToString("N2");
+            TextBox_F0_C4_mA_8.Text = mA_F0_C4[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F1  C0-------------------------------------------*/
-            TextBox_F1_C0_mA_1.Text = Convert.ToString(mA_F1_C0[1]);
-            TextBox_F1_C0_mA_2.Text = Convert.ToString(mA_F1_C0[2]);
-            TextBox_F1_C0_mA_3.Text = Convert.ToString(mA_F1_C0[3]);
-            TextBox_F1_C0_mA_4.Text = Convert.ToString(mA_F1_C0[4]);
-            TextBox_F1_C0_mA_5.Text = Convert.ToString(mA_F1_C0[5]);
-            TextBox_F1_C0_mA_6.Text = Convert.ToString(mA_F1_C0[6]);
-            TextBox_F1_C0_mA_7.Text = Convert.ToString(mA_F1_C0[7]);
-            TextBox_F1_C0_mA_8.Text = Convert.ToString(mA_F1_C0[8]);
+            TextBox_F1_C0_mA_1.Text = mA_F1_C0[1].ToString("N2");
+            TextBox_F1_C0_mA_2.Text = mA_F1_C0[2].ToString("N2");
+            TextBox_F1_C0_mA_3.Text = mA_F1_C0[3].ToString("N2");
+            TextBox_F1_C0_mA_4.Text = mA_F1_C0[4].ToString("N2");
+            TextBox_F1_C0_mA_5.Text = mA_F1_C0[5].ToString("N2");
+            TextBox_F1_C0_mA_6.Text = mA_F1_C0[6].ToString("N2");
+            TextBox_F1_C0_mA_7.Text = mA_F1_C0[7].ToString("N2");
+            TextBox_F1_C0_mA_8.Text = mA_F1_C0[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F1  C1-------------------------------------------*/
-            TextBox_F1_C1_mA_1.Text = Convert.ToString(mA_F1_C1[1]);
-            TextBox_F1_C1_mA_2.Text = Convert.ToString(mA_F1_C1[2]);
-            TextBox_F1_C1_mA_3.Text = Convert.ToString(mA_F1_C1[3]);
-            TextBox_F1_C1_mA_4.Text = Convert.ToString(mA_F1_C1[4]);
-            TextBox_F1_C1_mA_5.Text = Convert.ToString(mA_F1_C1[5]);
-            TextBox_F1_C1_mA_6.Text = Convert.ToString(mA_F1_C1[6]);
-            TextBox_F1_C1_mA_7.Text = Convert.ToString(mA_F1_C1[7]);
-            TextBox_F1_C1_mA_8.Text = Convert.ToString(mA_F1_C1[8]);
+            TextBox_F1_C1_mA_1.Text = mA_F1_C1[1].ToString("N2");
+            TextBox_F1_C1_mA_2.Text = mA_F1_C1[2].ToString("N2");
+            TextBox_F1_C1_mA_3.Text = mA_F1_C1[3].ToString("N2");
+            TextBox_F1_C1_mA_4.Text = mA_F1_C1[4].ToString("N2");
+            TextBox_F1_C1_mA_5.Text = mA_F1_C1[5].ToString("N2");
+            TextBox_F1_C1_mA_6.Text = mA_F1_C1[6].ToString("N2");
+            TextBox_F1_C1_mA_7.Text = mA_F1_C1[7].ToString("N2");
+            TextBox_F1_C1_mA_8.Text = mA_F1_C1[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F1  C2-------------------------------------------*/
-            TextBox_F1_C2_mA_1.Text = Convert.ToString(mA_F1_C2[1]);
-            TextBox_F1_C2_mA_2.Text = Convert.ToString(mA_F1_C2[2]);
-            TextBox_F1_C2_mA_3.Text = Convert.ToString(mA_F1_C2[3]);
-            TextBox_F1_C2_mA_4.Text = Convert.ToString(mA_F1_C2[4]);
-            TextBox_F1_C2_mA_5.Text = Convert.ToString(mA_F1_C2[5]);
-            TextBox_F1_C2_mA_6.Text = Convert.ToString(mA_F1_C2[6]);
-            TextBox_F1_C2_mA_7.Text = Convert.ToString(mA_F1_C2[7]);
-            TextBox_F1_C2_mA_8.Text = Convert.ToString(mA_F1_C2[8]);
+            TextBox_F1_C2_mA_1.Text = mA_F1_C2[1].ToString("N2");
+            TextBox_F1_C2_mA_2.Text = mA_F1_C2[2].ToString("N2");
+            TextBox_F1_C2_mA_3.Text = mA_F1_C2[3].ToString("N2");
+            TextBox_F1_C2_mA_4.Text = mA_F1_C2[4].ToString("N2");
+            TextBox_F1_C2_mA_5.Text = mA_F1_C2[5].ToString("N2");
+            TextBox_F1_C2_mA_6.Text = mA_F1_C2[6].ToString("N2");
+            TextBox_F1_C2_mA_7.Text = mA_F1_C2[7].ToString("N2");
+            TextBox_F1_C2_mA_8.Text = mA_F1_C2[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F1  C3-------------------------------------------*/
-            TextBox_F1_C3_mA_1.Text = Convert.ToString(mA_F1_C3[1]);
-            TextBox_F1_C3_mA_2.Text = Convert.ToString(mA_F1_C3[2]);
-            TextBox_F1_C3_mA_3.Text = Convert.ToString(mA_F1_C3[3]);
-            TextBox_F1_C3_mA_4.Text = Convert.ToString(mA_F1_C3[4]);
-            TextBox_F1_C3_mA_5.Text = Convert.ToString(mA_F1_C3[5]);
-            TextBox_F1_C3_mA_6.Text = Convert.ToString(mA_F1_C3[6]);
-            TextBox_F1_C3_mA_7.Text = Convert.ToString(mA_F1_C3[7]);
-            TextBox_F1_C3_mA_8.Text = Convert.ToString(mA_F1_C3[8]);
+            TextBox_F1_C3_mA_1.Text = mA_F1_C3[1].ToString("N2");
+            TextBox_F1_C3_mA_2.Text = mA_F1_C3[2].ToString("N2");
+            TextBox_F1_C3_mA_3.Text = mA_F1_C3[3].ToString("N2");
+            TextBox_F1_C3_mA_4.Text = mA_F1_C3[4].ToString("N2");
+            TextBox_F1_C3_mA_5.Text = mA_F1_C3[5].ToString("N2");
+            TextBox_F1_C3_mA_6.Text = mA_F1_C3[6].ToString("N2");
+            TextBox_F1_C3_mA_7.Text = mA_F1_C3[7].ToString("N2");
+            TextBox_F1_C3_mA_8.Text = mA_F1_C3[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F1  C4-------------------------------------------*/
-            TextBox_F1_C4_mA_1.Text = Convert.ToString(mA_F1_C4[1]);
-            TextBox_F1_C4_mA_2.Text = Convert.ToString(mA_F1_C4[2]);
-            TextBox_F1_C4_mA_3.Text = Convert.ToString(mA_F1_C4[3]);
-            TextBox_F1_C4_mA_4.Text = Convert.ToString(mA_F1_C4[4]);
-            TextBox_F1_C4_mA_5.Text = Convert.ToString(mA_F1_C4[5]);
-            TextBox_F1_C4_mA_6.Text = Convert.ToString(mA_F1_C4[6]);
-            TextBox_F1_C4_mA_7.Text = Convert.ToString(mA_F1_C4[7]);
-            TextBox_F1_C4_mA_8.Text = Convert.ToString(mA_F1_C4[8]);
+            TextBox_F1_C4_mA_1.Text = mA_F1_C4[1].ToString("N2");
+            TextBox_F1_C4_mA_2.Text =mA_F1_C4[2].ToString("N2");
+            TextBox_F1_C4_mA_3.Text = mA_F1_C4[3].ToString("N2");
+            TextBox_F1_C4_mA_4.Text = mA_F1_C4[4].ToString("N2");
+            TextBox_F1_C4_mA_5.Text = mA_F1_C4[5].ToString("N2");
+            TextBox_F1_C4_mA_6.Text = mA_F1_C4[6].ToString("N2");
+            TextBox_F1_C4_mA_7.Text = mA_F1_C4[7].ToString("N2");
+            TextBox_F1_C4_mA_8.Text = mA_F1_C4[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F2  C0-------------------------------------------*/
-            TextBox_F2_C0_mA_1.Text = Convert.ToString(mA_F2_C0[1]);
-            TextBox_F2_C0_mA_2.Text = Convert.ToString(mA_F2_C0[2]);
-            TextBox_F2_C0_mA_3.Text = Convert.ToString(mA_F2_C0[3]);
-            TextBox_F2_C0_mA_4.Text = Convert.ToString(mA_F2_C0[4]);
-            TextBox_F2_C0_mA_5.Text = Convert.ToString(mA_F2_C0[5]);
-            TextBox_F2_C0_mA_6.Text = Convert.ToString(mA_F2_C0[6]);
-            TextBox_F2_C0_mA_7.Text = Convert.ToString(mA_F2_C0[7]);
-            TextBox_F2_C0_mA_8.Text = Convert.ToString(mA_F2_C0[8]);
+            TextBox_F2_C0_mA_1.Text = mA_F2_C0[1].ToString("N2");
+            TextBox_F2_C0_mA_2.Text = mA_F2_C0[2].ToString("N2");
+            TextBox_F2_C0_mA_3.Text = mA_F2_C0[3].ToString("N2");
+            TextBox_F2_C0_mA_4.Text = mA_F2_C0[4].ToString("N2");
+            TextBox_F2_C0_mA_5.Text = mA_F2_C0[5].ToString("N2");
+            TextBox_F2_C0_mA_6.Text = mA_F2_C0[6].ToString("N2");
+            TextBox_F2_C0_mA_7.Text = mA_F2_C0[7].ToString("N2");
+            TextBox_F2_C0_mA_8.Text = mA_F2_C0[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F2  C1-------------------------------------------*/
-            TextBox_F2_C1_mA_1.Text = Convert.ToString(mA_F2_C1[1]);
-            TextBox_F2_C1_mA_2.Text = Convert.ToString(mA_F2_C1[2]);
-            TextBox_F2_C1_mA_3.Text = Convert.ToString(mA_F2_C1[3]);
-            TextBox_F2_C1_mA_4.Text = Convert.ToString(mA_F2_C1[4]);
-            TextBox_F2_C1_mA_5.Text = Convert.ToString(mA_F2_C1[5]);
-            TextBox_F2_C1_mA_6.Text = Convert.ToString(mA_F2_C1[6]);
-            TextBox_F2_C1_mA_7.Text = Convert.ToString(mA_F2_C1[7]);
-            TextBox_F2_C1_mA_8.Text = Convert.ToString(mA_F2_C1[8]);
+            TextBox_F2_C1_mA_1.Text = mA_F2_C1[1].ToString("N2");
+            TextBox_F2_C1_mA_2.Text = mA_F2_C1[2].ToString("N2");
+            TextBox_F2_C1_mA_3.Text = mA_F2_C1[3].ToString("N2");
+            TextBox_F2_C1_mA_4.Text = mA_F2_C1[4].ToString("N2");
+            TextBox_F2_C1_mA_5.Text = mA_F2_C1[5].ToString("N2");
+            TextBox_F2_C1_mA_6.Text = mA_F2_C1[6].ToString("N2");
+            TextBox_F2_C1_mA_7.Text = mA_F2_C1[7].ToString("N2");
+            TextBox_F2_C1_mA_8.Text = mA_F2_C1[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F2  C2-------------------------------------------*/
-            TextBox_F2_C2_mA_1.Text = Convert.ToString(mA_F2_C2[1]);
-            TextBox_F2_C2_mA_2.Text = Convert.ToString(mA_F2_C2[2]);
-            TextBox_F2_C2_mA_3.Text = Convert.ToString(mA_F2_C2[3]);
-            TextBox_F2_C2_mA_4.Text = Convert.ToString(mA_F2_C2[4]);
-            TextBox_F2_C2_mA_5.Text = Convert.ToString(mA_F2_C2[5]);
-            TextBox_F2_C2_mA_6.Text = Convert.ToString(mA_F2_C2[6]);
-            TextBox_F2_C2_mA_7.Text = Convert.ToString(mA_F2_C2[7]);
-            TextBox_F2_C2_mA_8.Text = Convert.ToString(mA_F2_C2[8]);
+            TextBox_F2_C2_mA_1.Text = mA_F2_C2[1].ToString("N2");
+            TextBox_F2_C2_mA_2.Text = mA_F2_C2[2].ToString("N2");
+            TextBox_F2_C2_mA_3.Text = mA_F2_C2[3].ToString("N2");
+            TextBox_F2_C2_mA_4.Text = mA_F2_C2[4].ToString("N2");
+            TextBox_F2_C2_mA_5.Text = mA_F2_C2[5].ToString("N2");
+            TextBox_F2_C2_mA_6.Text = mA_F2_C2[6].ToString("N2");
+            TextBox_F2_C2_mA_7.Text = mA_F2_C2[7].ToString("N2");
+            TextBox_F2_C2_mA_8.Text = mA_F2_C2[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F2  C3-------------------------------------------*/
-            TextBox_F2_C3_mA_1.Text = Convert.ToString(mA_F2_C3[1]);
-            TextBox_F2_C3_mA_2.Text = Convert.ToString(mA_F2_C3[2]);
-            TextBox_F2_C3_mA_3.Text = Convert.ToString(mA_F2_C3[3]);
-            TextBox_F2_C3_mA_4.Text = Convert.ToString(mA_F2_C3[4]);
-            TextBox_F2_C3_mA_5.Text = Convert.ToString(mA_F2_C3[5]);
-            TextBox_F2_C3_mA_6.Text = Convert.ToString(mA_F2_C3[6]);
-            TextBox_F2_C3_mA_7.Text = Convert.ToString(mA_F2_C3[7]);
-            TextBox_F2_C3_mA_8.Text = Convert.ToString(mA_F2_C3[8]);
+            TextBox_F2_C3_mA_1.Text = mA_F2_C3[1].ToString("N2");
+            TextBox_F2_C3_mA_2.Text = mA_F2_C3[2].ToString("N2");
+            TextBox_F2_C3_mA_3.Text = mA_F2_C3[3].ToString("N2");
+            TextBox_F2_C3_mA_4.Text = mA_F2_C3[4].ToString("N2");
+            TextBox_F2_C3_mA_5.Text = mA_F2_C3[5].ToString("N2");
+            TextBox_F2_C3_mA_6.Text = mA_F2_C3[6].ToString("N2");
+            TextBox_F2_C3_mA_7.Text = mA_F2_C3[7].ToString("N2");
+            TextBox_F2_C3_mA_8.Text = mA_F2_C3[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
             /*------------------------------------------------------------------------------*/
             /*-----------------------------F2  C4-------------------------------------------*/
-            TextBox_F2_C4_mA_1.Text = Convert.ToString(mA_F2_C4[1]);
-            TextBox_F2_C4_mA_2.Text = Convert.ToString(mA_F2_C4[2]);
-            TextBox_F2_C4_mA_3.Text = Convert.ToString(mA_F2_C4[3]);
-            TextBox_F2_C4_mA_4.Text = Convert.ToString(mA_F2_C4[4]);
-            TextBox_F2_C4_mA_5.Text = Convert.ToString(mA_F2_C4[5]);
-            TextBox_F2_C4_mA_6.Text = Convert.ToString(mA_F2_C4[6]);
-            TextBox_F2_C4_mA_7.Text = Convert.ToString(mA_F2_C4[7]);
-            TextBox_F2_C4_mA_8.Text = Convert.ToString(mA_F2_C4[8]);
+            TextBox_F2_C4_mA_1.Text = mA_F2_C4[1].ToString("N2");
+            TextBox_F2_C4_mA_2.Text = mA_F2_C4[2].ToString("N2");
+            TextBox_F2_C4_mA_3.Text = mA_F2_C4[3].ToString("N2");
+            TextBox_F2_C4_mA_4.Text = mA_F2_C4[4].ToString("N2");
+            TextBox_F2_C4_mA_5.Text = mA_F2_C4[5].ToString("N2");
+            TextBox_F2_C4_mA_6.Text = mA_F2_C4[6].ToString("N2");
+            TextBox_F2_C4_mA_7.Text = mA_F2_C4[7].ToString("N2");
+            TextBox_F2_C4_mA_8.Text = mA_F2_C4[8].ToString("N2");
             /*------------------------------------------------------------------------------*/
 
 
@@ -3046,42 +3288,42 @@ namespace Dewimed_Beta
         {
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C0----------------------------------------*/
-            TextBox_DC_F0_Campo0_1.Text = Convert.ToString(DC_F0_C0[1]);
-            TextBox_DC_F0_Campo0_2.Text = Convert.ToString(DC_F0_C0[2]);
-            TextBox_DC_F0_Campo0_3.Text = Convert.ToString(DC_F0_C0[3]);
-            TextBox_DC_F0_Campo0_4.Text = Convert.ToString(DC_F0_C0[4]);
-            TextBox_DC_F0_Campo0_5.Text = Convert.ToString(DC_F0_C0[5]);
-            TextBox_DC_F0_Campo0_6.Text = Convert.ToString(DC_F0_C0[6]);
-            TextBox_DC_F0_Campo0_7.Text = Convert.ToString(DC_F0_C0[7]);
-            TextBox_DC_F0_Campo0_8.Text = Convert.ToString(DC_F0_C0[8]);
+            TextBox_DC_F0_Campo0_1.Text = DC_F0_C0[1].ToString("N2");
+            TextBox_DC_F0_Campo0_2.Text = DC_F0_C0[2].ToString("N2");
+            TextBox_DC_F0_Campo0_3.Text = DC_F0_C0[3].ToString("N2");
+            TextBox_DC_F0_Campo0_4.Text = DC_F0_C0[4].ToString("N2");
+            TextBox_DC_F0_Campo0_5.Text = DC_F0_C0[5].ToString("N2");
+            TextBox_DC_F0_Campo0_6.Text = DC_F0_C0[6].ToString("N2");
+            TextBox_DC_F0_Campo0_7.Text = DC_F0_C0[7].ToString("N2");
+            TextBox_DC_F0_Campo0_8.Text = DC_F0_C0[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C1----------------------------------------*/
-            TextBox_DC_F0_Campo1_1.Text = Convert.ToString(DC_F0_C1[1]);
-            TextBox_DC_F0_Campo1_2.Text = Convert.ToString(DC_F0_C1[2]);
-            TextBox_DC_F0_Campo1_3.Text = Convert.ToString(DC_F0_C1[3]);
-            TextBox_DC_F0_Campo1_4.Text = Convert.ToString(DC_F0_C1[4]);
-            TextBox_DC_F0_Campo1_5.Text = Convert.ToString(DC_F0_C1[5]);
-            TextBox_DC_F0_Campo1_6.Text = Convert.ToString(DC_F0_C1[6]);
-            TextBox_DC_F0_Campo1_7.Text = Convert.ToString(DC_F0_C1[7]);
-            TextBox_DC_F0_Campo1_8.Text = Convert.ToString(DC_F0_C1[8]);
+            TextBox_DC_F0_Campo1_1.Text = DC_F0_C1[1].ToString("N2");
+            TextBox_DC_F0_Campo1_2.Text = DC_F0_C1[2].ToString("N2");
+            TextBox_DC_F0_Campo1_3.Text = DC_F0_C1[3].ToString("N2");
+            TextBox_DC_F0_Campo1_4.Text = DC_F0_C1[4].ToString("N2");
+            TextBox_DC_F0_Campo1_5.Text = DC_F0_C1[5].ToString("N2");
+            TextBox_DC_F0_Campo1_6.Text = DC_F0_C1[6].ToString("N2");
+            TextBox_DC_F0_Campo1_7.Text = DC_F0_C1[7].ToString("N2");
+            TextBox_DC_F0_Campo1_8.Text = DC_F0_C1[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C2----------------------------------------*/
-            TextBox_DC_F0_Campo2_1.Text = Convert.ToString(DC_F0_C2[1]);
-            TextBox_DC_F0_Campo2_2.Text = Convert.ToString(DC_F0_C2[2]);
-            TextBox_DC_F0_Campo2_3.Text = Convert.ToString(DC_F0_C2[3]);
-            TextBox_DC_F0_Campo2_4.Text = Convert.ToString(DC_F0_C2[4]);
-            TextBox_DC_F0_Campo2_5.Text = Convert.ToString(DC_F0_C2[5]);
-            TextBox_DC_F0_Campo2_6.Text = Convert.ToString(DC_F0_C2[6]);
-            TextBox_DC_F0_Campo2_7.Text = Convert.ToString(DC_F0_C2[7]);
-            TextBox_DC_F0_Campo2_8.Text = Convert.ToString(DC_F0_C2[8]);
+            TextBox_DC_F0_Campo2_1.Text = DC_F0_C2[1].ToString("N2");
+            TextBox_DC_F0_Campo2_2.Text = DC_F0_C2[2].ToString("N2");
+            TextBox_DC_F0_Campo2_3.Text = DC_F0_C2[3].ToString("N2");
+            TextBox_DC_F0_Campo2_4.Text = DC_F0_C2[4].ToString("N2");
+            TextBox_DC_F0_Campo2_5.Text = DC_F0_C2[5].ToString("N2");
+            TextBox_DC_F0_Campo2_6.Text = DC_F0_C2[6].ToString("N2");
+            TextBox_DC_F0_Campo2_7.Text = DC_F0_C2[7].ToString("N2");
+            TextBox_DC_F0_Campo2_8.Text = DC_F0_C2[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3089,14 +3331,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C3----------------------------------------*/
-            TextBox_DC_F0_Campo3_1.Text = Convert.ToString(DC_F0_C3[1]);
-            TextBox_DC_F0_Campo3_2.Text = Convert.ToString(DC_F0_C3[2]);
-            TextBox_DC_F0_Campo3_3.Text = Convert.ToString(DC_F0_C3[3]);
-            TextBox_DC_F0_Campo3_4.Text = Convert.ToString(DC_F0_C3[4]);
-            TextBox_DC_F0_Campo3_5.Text = Convert.ToString(DC_F0_C3[5]);
-            TextBox_DC_F0_Campo3_6.Text = Convert.ToString(DC_F0_C3[6]);
-            TextBox_DC_F0_Campo3_7.Text = Convert.ToString(DC_F0_C3[7]);
-            TextBox_DC_F0_Campo3_8.Text = Convert.ToString(DC_F0_C3[8]);
+            TextBox_DC_F0_Campo3_1.Text = DC_F0_C3[1].ToString("N2");
+            TextBox_DC_F0_Campo3_2.Text = DC_F0_C3[2].ToString("N2");
+            TextBox_DC_F0_Campo3_3.Text = DC_F0_C3[3].ToString("N2");
+            TextBox_DC_F0_Campo3_4.Text = DC_F0_C3[4].ToString("N2");
+            TextBox_DC_F0_Campo3_5.Text = DC_F0_C3[5].ToString("N2");
+            TextBox_DC_F0_Campo3_6.Text = DC_F0_C3[6].ToString("N2");
+            TextBox_DC_F0_Campo3_7.Text = DC_F0_C3[7].ToString("N2");
+            TextBox_DC_F0_Campo3_8.Text = DC_F0_C3[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3105,14 +3347,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C4----------------------------------------*/
-            TextBox_DC_F0_Campo4_1.Text = Convert.ToString(DC_F0_C4[1]);
-            TextBox_DC_F0_Campo4_2.Text = Convert.ToString(DC_F0_C4[2]);
-            TextBox_DC_F0_Campo4_3.Text = Convert.ToString(DC_F0_C4[3]);
-            TextBox_DC_F0_Campo4_4.Text = Convert.ToString(DC_F0_C4[4]);
-            TextBox_DC_F0_Campo4_5.Text = Convert.ToString(DC_F0_C4[5]);
-            TextBox_DC_F0_Campo4_6.Text = Convert.ToString(DC_F0_C4[6]);
-            TextBox_DC_F0_Campo4_7.Text = Convert.ToString(DC_F0_C4[7]);
-            TextBox_DC_F0_Campo4_8.Text = Convert.ToString(DC_F0_C4[8]);
+            TextBox_DC_F0_Campo4_1.Text = DC_F0_C4[1].ToString("N2");
+            TextBox_DC_F0_Campo4_2.Text = DC_F0_C4[2].ToString("N2");
+            TextBox_DC_F0_Campo4_3.Text = DC_F0_C4[3].ToString("N2");
+            TextBox_DC_F0_Campo4_4.Text =DC_F0_C4[4].ToString("N2");
+            TextBox_DC_F0_Campo4_5.Text = DC_F0_C4[5].ToString("N2");
+            TextBox_DC_F0_Campo4_6.Text = DC_F0_C4[6].ToString("N2");
+            TextBox_DC_F0_Campo4_7.Text = DC_F0_C4[7].ToString("N2");
+            TextBox_DC_F0_Campo4_8.Text = DC_F0_C4[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3121,42 +3363,42 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F1 C0----------------------------------------*/
-            TextBox_DC_F1_Campo0_1.Text = Convert.ToString(DC_F1_C0[1]);
-            TextBox_DC_F1_Campo0_2.Text = Convert.ToString(DC_F1_C0[2]);
-            TextBox_DC_F1_Campo0_3.Text = Convert.ToString(DC_F1_C0[3]);
-            TextBox_DC_F1_Campo0_4.Text = Convert.ToString(DC_F1_C0[4]);
-            TextBox_DC_F1_Campo0_5.Text = Convert.ToString(DC_F1_C0[5]);
-            TextBox_DC_F1_Campo0_6.Text = Convert.ToString(DC_F1_C0[6]);
-            TextBox_DC_F1_Campo0_7.Text = Convert.ToString(DC_F1_C0[7]);
-            TextBox_DC_F1_Campo0_8.Text = Convert.ToString(DC_F1_C0[8]);
+            TextBox_DC_F1_Campo0_1.Text = DC_F1_C0[1].ToString("N2");
+            TextBox_DC_F1_Campo0_2.Text = DC_F1_C0[2].ToString("N2");
+            TextBox_DC_F1_Campo0_3.Text = DC_F1_C0[3].ToString("N2");
+            TextBox_DC_F1_Campo0_4.Text = DC_F1_C0[4].ToString("N2");
+            TextBox_DC_F1_Campo0_5.Text = DC_F1_C0[5].ToString("N2");
+            TextBox_DC_F1_Campo0_6.Text = DC_F1_C0[6].ToString("N2");
+            TextBox_DC_F1_Campo0_7.Text = DC_F1_C0[7].ToString("N2");
+            TextBox_DC_F1_Campo0_8.Text = DC_F1_C0[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F1 C1----------------------------------------*/
-            TextBox_DC_F1_Campo1_1.Text = Convert.ToString(DC_F1_C1[1]);
-            TextBox_DC_F1_Campo1_2.Text = Convert.ToString(DC_F1_C1[2]);
-            TextBox_DC_F1_Campo1_3.Text = Convert.ToString(DC_F1_C1[3]);
-            TextBox_DC_F1_Campo1_4.Text = Convert.ToString(DC_F1_C1[4]);
-            TextBox_DC_F1_Campo1_5.Text = Convert.ToString(DC_F1_C1[5]);
-            TextBox_DC_F1_Campo1_6.Text = Convert.ToString(DC_F1_C1[6]);
-            TextBox_DC_F1_Campo1_7.Text = Convert.ToString(DC_F1_C1[7]);
-            TextBox_DC_F1_Campo1_8.Text = Convert.ToString(DC_F1_C1[8]);
+            TextBox_DC_F1_Campo1_1.Text = DC_F1_C1[1].ToString("N2");
+            TextBox_DC_F1_Campo1_2.Text = DC_F1_C1[2].ToString("N2");
+            TextBox_DC_F1_Campo1_3.Text = DC_F1_C1[3].ToString("N2");
+            TextBox_DC_F1_Campo1_4.Text = DC_F1_C1[4].ToString("N2");
+            TextBox_DC_F1_Campo1_5.Text = DC_F1_C1[5].ToString("N2");
+            TextBox_DC_F1_Campo1_6.Text = DC_F1_C1[6].ToString("N2");
+            TextBox_DC_F1_Campo1_7.Text = DC_F1_C1[7].ToString("N2");
+            TextBox_DC_F1_Campo1_8.Text = DC_F1_C1[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F1 C2----------------------------------------*/
-            TextBox_DC_F1_Campo2_1.Text = Convert.ToString(DC_F1_C2[1]);
-            TextBox_DC_F1_Campo2_2.Text = Convert.ToString(DC_F1_C2[2]);
-            TextBox_DC_F1_Campo2_3.Text = Convert.ToString(DC_F1_C2[3]);
-            TextBox_DC_F1_Campo2_4.Text = Convert.ToString(DC_F1_C2[4]);
-            TextBox_DC_F1_Campo2_5.Text = Convert.ToString(DC_F1_C2[5]);
-            TextBox_DC_F1_Campo2_6.Text = Convert.ToString(DC_F1_C2[6]);
-            TextBox_DC_F1_Campo2_7.Text = Convert.ToString(DC_F1_C2[7]);
-            TextBox_DC_F1_Campo2_8.Text = Convert.ToString(DC_F1_C2[8]);
+            TextBox_DC_F1_Campo2_1.Text = DC_F1_C2[1].ToString("N2");
+            TextBox_DC_F1_Campo2_2.Text = DC_F1_C2[2].ToString("N2");
+            TextBox_DC_F1_Campo2_3.Text =DC_F1_C2[3].ToString("N2");
+            TextBox_DC_F1_Campo2_4.Text = DC_F1_C2[4].ToString("N2");
+            TextBox_DC_F1_Campo2_5.Text = DC_F1_C2[5].ToString("N2");
+            TextBox_DC_F1_Campo2_6.Text = DC_F1_C2[6].ToString("N2");
+            TextBox_DC_F1_Campo2_7.Text = DC_F1_C2[7].ToString("N2");
+            TextBox_DC_F1_Campo2_8.Text = DC_F1_C2[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3164,14 +3406,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F1 C3----------------------------------------*/
-            TextBox_DC_F1_Campo3_1.Text = Convert.ToString(DC_F1_C3[1]);
-            TextBox_DC_F1_Campo3_2.Text = Convert.ToString(DC_F1_C3[2]);
-            TextBox_DC_F1_Campo3_3.Text = Convert.ToString(DC_F1_C3[3]);
-            TextBox_DC_F1_Campo3_4.Text = Convert.ToString(DC_F1_C3[4]);
-            TextBox_DC_F1_Campo3_5.Text = Convert.ToString(DC_F1_C3[5]);
-            TextBox_DC_F1_Campo3_6.Text = Convert.ToString(DC_F1_C3[6]);
-            TextBox_DC_F1_Campo3_7.Text = Convert.ToString(DC_F1_C3[7]);
-            TextBox_DC_F1_Campo3_8.Text = Convert.ToString(DC_F1_C3[8]);
+            TextBox_DC_F1_Campo3_1.Text = DC_F1_C3[1].ToString("N2");
+            TextBox_DC_F1_Campo3_2.Text = DC_F1_C3[2].ToString("N2");
+            TextBox_DC_F1_Campo3_3.Text = DC_F1_C3[3].ToString("N2");
+            TextBox_DC_F1_Campo3_4.Text =DC_F1_C3[4].ToString("N2");
+            TextBox_DC_F1_Campo3_5.Text = DC_F1_C3[5].ToString("N2");
+            TextBox_DC_F1_Campo3_6.Text = DC_F1_C3[6].ToString("N2");
+            TextBox_DC_F1_Campo3_7.Text = DC_F1_C3[7].ToString("N2");
+            TextBox_DC_F1_Campo3_8.Text = DC_F1_C3[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3180,14 +3422,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F1 C4----------------------------------------*/
-            TextBox_DC_F1_Campo4_1.Text = Convert.ToString(DC_F1_C4[1]);
-            TextBox_DC_F1_Campo4_2.Text = Convert.ToString(DC_F1_C4[2]);
-            TextBox_DC_F1_Campo4_3.Text = Convert.ToString(DC_F1_C4[3]);
-            TextBox_DC_F1_Campo4_4.Text = Convert.ToString(DC_F1_C4[4]);
-            TextBox_DC_F1_Campo4_5.Text = Convert.ToString(DC_F1_C4[5]);
-            TextBox_DC_F1_Campo4_6.Text = Convert.ToString(DC_F1_C4[6]);
-            TextBox_DC_F1_Campo4_7.Text = Convert.ToString(DC_F1_C4[7]);
-            TextBox_DC_F1_Campo4_8.Text = Convert.ToString(DC_F1_C4[8]);
+            TextBox_DC_F1_Campo4_1.Text = DC_F1_C4[1].ToString("N2");
+            TextBox_DC_F1_Campo4_2.Text = DC_F1_C4[2].ToString("N2");
+            TextBox_DC_F1_Campo4_3.Text = DC_F1_C4[3].ToString("N2");
+            TextBox_DC_F1_Campo4_4.Text = DC_F1_C4[4].ToString("N2");
+            TextBox_DC_F1_Campo4_5.Text = DC_F1_C4[5].ToString("N2");
+            TextBox_DC_F1_Campo4_6.Text = DC_F1_C4[6].ToString("N2");
+            TextBox_DC_F1_Campo4_7.Text = DC_F1_C4[7].ToString("N2");
+            TextBox_DC_F1_Campo4_8.Text = DC_F1_C4[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3199,42 +3441,42 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F2 C0----------------------------------------*/
-            TextBox_DC_F2_Campo0_1.Text = Convert.ToString(DC_F2_C0[1]);
-            TextBox_DC_F2_Campo0_2.Text = Convert.ToString(DC_F2_C0[2]);
-            TextBox_DC_F2_Campo0_3.Text = Convert.ToString(DC_F2_C0[3]);
-            TextBox_DC_F2_Campo0_4.Text = Convert.ToString(DC_F2_C0[4]);
-            TextBox_DC_F2_Campo0_5.Text = Convert.ToString(DC_F2_C0[5]);
-            TextBox_DC_F2_Campo0_6.Text = Convert.ToString(DC_F2_C0[6]);
-            TextBox_DC_F2_Campo0_7.Text = Convert.ToString(DC_F2_C0[7]);
-            TextBox_DC_F2_Campo0_8.Text = Convert.ToString(DC_F2_C0[8]);
+            TextBox_DC_F2_Campo0_1.Text = DC_F2_C0[1].ToString("N2");
+            TextBox_DC_F2_Campo0_2.Text = DC_F2_C0[2].ToString("N2");
+            TextBox_DC_F2_Campo0_3.Text = DC_F2_C0[3].ToString("N2");
+            TextBox_DC_F2_Campo0_4.Text = DC_F2_C0[4].ToString("N2");
+            TextBox_DC_F2_Campo0_5.Text = DC_F2_C0[5].ToString("N2");
+            TextBox_DC_F2_Campo0_6.Text = DC_F2_C0[6].ToString("N2");
+            TextBox_DC_F2_Campo0_7.Text = DC_F2_C0[7].ToString("N2");
+            TextBox_DC_F2_Campo0_8.Text = DC_F2_C0[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F2 C1----------------------------------------*/
-            TextBox_DC_F2_Campo1_1.Text = Convert.ToString(DC_F2_C1[1]);
-            TextBox_DC_F2_Campo1_2.Text = Convert.ToString(DC_F2_C1[2]);
-            TextBox_DC_F2_Campo1_3.Text = Convert.ToString(DC_F2_C1[3]);
-            TextBox_DC_F2_Campo1_4.Text = Convert.ToString(DC_F2_C1[4]);
-            TextBox_DC_F2_Campo1_5.Text = Convert.ToString(DC_F2_C1[5]);
-            TextBox_DC_F2_Campo1_6.Text = Convert.ToString(DC_F2_C1[6]);
-            TextBox_DC_F2_Campo1_7.Text = Convert.ToString(DC_F2_C1[7]);
-            TextBox_DC_F2_Campo1_8.Text = Convert.ToString(DC_F2_C1[8]);
+            TextBox_DC_F2_Campo1_1.Text = DC_F2_C1[1].ToString("N2");
+            TextBox_DC_F2_Campo1_2.Text = DC_F2_C1[2].ToString("N2");
+            TextBox_DC_F2_Campo1_3.Text = DC_F2_C1[3].ToString("N2");
+            TextBox_DC_F2_Campo1_4.Text = DC_F2_C1[4].ToString("N2");
+            TextBox_DC_F2_Campo1_5.Text = DC_F2_C1[5].ToString("N2");
+            TextBox_DC_F2_Campo1_6.Text = DC_F2_C1[6].ToString("N2");
+            TextBox_DC_F2_Campo1_7.Text = DC_F2_C1[7].ToString("N2");
+            TextBox_DC_F2_Campo1_8.Text = DC_F2_C1[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F2 C2----------------------------------------*/
-            TextBox_DC_F2_Campo2_1.Text = Convert.ToString(DC_F2_C2[1]);
-            TextBox_DC_F2_Campo2_2.Text = Convert.ToString(DC_F2_C2[2]);
-            TextBox_DC_F2_Campo2_3.Text = Convert.ToString(DC_F2_C2[3]);
-            TextBox_DC_F2_Campo2_4.Text = Convert.ToString(DC_F2_C2[4]);
-            TextBox_DC_F2_Campo2_5.Text = Convert.ToString(DC_F2_C2[5]);
-            TextBox_DC_F2_Campo2_6.Text = Convert.ToString(DC_F2_C2[6]);
-            TextBox_DC_F2_Campo2_7.Text = Convert.ToString(DC_F2_C2[7]);
-            TextBox_DC_F2_Campo2_8.Text = Convert.ToString(DC_F2_C2[8]);
+            TextBox_DC_F2_Campo2_1.Text = DC_F2_C2[1].ToString("N2");
+            TextBox_DC_F2_Campo2_2.Text = DC_F2_C2[2].ToString("N2");
+            TextBox_DC_F2_Campo2_3.Text = DC_F2_C2[3].ToString("N2");
+            TextBox_DC_F2_Campo2_4.Text = DC_F2_C2[4].ToString("N2");
+            TextBox_DC_F2_Campo2_5.Text = DC_F2_C2[5].ToString("N2");
+            TextBox_DC_F2_Campo2_6.Text = DC_F2_C2[6].ToString("N2");
+            TextBox_DC_F2_Campo2_7.Text = DC_F2_C2[7].ToString("N2");
+            TextBox_DC_F2_Campo2_8.Text = DC_F2_C2[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3242,14 +3484,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F2 C3----------------------------------------*/
-            TextBox_DC_F2_Campo3_1.Text = Convert.ToString(DC_F2_C3[1]);
-            TextBox_DC_F2_Campo3_2.Text = Convert.ToString(DC_F2_C3[2]);
-            TextBox_DC_F2_Campo3_3.Text = Convert.ToString(DC_F2_C3[3]);
-            TextBox_DC_F2_Campo3_4.Text = Convert.ToString(DC_F2_C3[4]);
-            TextBox_DC_F2_Campo3_5.Text = Convert.ToString(DC_F2_C3[5]);
-            TextBox_DC_F2_Campo3_6.Text = Convert.ToString(DC_F2_C3[6]);
-            TextBox_DC_F2_Campo3_7.Text = Convert.ToString(DC_F2_C3[7]);
-            TextBox_DC_F2_Campo3_8.Text = Convert.ToString(DC_F2_C3[8]);
+            TextBox_DC_F2_Campo3_1.Text = DC_F2_C3[1].ToString("N2");
+            TextBox_DC_F2_Campo3_2.Text = DC_F2_C3[2].ToString("N2");
+            TextBox_DC_F2_Campo3_3.Text = DC_F2_C3[3].ToString("N2");
+            TextBox_DC_F2_Campo3_4.Text = DC_F2_C3[4].ToString("N2");
+            TextBox_DC_F2_Campo3_5.Text = DC_F2_C3[5].ToString("N2");
+            TextBox_DC_F2_Campo3_6.Text = DC_F2_C3[6].ToString("N2");
+            TextBox_DC_F2_Campo3_7.Text = DC_F2_C3[7].ToString("N2");
+            TextBox_DC_F2_Campo3_8.Text = DC_F2_C3[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3258,14 +3500,14 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*-----------------------------------F0 C4----------------------------------------*/
-            TextBox_DC_F2_Campo4_1.Text = Convert.ToString(DC_F2_C4[1]);
-            TextBox_DC_F2_Campo4_2.Text = Convert.ToString(DC_F2_C4[2]);
-            TextBox_DC_F2_Campo4_3.Text = Convert.ToString(DC_F2_C4[3]);
-            TextBox_DC_F2_Campo4_4.Text = Convert.ToString(DC_F2_C4[4]);
-            TextBox_DC_F2_Campo4_5.Text = Convert.ToString(DC_F2_C4[5]);
-            TextBox_DC_F2_Campo4_6.Text = Convert.ToString(DC_F2_C4[6]);
-            TextBox_DC_F2_Campo4_7.Text = Convert.ToString(DC_F2_C4[7]);
-            TextBox_DC_F2_Campo4_8.Text = Convert.ToString(DC_F2_C4[8]);
+            TextBox_DC_F2_Campo4_1.Text = DC_F2_C4[1].ToString("N2");
+            TextBox_DC_F2_Campo4_2.Text = DC_F2_C4[2].ToString("N2");
+            TextBox_DC_F2_Campo4_3.Text =DC_F2_C4[3].ToString("N2");
+            TextBox_DC_F2_Campo4_4.Text = DC_F2_C4[4].ToString("N2");
+            TextBox_DC_F2_Campo4_5.Text = DC_F2_C4[5].ToString("N2");
+            TextBox_DC_F2_Campo4_6.Text = DC_F2_C4[6].ToString("N2");
+            TextBox_DC_F2_Campo4_7.Text = DC_F2_C4[7].ToString("N2");
+            TextBox_DC_F2_Campo4_8.Text = DC_F2_C4[8].ToString("N2");
 
 
             /*--------------------------------------------------------------------------------*/
@@ -3519,79 +3761,79 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C0-------------------------------------------*/
-            TextBox_F0_Campo0_Min.Text = Convert.ToString(Registro_F0_C0[0]);
-            TextBox_F0_Campo0_1.Text = Convert.ToString(Registro_F0_C0[1]);
-            TextBox_F0_Campo0_2.Text = Convert.ToString(Registro_F0_C0[2]);
-            TextBox_F0_Campo0_3.Text = Convert.ToString(Registro_F0_C0[3]);
-            TextBox_F0_Campo0_4.Text = Convert.ToString(Registro_F0_C0[4]);
-            TextBox_F0_Campo0_5.Text = Convert.ToString(Registro_F0_C0[5]);
-            TextBox_F0_Campo0_6.Text = Convert.ToString(Registro_F0_C0[6]);
-            TextBox_F0_Campo0_7.Text = Convert.ToString(Registro_F0_C0[7]);
-            TextBox_F0_Campo0_8.Text = Convert.ToString(Registro_F0_C0[8]);
-            TextBox_F0_Campo0_Max.Text = Convert.ToString(Registro_F0_C0[9]);
+            TextBox_F0_Campo0_Min.Text = Registro_F0_C0[0].ToString();
+            TextBox_F0_Campo0_1.Text = Registro_F0_C0[1].ToString();
+            TextBox_F0_Campo0_2.Text = Registro_F0_C0[2].ToString();
+            TextBox_F0_Campo0_3.Text = Registro_F0_C0[3].ToString();
+            TextBox_F0_Campo0_4.Text = Registro_F0_C0[4].ToString();
+            TextBox_F0_Campo0_5.Text = Registro_F0_C0[5].ToString();
+            TextBox_F0_Campo0_6.Text = Registro_F0_C0[6].ToString();
+            TextBox_F0_Campo0_7.Text = Registro_F0_C0[7].ToString();
+            TextBox_F0_Campo0_8.Text = Registro_F0_C0[8].ToString();
+            TextBox_F0_Campo0_Max.Text = Registro_F0_C0[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C1-------------------------------------------*/
-            TextBox_F0_Campo1_Min.Text = Convert.ToString(Registro_F0_C1[0]);
-            TextBox_F0_Campo1_1.Text = Convert.ToString(Registro_F0_C1[1]);
-            TextBox_F0_Campo1_2.Text = Convert.ToString(Registro_F0_C1[2]);
-            TextBox_F0_Campo1_3.Text = Convert.ToString(Registro_F0_C1[3]);
-            TextBox_F0_Campo1_4.Text = Convert.ToString(Registro_F0_C1[4]);
-            TextBox_F0_Campo1_5.Text = Convert.ToString(Registro_F0_C1[5]);
-            TextBox_F0_Campo1_6.Text = Convert.ToString(Registro_F0_C1[6]);
-            TextBox_F0_Campo1_7.Text = Convert.ToString(Registro_F0_C1[7]);
-            TextBox_F0_Campo1_8.Text = Convert.ToString(Registro_F0_C1[8]);
-            TextBox_F0_Campo1_Max.Text = Convert.ToString(Registro_F0_C1[9]);
+            TextBox_F0_Campo1_Min.Text = Registro_F0_C1[0].ToString();
+            TextBox_F0_Campo1_1.Text = Registro_F0_C1[1].ToString();
+            TextBox_F0_Campo1_2.Text = Registro_F0_C1[2].ToString();
+            TextBox_F0_Campo1_3.Text = Registro_F0_C1[3].ToString();
+            TextBox_F0_Campo1_4.Text = Registro_F0_C1[4].ToString();
+            TextBox_F0_Campo1_5.Text = Registro_F0_C1[5].ToString();
+            TextBox_F0_Campo1_6.Text = Registro_F0_C1[6].ToString();
+            TextBox_F0_Campo1_7.Text = Registro_F0_C1[7].ToString();
+            TextBox_F0_Campo1_8.Text = Registro_F0_C1[8].ToString();
+            TextBox_F0_Campo1_Max.Text = Registro_F0_C1[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C2-------------------------------------------*/
-            TextBox_F0_Campo2_Min.Text = Convert.ToString(Registro_F0_C2[0]);
-            TextBox_F0_Campo2_1.Text = Convert.ToString(Registro_F0_C2[1]);
-            TextBox_F0_Campo2_2.Text = Convert.ToString(Registro_F0_C2[2]);
-            TextBox_F0_Campo2_3.Text = Convert.ToString(Registro_F0_C2[3]);
-            TextBox_F0_Campo2_4.Text = Convert.ToString(Registro_F0_C2[4]);
-            TextBox_F0_Campo2_5.Text = Convert.ToString(Registro_F0_C2[5]);
-            TextBox_F0_Campo2_6.Text = Convert.ToString(Registro_F0_C2[6]);
-            TextBox_F0_Campo2_7.Text = Convert.ToString(Registro_F0_C2[7]);
-            TextBox_F0_Campo2_8.Text = Convert.ToString(Registro_F0_C2[8]);
-            TextBox_F0_Campo2_Max.Text = Convert.ToString(Registro_F0_C2[9]);
+            TextBox_F0_Campo2_Min.Text = Registro_F0_C2[0].ToString();
+            TextBox_F0_Campo2_1.Text = Registro_F0_C2[1].ToString();
+            TextBox_F0_Campo2_2.Text = Registro_F0_C2[2].ToString();
+            TextBox_F0_Campo2_3.Text = Registro_F0_C2[3].ToString();
+            TextBox_F0_Campo2_4.Text = Registro_F0_C2[4].ToString();
+            TextBox_F0_Campo2_5.Text = Registro_F0_C2[5].ToString();
+            TextBox_F0_Campo2_6.Text = Registro_F0_C2[6].ToString();
+            TextBox_F0_Campo2_7.Text = Registro_F0_C2[7].ToString();
+            TextBox_F0_Campo2_8.Text = Registro_F0_C2[8].ToString();
+            TextBox_F0_Campo2_Max.Text = Registro_F0_C2[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C3-------------------------------------------*/
-            TextBox_F0_Campo3_Min.Text = Convert.ToString(Registro_F0_C3[0]);
-            TextBox_F0_Campo3_1.Text = Convert.ToString(Registro_F0_C3[1]);
-            TextBox_F0_Campo3_2.Text = Convert.ToString(Registro_F0_C3[2]);
-            TextBox_F0_Campo3_3.Text = Convert.ToString(Registro_F0_C3[3]);
-            TextBox_F0_Campo3_4.Text = Convert.ToString(Registro_F0_C3[4]);
-            TextBox_F0_Campo3_5.Text = Convert.ToString(Registro_F0_C3[5]);
-            TextBox_F0_Campo3_6.Text = Convert.ToString(Registro_F0_C3[6]);
-            TextBox_F0_Campo3_7.Text = Convert.ToString(Registro_F0_C3[7]);
-            TextBox_F0_Campo3_8.Text = Convert.ToString(Registro_F0_C3[8]);
-            TextBox_F0_Campo3_Max.Text = Convert.ToString(Registro_F0_C3[9]);
+            TextBox_F0_Campo3_Min.Text = Registro_F0_C3[0].ToString();
+            TextBox_F0_Campo3_1.Text = Registro_F0_C3[1].ToString();
+            TextBox_F0_Campo3_2.Text = Registro_F0_C3[2].ToString();
+            TextBox_F0_Campo3_3.Text = Registro_F0_C3[3].ToString();
+            TextBox_F0_Campo3_4.Text = Registro_F0_C3[4].ToString();
+            TextBox_F0_Campo3_5.Text = Registro_F0_C3[5].ToString();
+            TextBox_F0_Campo3_6.Text = Registro_F0_C3[6].ToString();
+            TextBox_F0_Campo3_7.Text = Registro_F0_C3[7].ToString();
+            TextBox_F0_Campo3_8.Text = Registro_F0_C3[8].ToString();
+            TextBox_F0_Campo3_Max.Text = Registro_F0_C3[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C4-------------------------------------------*/
-            TextBox_F0_Campo4_Min.Text = Convert.ToString(Registro_F0_C4[0]);
-            TextBox_F0_Campo4_1.Text = Convert.ToString(Registro_F0_C4[1]);
-            TextBox_F0_Campo4_2.Text = Convert.ToString(Registro_F0_C4[2]);
-            TextBox_F0_Campo4_3.Text = Convert.ToString(Registro_F0_C4[3]);
-            TextBox_F0_Campo4_4.Text = Convert.ToString(Registro_F0_C4[4]);
-            TextBox_F0_Campo4_5.Text = Convert.ToString(Registro_F0_C4[5]);
-            TextBox_F0_Campo4_6.Text = Convert.ToString(Registro_F0_C4[6]);
-            TextBox_F0_Campo4_7.Text = Convert.ToString(Registro_F0_C4[7]);
-            TextBox_F0_Campo4_8.Text = Convert.ToString(Registro_F0_C4[8]);
-            TextBox_F0_Campo4_Max.Text = Convert.ToString(Registro_F0_C4[9]);
+            TextBox_F0_Campo4_Min.Text = Registro_F0_C4[0].ToString();
+            TextBox_F0_Campo4_1.Text = Registro_F0_C4[1].ToString();
+            TextBox_F0_Campo4_2.Text = Registro_F0_C4[2].ToString();
+            TextBox_F0_Campo4_3.Text = Registro_F0_C4[3].ToString();
+            TextBox_F0_Campo4_4.Text = Registro_F0_C4[4].ToString();
+            TextBox_F0_Campo4_5.Text = Registro_F0_C4[5].ToString();
+            TextBox_F0_Campo4_6.Text = Registro_F0_C4[6].ToString();
+            TextBox_F0_Campo4_7.Text = Registro_F0_C4[7].ToString();
+            TextBox_F0_Campo4_8.Text = Registro_F0_C4[8].ToString();
+            TextBox_F0_Campo4_Max.Text = Registro_F0_C4[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
@@ -3599,158 +3841,158 @@ namespace Dewimed_Beta
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F0 C0-------------------------------------------*/
-            TextBox_F1_Campo0_Min.Text = Convert.ToString(Registro_F1_C0[0]);
-            TextBox_F1_Campo0_1.Text = Convert.ToString(Registro_F1_C0[1]);
-            TextBox_F1_Campo0_2.Text = Convert.ToString(Registro_F1_C0[2]);
-            TextBox_F1_Campo0_3.Text = Convert.ToString(Registro_F1_C0[3]);
-            TextBox_F1_Campo0_4.Text = Convert.ToString(Registro_F1_C0[4]);
-            TextBox_F1_Campo0_5.Text = Convert.ToString(Registro_F1_C0[5]);
-            TextBox_F1_Campo0_6.Text = Convert.ToString(Registro_F1_C0[6]);
-            TextBox_F1_Campo0_7.Text = Convert.ToString(Registro_F1_C0[7]);
-            TextBox_F1_Campo0_8.Text = Convert.ToString(Registro_F1_C0[8]);
-            TextBox_F1_Campo0_Max.Text = Convert.ToString(Registro_F1_C0[9]);
+            TextBox_F1_Campo0_Min.Text = Registro_F1_C0[0].ToString();
+            TextBox_F1_Campo0_1.Text = Registro_F1_C0[1].ToString();
+            TextBox_F1_Campo0_2.Text = Registro_F1_C0[2].ToString();
+            TextBox_F1_Campo0_3.Text = Registro_F1_C0[3].ToString();
+            TextBox_F1_Campo0_4.Text = Registro_F1_C0[4].ToString();
+            TextBox_F1_Campo0_5.Text = Registro_F1_C0[5].ToString();
+            TextBox_F1_Campo0_6.Text = Registro_F1_C0[6].ToString();
+            TextBox_F1_Campo0_7.Text = Registro_F1_C0[7].ToString();
+            TextBox_F1_Campo0_8.Text = Registro_F1_C0[8].ToString();
+            TextBox_F1_Campo0_Max.Text = Registro_F1_C0[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F1 C1-------------------------------------------*/
-            TextBox_F1_Campo1_Min.Text = Convert.ToString(Registro_F1_C1[0]);
-            TextBox_F1_Campo1_1.Text = Convert.ToString(Registro_F1_C1[1]);
-            TextBox_F1_Campo1_2.Text = Convert.ToString(Registro_F1_C1[2]);
-            TextBox_F1_Campo1_3.Text = Convert.ToString(Registro_F1_C1[3]);
-            TextBox_F1_Campo1_4.Text = Convert.ToString(Registro_F1_C1[4]);
-            TextBox_F1_Campo1_5.Text = Convert.ToString(Registro_F1_C1[5]);
-            TextBox_F1_Campo1_6.Text = Convert.ToString(Registro_F1_C1[6]);
-            TextBox_F1_Campo1_7.Text = Convert.ToString(Registro_F1_C1[7]);
-            TextBox_F1_Campo1_8.Text = Convert.ToString(Registro_F1_C1[8]);
-            TextBox_F1_Campo1_Max.Text = Convert.ToString(Registro_F1_C1[9]);
+            TextBox_F1_Campo1_Min.Text = Registro_F1_C1[0].ToString();
+            TextBox_F1_Campo1_1.Text = Registro_F1_C1[1].ToString();
+            TextBox_F1_Campo1_2.Text = Registro_F1_C1[2].ToString();
+            TextBox_F1_Campo1_3.Text = Registro_F1_C1[3].ToString();
+            TextBox_F1_Campo1_4.Text = Registro_F1_C1[4].ToString();
+            TextBox_F1_Campo1_5.Text = Registro_F1_C1[5].ToString();
+            TextBox_F1_Campo1_6.Text = Registro_F1_C1[6].ToString();
+            TextBox_F1_Campo1_7.Text = Registro_F1_C1[7].ToString();
+            TextBox_F1_Campo1_8.Text = Registro_F1_C1[8].ToString();
+            TextBox_F1_Campo1_Max.Text = Registro_F1_C1[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F1 C2-------------------------------------------*/
-            TextBox_F1_Campo2_Min.Text = Convert.ToString(Registro_F1_C2[0]);
-            TextBox_F1_Campo2_1.Text = Convert.ToString(Registro_F1_C2[1]);
-            TextBox_F1_Campo2_2.Text = Convert.ToString(Registro_F1_C2[2]);
-            TextBox_F1_Campo2_3.Text = Convert.ToString(Registro_F1_C2[3]);
-            TextBox_F1_Campo2_4.Text = Convert.ToString(Registro_F1_C2[4]);
-            TextBox_F1_Campo2_5.Text = Convert.ToString(Registro_F1_C2[5]);
-            TextBox_F1_Campo2_6.Text = Convert.ToString(Registro_F1_C2[6]);
-            TextBox_F1_Campo2_7.Text = Convert.ToString(Registro_F1_C2[7]);
-            TextBox_F1_Campo2_8.Text = Convert.ToString(Registro_F1_C2[8]);
-            TextBox_F1_Campo2_Max.Text = Convert.ToString(Registro_F1_C2[9]);
+            TextBox_F1_Campo2_Min.Text = Registro_F1_C2[0].ToString();
+            TextBox_F1_Campo2_1.Text = Registro_F1_C2[1].ToString();
+            TextBox_F1_Campo2_2.Text = Registro_F1_C2[2].ToString();
+            TextBox_F1_Campo2_3.Text = Registro_F1_C2[3].ToString();
+            TextBox_F1_Campo2_4.Text = Registro_F1_C2[4].ToString();
+            TextBox_F1_Campo2_5.Text = Registro_F1_C2[5].ToString();
+            TextBox_F1_Campo2_6.Text = Registro_F1_C2[6].ToString();
+            TextBox_F1_Campo2_7.Text = Registro_F1_C2[7].ToString();
+            TextBox_F1_Campo2_8.Text = Registro_F1_C2[8].ToString();
+            TextBox_F1_Campo2_Max.Text = Registro_F1_C2[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F1 C3-------------------------------------------*/
-            TextBox_F1_Campo3_Min.Text = Convert.ToString(Registro_F1_C3[0]);
-            TextBox_F1_Campo3_1.Text = Convert.ToString(Registro_F1_C3[1]);
-            TextBox_F1_Campo3_2.Text = Convert.ToString(Registro_F1_C3[2]);
-            TextBox_F1_Campo3_3.Text = Convert.ToString(Registro_F1_C3[3]);
-            TextBox_F1_Campo3_4.Text = Convert.ToString(Registro_F1_C3[4]);
-            TextBox_F1_Campo3_5.Text = Convert.ToString(Registro_F1_C3[5]);
-            TextBox_F1_Campo3_6.Text = Convert.ToString(Registro_F1_C3[6]);
-            TextBox_F1_Campo3_7.Text = Convert.ToString(Registro_F1_C3[7]);
-            TextBox_F1_Campo3_8.Text = Convert.ToString(Registro_F1_C3[8]);
-            TextBox_F1_Campo3_Max.Text = Convert.ToString(Registro_F1_C3[9]);
+            TextBox_F1_Campo3_Min.Text = Registro_F1_C3[0].ToString();
+            TextBox_F1_Campo3_1.Text = Registro_F1_C3[1].ToString();
+            TextBox_F1_Campo3_2.Text = Registro_F1_C3[2].ToString();
+            TextBox_F1_Campo3_3.Text = Registro_F1_C3[3].ToString();
+            TextBox_F1_Campo3_4.Text = Registro_F1_C3[4].ToString();
+            TextBox_F1_Campo3_5.Text = Registro_F1_C3[5].ToString();
+            TextBox_F1_Campo3_6.Text = Registro_F1_C3[6].ToString();
+            TextBox_F1_Campo3_7.Text = Registro_F1_C3[7].ToString();
+            TextBox_F1_Campo3_8.Text = Registro_F1_C3[8].ToString();
+            TextBox_F1_Campo3_Max.Text = Registro_F1_C3[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F1 C4-------------------------------------------*/
-            TextBox_F1_Campo4_Min.Text = Convert.ToString(Registro_F1_C4[0]);
-            TextBox_F1_Campo4_1.Text = Convert.ToString(Registro_F1_C4[1]);
-            TextBox_F1_Campo4_2.Text = Convert.ToString(Registro_F1_C4[2]);
-            TextBox_F1_Campo4_3.Text = Convert.ToString(Registro_F1_C4[3]);
-            TextBox_F1_Campo4_4.Text = Convert.ToString(Registro_F1_C4[4]);
-            TextBox_F1_Campo4_5.Text = Convert.ToString(Registro_F1_C4[5]);
-            TextBox_F1_Campo4_6.Text = Convert.ToString(Registro_F1_C4[6]);
-            TextBox_F1_Campo4_7.Text = Convert.ToString(Registro_F1_C4[7]);
-            TextBox_F1_Campo4_8.Text = Convert.ToString(Registro_F1_C4[8]);
-            TextBox_F1_Campo4_Max.Text = Convert.ToString(Registro_F1_C4[9]);
+            TextBox_F1_Campo4_Min.Text = Registro_F1_C4[0].ToString();
+            TextBox_F1_Campo4_1.Text = Registro_F1_C4[1].ToString();
+            TextBox_F1_Campo4_2.Text = Registro_F1_C4[2].ToString();
+            TextBox_F1_Campo4_3.Text = Registro_F1_C4[3].ToString();
+            TextBox_F1_Campo4_4.Text = Registro_F1_C4[4].ToString();
+            TextBox_F1_Campo4_5.Text = Registro_F1_C4[5].ToString();
+            TextBox_F1_Campo4_6.Text = Registro_F1_C4[6].ToString();
+            TextBox_F1_Campo4_7.Text = Registro_F1_C4[7].ToString();
+            TextBox_F1_Campo4_8.Text = Registro_F1_C4[8].ToString();
+            TextBox_F1_Campo4_Max.Text = Registro_F1_C4[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F2 C0-------------------------------------------*/
-            TextBox_F2_Campo0_Min.Text = Convert.ToString(Registro_F2_C0[0]);
-            TextBox_F2_Campo0_1.Text = Convert.ToString(Registro_F2_C0[1]);
-            TextBox_F2_Campo0_2.Text = Convert.ToString(Registro_F2_C0[2]);
-            TextBox_F2_Campo0_3.Text = Convert.ToString(Registro_F2_C0[3]);
-            TextBox_F2_Campo0_4.Text = Convert.ToString(Registro_F2_C0[4]);
-            TextBox_F2_Campo0_5.Text = Convert.ToString(Registro_F2_C0[5]);
-            TextBox_F2_Campo0_6.Text = Convert.ToString(Registro_F2_C0[6]);
-            TextBox_F2_Campo0_7.Text = Convert.ToString(Registro_F2_C0[7]);
-            TextBox_F2_Campo0_8.Text = Convert.ToString(Registro_F2_C0[8]);
-            TextBox_F2_Campo0_Max.Text = Convert.ToString(Registro_F2_C0[9]);
+            TextBox_F2_Campo0_Min.Text = Registro_F2_C0[0].ToString();
+            TextBox_F2_Campo0_1.Text = Registro_F2_C0[1].ToString();
+            TextBox_F2_Campo0_2.Text = Registro_F2_C0[2].ToString();
+            TextBox_F2_Campo0_3.Text = Registro_F2_C0[3].ToString();
+            TextBox_F2_Campo0_4.Text = Registro_F2_C0[4].ToString();
+            TextBox_F2_Campo0_5.Text = Registro_F2_C0[5].ToString();
+            TextBox_F2_Campo0_6.Text = Registro_F2_C0[6].ToString();
+            TextBox_F2_Campo0_7.Text = Registro_F2_C0[7].ToString();
+            TextBox_F2_Campo0_8.Text = Registro_F2_C0[8].ToString();
+            TextBox_F2_Campo0_Max.Text = Registro_F2_C0[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F2 C1-------------------------------------------*/
-            TextBox_F2_Campo1_Min.Text = Convert.ToString(Registro_F2_C1[0]);
-            TextBox_F2_Campo1_1.Text = Convert.ToString(Registro_F2_C1[1]);
-            TextBox_F2_Campo1_2.Text = Convert.ToString(Registro_F2_C1[2]);
-            TextBox_F2_Campo1_3.Text = Convert.ToString(Registro_F2_C1[3]);
-            TextBox_F2_Campo1_4.Text = Convert.ToString(Registro_F2_C1[4]);
-            TextBox_F2_Campo1_5.Text = Convert.ToString(Registro_F2_C1[5]);
-            TextBox_F2_Campo1_6.Text = Convert.ToString(Registro_F2_C1[6]);
-            TextBox_F2_Campo1_7.Text = Convert.ToString(Registro_F2_C1[7]);
-            TextBox_F2_Campo1_8.Text = Convert.ToString(Registro_F2_C1[8]);
-            TextBox_F2_Campo1_Max.Text = Convert.ToString(Registro_F2_C1[9]);
+            TextBox_F2_Campo1_Min.Text = Registro_F2_C1[0].ToString();
+            TextBox_F2_Campo1_1.Text = Registro_F2_C1[1].ToString();
+            TextBox_F2_Campo1_2.Text = Registro_F2_C1[2].ToString();
+            TextBox_F2_Campo1_3.Text = Registro_F2_C1[3].ToString();
+            TextBox_F2_Campo1_4.Text = Registro_F2_C1[4].ToString();
+            TextBox_F2_Campo1_5.Text = Registro_F2_C1[5].ToString();
+            TextBox_F2_Campo1_6.Text = Registro_F2_C1[6].ToString();
+            TextBox_F2_Campo1_7.Text = Registro_F2_C1[7].ToString();
+            TextBox_F2_Campo1_8.Text = Registro_F2_C1[8].ToString();
+            TextBox_F2_Campo1_Max.Text = Registro_F2_C1[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F2 C2-------------------------------------------*/
-            TextBox_F2_Campo2_Min.Text = Convert.ToString(Registro_F2_C2[0]);
-            TextBox_F2_Campo2_1.Text = Convert.ToString(Registro_F2_C2[1]);
-            TextBox_F2_Campo2_2.Text = Convert.ToString(Registro_F2_C2[2]);
-            TextBox_F2_Campo2_3.Text = Convert.ToString(Registro_F2_C2[3]);
-            TextBox_F2_Campo2_4.Text = Convert.ToString(Registro_F2_C2[4]);
-            TextBox_F2_Campo2_5.Text = Convert.ToString(Registro_F2_C2[5]);
-            TextBox_F2_Campo2_6.Text = Convert.ToString(Registro_F2_C2[6]);
-            TextBox_F2_Campo2_7.Text = Convert.ToString(Registro_F2_C2[7]);
-            TextBox_F2_Campo2_8.Text = Convert.ToString(Registro_F2_C2[8]);
-            TextBox_F2_Campo2_Max.Text = Convert.ToString(Registro_F2_C2[9]);
+            TextBox_F2_Campo2_Min.Text = Registro_F2_C2[0].ToString();
+            TextBox_F2_Campo2_1.Text = Registro_F2_C2[1].ToString();
+            TextBox_F2_Campo2_2.Text = Registro_F2_C2[2].ToString();
+            TextBox_F2_Campo2_3.Text = Registro_F2_C2[3].ToString();
+            TextBox_F2_Campo2_4.Text = Registro_F2_C2[4].ToString();
+            TextBox_F2_Campo2_5.Text = Registro_F2_C2[5].ToString();
+            TextBox_F2_Campo2_6.Text = Registro_F2_C2[6].ToString();
+            TextBox_F2_Campo2_7.Text = Registro_F2_C2[7].ToString();
+            TextBox_F2_Campo2_8.Text = Registro_F2_C2[8].ToString();
+            TextBox_F2_Campo2_Max.Text = Registro_F2_C2[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F2 C3-------------------------------------------*/
-            TextBox_F2_Campo3_Min.Text = Convert.ToString(Registro_F2_C3[0]);
-            TextBox_F2_Campo3_1.Text = Convert.ToString(Registro_F2_C3[1]);
-            TextBox_F2_Campo3_2.Text = Convert.ToString(Registro_F2_C3[2]);
-            TextBox_F2_Campo3_3.Text = Convert.ToString(Registro_F2_C3[3]);
-            TextBox_F2_Campo3_4.Text = Convert.ToString(Registro_F2_C3[4]);
-            TextBox_F2_Campo3_5.Text = Convert.ToString(Registro_F2_C3[5]);
-            TextBox_F2_Campo3_6.Text = Convert.ToString(Registro_F2_C3[6]);
-            TextBox_F2_Campo3_7.Text = Convert.ToString(Registro_F2_C3[7]);
-            TextBox_F2_Campo3_8.Text = Convert.ToString(Registro_F2_C3[8]);
-            TextBox_F2_Campo3_Max.Text = Convert.ToString(Registro_F2_C3[9]);
+            TextBox_F2_Campo3_Min.Text = Registro_F2_C3[0].ToString();
+            TextBox_F2_Campo3_1.Text = Registro_F2_C3[1].ToString();
+            TextBox_F2_Campo3_2.Text = Registro_F2_C3[2].ToString();
+            TextBox_F2_Campo3_3.Text = Registro_F2_C3[3].ToString();
+            TextBox_F2_Campo3_4.Text = Registro_F2_C3[4].ToString();
+            TextBox_F2_Campo3_5.Text = Registro_F2_C3[5].ToString();
+            TextBox_F2_Campo3_6.Text = Registro_F2_C3[6].ToString();
+            TextBox_F2_Campo3_7.Text = Registro_F2_C3[7].ToString();
+            TextBox_F2_Campo3_8.Text = Registro_F2_C3[8].ToString();
+            TextBox_F2_Campo3_Max.Text = Registro_F2_C3[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
 
             /*--------------------------------------------------------------------------------*/
             /*---------------------------------F2 C4-------------------------------------------*/
-            TextBox_F2_Campo4_Min.Text = Convert.ToString(Registro_F2_C4[0]);
-            TextBox_F2_Campo4_1.Text = Convert.ToString(Registro_F2_C4[1]);
-            TextBox_F2_Campo4_2.Text = Convert.ToString(Registro_F2_C4[2]);
-            TextBox_F2_Campo4_3.Text = Convert.ToString(Registro_F2_C4[3]);
-            TextBox_F2_Campo4_4.Text = Convert.ToString(Registro_F2_C4[4]);
-            TextBox_F2_Campo4_5.Text = Convert.ToString(Registro_F2_C4[5]);
-            TextBox_F2_Campo4_6.Text = Convert.ToString(Registro_F2_C4[6]);
-            TextBox_F2_Campo4_7.Text = Convert.ToString(Registro_F2_C4[7]);
-            TextBox_F2_Campo4_8.Text = Convert.ToString(Registro_F2_C4[8]);
-            TextBox_F2_Campo4_Max.Text = Convert.ToString(Registro_F2_C4[9]);
+            TextBox_F2_Campo4_Min.Text = Registro_F2_C4[0].ToString();
+            TextBox_F2_Campo4_1.Text = Registro_F2_C4[1].ToString();
+            TextBox_F2_Campo4_2.Text = Registro_F2_C4[2].ToString();
+            TextBox_F2_Campo4_3.Text = Registro_F2_C4[3].ToString();
+            TextBox_F2_Campo4_4.Text = Registro_F2_C4[4].ToString();
+            TextBox_F2_Campo4_5.Text = Registro_F2_C4[5].ToString();
+            TextBox_F2_Campo4_6.Text = Registro_F2_C4[6].ToString();
+            TextBox_F2_Campo4_7.Text = Registro_F2_C4[7].ToString();
+            TextBox_F2_Campo4_8.Text = Registro_F2_C4[8].ToString();
+            TextBox_F2_Campo4_Max.Text = Registro_F2_C4[9].ToString();
 
             /*--------------------------------------------------------------------------------*/
 
@@ -4953,7 +5195,87 @@ namespace Dewimed_Beta
 
         }
 
+        public void Serial_IndexVolt()// esta funcion se ejecuta despues de que se envia el comando de lectura de voltajes
+        {
 
+            try
+            {
+                indexOfA = Convert.ToInt32(SerialDataIn.IndexOf("A"));
+                indexOfB = Convert.ToInt32(SerialDataIn.IndexOf("B"));
+                indexOfC = Convert.ToInt32(SerialDataIn.IndexOf("C"));
+                indexOfD = Convert.ToInt32(SerialDataIn.IndexOf("D"));
+                indexOfE = Convert.ToInt32(SerialDataIn.IndexOf("E"));
+                indexOfF = Convert.ToInt32(SerialDataIn.IndexOf("F"));
+
+
+
+                String_F0_C0_MIN = SerialDataIn.Substring(0, indexOfA);
+                tempTextBox.Text = String_F0_C0_MIN;//IMPRIMIRMOS EL VALOR 
+
+
+
+                String_F0_C0_MAX = SerialDataIn.Substring(indexOfA + 1, (indexOfB - indexOfA) - 1);
+                voltTextBox.Text = String_F0_C0_MAX;
+
+
+
+                String_F0_C1_MIN = SerialDataIn.Substring(indexOfB + 1, (indexOfC - indexOfB) - 1);
+                If0TextBox.Text = String_F0_C1_MIN;
+
+
+                String_F0_C1_MAX = SerialDataIn.Substring(indexOfC + 1, (indexOfD - indexOfC) - 1);
+                f0.Text = String_F0_C1_MAX;
+
+
+                String_F0_C2_MIN = SerialDataIn.Substring(indexOfD + 1, (indexOfE - indexOfD) - 1);
+                f1.Text = String_F0_C2_MIN;
+
+                String_F0_C2_MAX = SerialDataIn.Substring(indexOfE + 1, (indexOfF - indexOfE) - 1);
+                f2.Text = String_F0_C2_MAX;
+
+                SerialDataIn = null;
+
+                //////////////////////////////////////////////////////////////////////////////////////////
+                /*
+                StringTemp = SerialDataIn.Substring(0, indexOff);
+                tempTextBox.Text = StringTemp;//IMPRIMIRMOS EL VALOR 
+
+                StringVolt = SerialDataIn.Substring(indexOff + 1, (indexOfg - indexOff) - 1);
+                voltTextBox.Text = StringVolt;
+
+                StringI = SerialDataIn.Substring(indexOfg + 1, (indexOfh - indexOfg) - 1);
+                If0TextBox.Text = StringI;
+
+
+
+                StringF0 = SerialDataIn.Substring(indexOfh + 1, (indexOfi - indexOfh) - 1);
+                TextBox_F0_Campo1_Max.Text = StringF0;
+
+
+                StringF1 = SerialDataIn.Substring(indexOfi + 1, (indexOfj - indexOfi) - 1);
+                TextBox_F0_Campo2_Min.Text = StringF1;
+
+
+                StringF2 = SerialDataIn.Substring(indexOfj + 1, (indexOfk - indexOfj) - 1);
+                TextBox_F0_Campo2_Max.Text = StringF2;
+
+                SerialDataIn2 = null;
+
+                */
+
+
+
+            }
+
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
+
+
+
+        }
         public void Serial_Index()// esta funcion se ejecuta despues de que se envia el comando de lectura [R] y realiza la index de la trama serial
         {
 
@@ -5165,151 +5487,199 @@ namespace Dewimed_Beta
 
             /*--------------------------F0--------------------------------------------------*/
             /*Ahora debemos de imprimir las cadenas*/
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$A$");// mandamos el comando para lectura de F0C0
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             /*Ahora enviamos F0C0*/
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F0_C0[0], Val_F0_C0[1], Val_F0_C0[2], Val_F0_C0[3], Val_F0_C0[4], Val_F0_C0[5], Val_F0_C0[6], Val_F0_C0[7], Val_F0_C0[8], Val_F0_C0[9]));
-            Thread.Sleep(100);
-            
-            
+            Thread.Sleep(Tiempo);
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$B$");// mandamos el comando para lectura de F0C1
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F0C1
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F0_C1[0], Val_F0_C1[1], Val_F0_C1[2], Val_F0_C1[3], Val_F0_C1[4], Val_F0_C1[5], Val_F0_C1[6], Val_F0_C1[7], Val_F0_C1[8], Val_F0_C1[9]));
-            Thread.Sleep(100);
+            Thread.Sleep(Tiempo);
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(100);//delay
 
 
 
-   
 
-            
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$C$");// mandamos el comando para lectura de F0C1
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F0C1
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F0_C2[0], Val_F0_C2[1], Val_F0_C2[2], Val_F0_C2[3], Val_F0_C2[4], Val_F0_C2[5], Val_F0_C2[6], Val_F0_C2[7], Val_F0_C2[8], Val_F0_C2[9]));
-            Thread.Sleep(100);
-            
+            Thread.Sleep(Tiempo);
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
 
 
 
 
 
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$D$");// mandamos el comando para lectura de F0C3
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F0C3
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F0_C3[0], Val_F0_C3[1], Val_F0_C3[2], Val_F0_C3[3], Val_F0_C3[4], Val_F0_C3[5], Val_F0_C3[6], Val_F0_C3[7], Val_F0_C3[8], Val_F0_C3[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-            
 
-           serialPort_Form2.WriteLine("$E$");// mandamos el comando para lectura de F0C4
-           Thread.Sleep(100);//delay de 100 ms
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
+            serialPort_Form2.WriteLine("$E$");// mandamos el comando para lectura de F0C4
+           Thread.Sleep(Tiempo);//delay de 100 ms
            //Ahora enviamos F0C4
            serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                Val_F0_C4[0], Val_F0_C4[1], Val_F0_C4[2], Val_F0_C4[3], Val_F0_C4[4], Val_F0_C4[5], Val_F0_C4[6], Val_F0_C4[7], Val_F0_C4[8], Val_F0_C4[9]));
-           Thread.Sleep(100);//delay de 100 ms
+           Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-          
 
             /*--------------------------F1--------------------------------------------------*/
             /*Ahora debemos de imprimir las cadenas*/
 
-            
-            
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$F$");// mandamos el comando para lectura de F1C0
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F1C0
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F1_C0[0], Val_F1_C0[1], Val_F1_C0[2], Val_F1_C0[3], Val_F1_C0[4], Val_F1_C0[5], Val_F1_C0[6], Val_F1_C0[7], Val_F1_C0[8], Val_F1_C0[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$G$");// mandamos el comando para lectura de F1C1
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F1C1
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F1_C1[0], Val_F1_C1[1], Val_F1_C1[2], Val_F1_C1[3], Val_F1_C1[4], Val_F1_C1[5], Val_F1_C1[6], Val_F1_C1[7], Val_F1_C1[8], Val_F1_C1[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(100);//delay
 
-            
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$H$");// mandamos el comando para lectura de F1C2
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F1C2
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F1_C2[0], Val_F1_C2[1], Val_F1_C2[2], Val_F1_C2[3], Val_F1_C2[4], Val_F1_C2[5], Val_F1_C2[6], Val_F1_C2[7], Val_F1_C2[8], Val_F1_C2[9]));
-            Thread.Sleep(100);//delay de 100 ms
-            
+            Thread.Sleep(Tiempo);//delay de 100 ms
 
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$I$");// mandamos el comando para lectura de F1C3
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F1C3
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F1_C3[0], Val_F1_C3[1], Val_F1_C3[2], Val_F1_C3[3], Val_F1_C3[4], Val_F1_C3[5], Val_F1_C3[6], Val_F1_C3[7], Val_F1_C3[8], Val_F1_C3[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
 
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$J$");// mandamos el comando para lectura de F1C4
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F1C4
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F1_C4[0], Val_F1_C4[1], Val_F1_C4[2], Val_F1_C4[3], Val_F1_C4[4], Val_F1_C4[5], Val_F1_C4[6], Val_F1_C4[7], Val_F1_C4[8], Val_F1_C4[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-            
 
 
 
             /*--------------------------F2--------------------------------------------------*/
             /*Ahora debemos de imprimir las cadenas*/
 
-            
-            
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$K$");// mandamos el comando para lectura de F2C0
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F2C0
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F2_C0[0], Val_F2_C0[1], Val_F2_C0[2], Val_F2_C0[3], Val_F2_C0[4], Val_F2_C0[5], Val_F2_C0[6], Val_F2_C0[7], Val_F2_C0[8], Val_F2_C0[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$L$");// mandamos el comando para lectura de F2C1
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F2C1
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F2_C1[0], Val_F2_C1[1], Val_F2_C1[2], Val_F2_C1[3], Val_F2_C1[4], Val_F2_C1[5], Val_F2_C1[6], Val_F2_C1[7], Val_F2_C1[8], Val_F2_C1[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
 
-            
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
+
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$M$");// mandamos el comando para lectura de F2C2
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F2C2
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F2_C2[0], Val_F2_C2[1], Val_F2_C2[2], Val_F2_C2[3], Val_F2_C2[4], Val_F2_C2[5], Val_F2_C2[6], Val_F2_C2[7], Val_F2_C2[8], Val_F2_C2[9]));
-            Thread.Sleep(100);//delay de 100 ms
-            
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
             serialPort_Form2.WriteLine("$N$");// mandamos el comando para lectura de F2C3
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F2C3
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F2_C3[0], Val_F2_C3[1], Val_F2_C3[2], Val_F2_C3[3], Val_F2_C3[4], Val_F2_C3[5], Val_F2_C3[6], Val_F2_C3[7], Val_F2_C3[8], Val_F2_C3[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
+            serialPort_Form2.WriteLine("X");// 
+            Thread.Sleep(Tiempo);//delay
 
             serialPort_Form2.WriteLine("$O$");// mandamos el comando para lectura de F2C4
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
             //Ahora enviamos F2C4
             serialPort_Form2.WriteLine(String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
                 Val_F2_C4[0], Val_F2_C4[1], Val_F2_C4[2], Val_F2_C4[3], Val_F2_C4[4], Val_F2_C4[5], Val_F2_C4[6], Val_F2_C4[7], Val_F2_C4[8], Val_F2_C4[9]));
-            Thread.Sleep(100);//delay de 100 ms
+            Thread.Sleep(Tiempo);//delay de 100 ms
+            serialPort_Form2.WriteLine("[N]");// 
+            Thread.Sleep(Tiempo);//delay
 
-            
+
 
 
 
@@ -5486,7 +5856,8 @@ namespace Dewimed_Beta
             try
 
             {
-                serialPort_Form2.WriteLine("[P]");
+                serialPort_Form2.WriteLine("p");// 
+
 
 
             }
